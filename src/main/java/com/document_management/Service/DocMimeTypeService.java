@@ -36,7 +36,7 @@ public class DocMimeTypeService {
         }
     }
 
-    public void deleteDocMimeType(Long id) {
-        docMimeTypeRepository.deleteById(id);
-    }
+//    public void deleteDocMimeType(Long id) {
+//        docMimeTypeRepository.deleteById(id);
+//    }
 }

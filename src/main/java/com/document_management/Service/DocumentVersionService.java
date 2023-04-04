@@ -31,7 +31,7 @@ public class DocumentVersionService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document Version not found"));
     }
 
-    public void delete(int id) {
-        repository.deleteById(id);
-    }
+//    public void delete(int id) {
+//        repository.deleteById(id);
+//    }
 }

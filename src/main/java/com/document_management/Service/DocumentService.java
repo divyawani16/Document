@@ -37,8 +37,8 @@ public class DocumentService {
         return documentRepository.save(document);
     }
 
-    public void deleteDocument(Long id) {
-        Document document = getDocumentById(id);
-        documentRepository.delete(document);
-    }
+//    public void deleteDocument(Long id) {
+//        Document document = getDocumentById(id);
+//        documentRepository.delete(document);
+//    }
 }

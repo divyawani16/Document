@@ -15,7 +15,7 @@ public class DocTypeController {
     @Autowired
     private DocTypeService docTypeService;
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public ResponseEntity<List<DocType>> getAllDocTypes() {
         List<DocType> docTypes = docTypeService.getAllDocTypes();
         return new ResponseEntity<>(docTypes, HttpStatus.OK);
@@ -46,10 +46,10 @@ public class DocTypeController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteDocType(@PathVariable("id") Long id) {
-        docTypeService.deleteDocType(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<HttpStatus> deleteDocType(@PathVariable("id") Long id) {
+//        docTypeService.deleteDocType(id);
+//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//    }
 
 }

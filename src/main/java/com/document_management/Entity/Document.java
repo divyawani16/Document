@@ -18,18 +18,15 @@ public class Document {
     private String name;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "UserId",referencedColumnName = "UserId")
     private Users users;
 
     @OneToOne
-    @JsonIgnore
     @JoinColumn(name = "DocTypeId", referencedColumnName = "docTypeId")
     private DocType docType;
 
 
     @OneToOne
-    @JsonIgnore
     @JoinColumn(name = "docMimeTypeId", referencedColumnName = "docMimeTypeId")
     private DocMimeType docMimeType;
 
