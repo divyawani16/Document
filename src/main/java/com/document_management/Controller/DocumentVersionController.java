@@ -36,9 +36,9 @@ public class DocumentVersionController {
         return ResponseEntity.ok(documentVersion);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable int id) {
-        service.delete(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> delete(@PathVariable int id) {
+//        service.delete(id);
+//        return ResponseEntity.noContent().build();
+//    }
 }

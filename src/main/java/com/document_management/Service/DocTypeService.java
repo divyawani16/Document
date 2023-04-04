@@ -39,8 +39,8 @@ public class DocTypeService {
         }
     }
 
-    public void deleteDocType(Long id) {
-        docTypeRepository.deleteById(id);
-    }
+//    public void deleteDocType(Long id) {
+//        docTypeRepository.deleteById(id);
+//    }
 
 }

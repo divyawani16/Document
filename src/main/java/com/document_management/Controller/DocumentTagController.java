@@ -29,9 +29,9 @@ public class DocumentTagController {
         return ResponseEntity.ok(documentTagService.getDocumentTagById(id));
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocumentTag(@PathVariable Long id) {
-        documentTagService.deleteDocumentTag(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteDocumentTag(@PathVariable Long id) {
+//        documentTagService.deleteDocumentTag(id);
+//        return ResponseEntity.noContent().build();
+//    }
 }

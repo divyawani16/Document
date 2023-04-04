@@ -35,9 +35,9 @@ public class DocumentController {
         return documentService.updateDocument(id, documentDetails);
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteDocument(@PathVariable Long id) {
-        documentService.deleteDocument(id);
-        return ResponseEntity.ok().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<?> deleteDocument(@PathVariable Long id) {
+//        documentService.deleteDocument(id);
+//        return ResponseEntity.ok().build();
+//    }
 }

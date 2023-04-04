@@ -45,10 +45,10 @@ public class DocMimeTypeController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocMimeType(@PathVariable("id") Long id) {
-        docMimeTypeService.deleteDocMimeType(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteDocMimeType(@PathVariable("id") Long id) {
+//        docMimeTypeService.deleteDocMimeType(id);
+//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//    }
 
 }

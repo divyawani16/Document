@@ -24,8 +24,9 @@ public class DocumentAuditService {
         return documentAuditRepository.save(documentAudit);
     }
 
-    public void deleteDocumentAuditById(Long id) {
-        documentAuditRepository.deleteById(id);
-    }
+//    public void deleteDocumentAuditById(Long id)
+//    {
+//        documentAuditRepository.deleteById(id);
+//    }
 
 }

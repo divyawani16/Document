@@ -30,11 +30,11 @@ public class DocumentAuditController {
         DocumentAudit savedDocumentAudit = documentAuditService.saveDocumentAudit(documentAudit);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDocumentAudit);
     }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocumentAuditById(@PathVariable Long id) {
-        documentAuditService.deleteDocumentAuditById(id);
-        return ResponseEntity.noContent().build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Void> deleteDocumentAuditById(@PathVariable Long id) {
+//        documentAuditService.deleteDocumentAuditById(id);
+//        return ResponseEntity.noContent().build();
+//    }
 
 }
 
