@@ -1,6 +1,7 @@
 package com.document_management.Entity;
-import jakarta.persistence.*;
 import lombok.*;
+
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor

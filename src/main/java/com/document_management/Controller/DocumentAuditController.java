@@ -15,7 +15,7 @@ public class DocumentAuditController {
     @Autowired
     private DocumentAuditService documentAuditService;
 
-    @GetMapping("/get")
+    @GetMapping("/")
     public ResponseEntity<List<DocumentAudit>> getAllDocumentAudits() {
         List<DocumentAudit> documentAudits = documentAuditService.getAllDocumentAudits();
         return ResponseEntity.ok(documentAudits);
@@ -25,7 +25,7 @@ public class DocumentAuditController {
         DocumentAudit documentAudit = documentAuditService.getDocumentAuditById(id);
         return ResponseEntity.ok(documentAudit);
     }
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<DocumentAudit> saveDocumentAudit(@RequestBody DocumentAudit documentAudit) {
         DocumentAudit savedDocumentAudit = documentAuditService.saveDocumentAudit(documentAudit);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedDocumentAudit);
