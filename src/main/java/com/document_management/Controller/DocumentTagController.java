@@ -14,12 +14,12 @@ import java.util.List;
 public class DocumentTagController {
     private final DocumentTagService documentTagService;
 
-    @GetMapping("/get")
+    @GetMapping("/")
     public ResponseEntity<List<DocumentTag>> getAllDocumentTags() {
         return ResponseEntity.ok(documentTagService.getAllDocumentTags());
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<DocumentTag> createDocumentTag(@Valid @RequestBody DocumentTag documentTag) {
         return ResponseEntity.status(HttpStatus.CREATED).body(documentTagService.createDocumentTag(documentTag));
     }

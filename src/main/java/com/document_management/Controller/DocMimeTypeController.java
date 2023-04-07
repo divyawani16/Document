@@ -1,6 +1,8 @@
 package com.document_management.Controller;
 import com.document_management.Entity.DocMimeType;
         import com.document_management.Service.DocMimeTypeService;
+
+        import org.slf4j.LoggerFactory;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.http.HttpStatus;
         import org.springframework.http.ResponseEntity;
@@ -15,9 +17,10 @@ public class DocMimeTypeController {
     @Autowired
     private DocMimeTypeService docMimeTypeService;
 
-    @GetMapping("get")
+    @GetMapping("/")
     public ResponseEntity<List<DocMimeType>> getAllDocMimeTypes() {
         List<DocMimeType> docMimeTypes = docMimeTypeService.getAllDocMimeTypes();
+
         return new ResponseEntity<>(docMimeTypes, HttpStatus.OK);
     }
 
@@ -28,7 +31,7 @@ public class DocMimeTypeController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("add")
+    @PostMapping("/")
     public ResponseEntity<DocMimeType> createDocMimeType(@RequestBody DocMimeType docMimeType) {
         DocMimeType createdMimeType = docMimeTypeService.createDocMimeType(docMimeType);
         return new ResponseEntity<>(createdMimeType, HttpStatus.CREATED);

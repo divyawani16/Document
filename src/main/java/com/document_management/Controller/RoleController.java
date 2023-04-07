@@ -12,7 +12,7 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @GetMapping("/roles")
+    @GetMapping("/")
     public List<Role> getAllRoles() {
         return roleService.getAllRoles();
     }
@@ -22,7 +22,7 @@ public class RoleController {
         return roleService.getRoleById(id);
     }
 
-    @PostMapping("/roles")
+    @PostMapping("/")
     public Role createRole(@RequestBody Role role) {
         return roleService.createRole(role);
     }

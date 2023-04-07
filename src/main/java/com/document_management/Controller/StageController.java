@@ -15,7 +15,7 @@ public class StageController {
         this.stageService = stageService;
     }
 
-    @GetMapping("/get")
+    @GetMapping("/")
     public ResponseEntity<List<Stage>> getAllStages() {
         List<Stage> stages = stageService.getAllStages();
         return ResponseEntity.ok(stages);
@@ -27,7 +27,7 @@ public class StageController {
         return ResponseEntity.ok(stage);
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<Stage> saveStage(@RequestBody Stage stage) {
         Stage savedStage = stageService.saveStage(stage);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedStage);

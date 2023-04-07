@@ -1,44 +1,60 @@
 package com.document_management.Service;
+
+import com.document_management.DTO.DocumentDto;
+import com.document_management.DTO.DocumentMapper;
 import com.document_management.Entity.Document;
 import com.document_management.Repository.DocumentRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DocumentService {
     @Autowired
     private DocumentRepository documentRepository;
 
-    public List<Document> getAllDocuments() {
-        return documentRepository.findAll();
+    @Autowired
+    private DocumentMapper documentMapper;
+
+public List<DocumentDto> getAllDocuments() {
+    List<Document> documents = documentRepository.findAll();
+    return documents.stream()
+            .map(document -> documentMapper.toDocumentDto(document))
+            .collect(Collectors.toList());
+}
+      public DocumentDto getDocumentById(Long id) {
+        Document document = documentRepository.findById(id).orElse(null);
+        if (document == null) {
+            return null;
+        }
+        return documentMapper.toDocumentDto(document);
     }
 
-    public Document getDocumentById(Long id) {
-        return documentRepository.findById(id).orElse(null);
+    public DocumentDto createDocument(DocumentDto documentDto) {
+        Document document = documentMapper.toDocument(documentDto);
+        Document savedDocument = documentRepository.save(document);
+        return documentMapper.toDocumentDto(savedDocument);
     }
 
 
 
-    public Document createDocument(Document document) {
-        return documentRepository.save(document);
-    }
 
-    public Document updateDocument(Long id, Document documentDetails) {
-        Document document = getDocumentById(id);
-
-        document.setName(documentDetails.getName());
-//        document.setUserId(documentDetails.getUserId());
-        document.setDocType(documentDetails.getDocType());
-        document.setDocMimeType(documentDetails.getDocMimeType());
-     //   document.setDocumentVersion(documentDetails.getDocumentVersion());
-
-        return documentRepository.save(document);
-    }
-
-//    public void deleteDocument(Long id) {
-//        Document document = getDocumentById(id);
-//        documentRepository.delete(document);
+//    public DocumentDto updateDocument(Long id, DocumentDto documentDto) {
+//        Document document = documentRepository.findById(id).orElse(null);
+//        if (document == null) {
+//            return null;
+//        }
+//        document.setName(documentDto.getName());
+//        document.setUserId(documentDto.getUserId());
+//        document.setPropertyId(documentDto.getPropertyId());
+//        document.setDocTypeId(documentDto.getDocTypeId());
+//        document.setDocMimeTypeId(documentDto.getDocMimeTypeId());
+//        Document updatedDocument = documentRepository.save(document);
+//        return documentMapper.toDocumentDto(updatedDocument);
 //    }
 }
+
+

@@ -16,7 +16,7 @@ public class DocumentVersionController {
         this.service = service;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public ResponseEntity<DocumentVersion> create(@RequestBody DocumentVersion documentVersion) {
         DocumentVersion savedDocumentVersion = service.save(documentVersion);
         return ResponseEntity
@@ -24,7 +24,7 @@ public class DocumentVersionController {
                 .body(savedDocumentVersion);
     }
 
-    @GetMapping
+    @GetMapping("/")
     public ResponseEntity<List<DocumentVersion>> getAll() {
         List<DocumentVersion> documentVersions = service.getAll();
         return ResponseEntity.ok(documentVersions);
