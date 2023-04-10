@@ -3,11 +3,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class PropertyDto {
-    private Integer propertyId;
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public class PropertyDto {
+        private Integer propertyId;
         private Long userId;
         private String propertyName;
         private String address;
@@ -16,6 +16,5 @@ public class PropertyDto {
         private String building;
         private int floorNumber;
         private int flatNumber;
-    }
 
-
+}

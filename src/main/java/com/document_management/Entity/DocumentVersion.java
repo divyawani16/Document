@@ -1,4 +1,6 @@
 package com.document_management.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class DocumentVersion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,6 +37,8 @@ public class DocumentVersion {
 
     @Column(name = "UpdatedDate")
     private Date updatedDate;
+
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "documentId", referencedColumnName = "documentId")
     private Document document;
