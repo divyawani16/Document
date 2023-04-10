@@ -10,7 +10,8 @@ package com.document_management.Controller;
 
 @RestController
 @RequestMapping("/api/document-audits")
-public class DocumentAuditController {
+public class
+DocumentAuditController {
 
     @Autowired
     private DocumentAuditService documentAuditService;
