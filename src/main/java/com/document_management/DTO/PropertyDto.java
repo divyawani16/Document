@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public class PropertyDTO {
+    public class PropertyDto {
         private Integer propertyId;
         private Long userId;
         private String propertyName;
