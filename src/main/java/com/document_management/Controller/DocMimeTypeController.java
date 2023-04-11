@@ -1,7 +1,6 @@
 package com.document_management.Controller;
 import com.document_management.Entity.DocMimeType;
         import com.document_management.Service.DocMimeTypeService;
-
         import org.slf4j.LoggerFactory;
         import org.springframework.beans.factory.annotation.Autowired;
         import org.springframework.http.HttpStatus;
