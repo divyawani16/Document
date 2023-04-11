@@ -39,9 +39,5 @@ public class Property {
     @Column(name="flatNumber")
     private Integer flatNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "UserId")
-    private Users user;
-
 
 }

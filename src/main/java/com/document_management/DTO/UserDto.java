@@ -1,6 +1,4 @@
 package com.document_management.DTO;
-
-
 import lombok.Data;
 
 @Data
@@ -12,5 +10,5 @@ public class UserDto {
     private String emailId;
     private String username;
     private String password;
-    private Long roleId;
+
 }

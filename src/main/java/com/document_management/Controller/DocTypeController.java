@@ -1,7 +1,6 @@
 package com.document_management.Controller;
 import com.document_management.Entity.DocType;
 import com.document_management.Service.DocTypeService;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/api/doctypes")
@@ -21,7 +19,7 @@ public class DocTypeController {
     private static final Logger logger = LogManager.getLogger(DocTypeController.class);
     @GetMapping("/")
     public ResponseEntity<List<DocType>> getAllDocTypes() {
-        logger.info("Getting all document  types........................................................");
+        logger.info("Getting all document  types........");
         List<DocType> docTypes = docTypeService.getAllDocTypes();
         return new ResponseEntity<>(docTypes, HttpStatus.OK);
     }

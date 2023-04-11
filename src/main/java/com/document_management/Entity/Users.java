@@ -1,4 +1,5 @@
 package com.document_management.Entity;
+import com.document_management.CustomValidation.PhoneNoValidation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class Users {
     @Column(name = "LastName")
     private String lastName;
 
-
+   //@PhoneNoValidation
     @Column(name = "PhoneNumber")
     private String phoneNumber;
 
@@ -38,16 +39,6 @@ public class Users {
     @Column(name = "Password")
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "roleId")
-    private Role role;
-
-
-    public Users(String username, String password, Role role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
 
 
 }
