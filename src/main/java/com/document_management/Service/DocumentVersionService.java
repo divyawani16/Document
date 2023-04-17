@@ -1,37 +1,35 @@
 package com.document_management.Service;
+
+import com.document_management.DTO.DocumentVersionDto;
 import com.document_management.Entity.DocumentVersion;
 import com.document_management.Repository.DocumentVersionRepository;
-import org.springframework.http.HttpStatus;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.Date;
-import java.util.List;
+import javax.persistence.EntityNotFoundException;
+import java.time.LocalDateTime;
 
 @Service
 public class DocumentVersionService {
-    private final DocumentVersionRepository repository;
 
-    public DocumentVersionService(DocumentVersionRepository repository) {
-        this.repository = repository;
+    private final DocumentVersionRepository documentVersionRepository;
+    private final ModelMapper modelMapper;
+
+    public DocumentVersionService(DocumentVersionRepository documentVersionRepository, ModelMapper modelMapper) {
+        this.documentVersionRepository = documentVersionRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public DocumentVersion save(DocumentVersion documentVersion) {
-        return repository.save(documentVersion);
+    public DocumentVersionDto getDocumentVersionById(int docVersionId) {
+        DocumentVersion documentVersion = documentVersionRepository.findById(docVersionId)
+                .orElseThrow(() ->  new EntityNotFoundException("Document version not found"));
+        return modelMapper.map(documentVersion, DocumentVersionDto.class);
     }
 
-    public List<DocumentVersion> getAll() {
-        return repository.findAll();
+    public DocumentVersionDto createDocumentVersion(DocumentVersionDto documentVersionDto) {
+        DocumentVersion documentVersion = modelMapper.map(documentVersionDto, DocumentVersion.class);
+        documentVersion.setCreatedDate(LocalDateTime.now());
+        DocumentVersion savedDocumentVersion = documentVersionRepository.save(documentVersion);
+        return modelMapper.map(savedDocumentVersion, DocumentVersionDto.class);
     }
-
-    public DocumentVersion getById(int id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document Version not found"));
-    }
-
-//    public void delete(int id) {
-//        repository.deleteById(id);
-//    }
 }

@@ -10,14 +10,14 @@ import javax.persistence.*;
     @AllArgsConstructor
     public class DocType {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name="docTypeId")
-        private Long id;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "DocTypeId")
+    private Integer docTypeId;
 
-        @Column(name="docName")
-        private String name;
+    @Column(name = "DocTypeName")
+    private String docTypeName;
 
 
     }

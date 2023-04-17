@@ -1,46 +1,53 @@
 package com.document_management.Service;
+
+import com.document_management.DTO.RoleDto;
 import com.document_management.Entity.Role;
 import com.document_management.Repository.RoleRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RoleService {
+    private RoleRepository roleRepository;
+    private ModelMapper modelMapper;
 
     @Autowired
-    private RoleRepository roleRepository;
-
-    public List<Role> getAllRoles() {
-        return roleRepository.findAll();
+    public RoleService(RoleRepository roleRepository, ModelMapper modelMapper) {
+        this.roleRepository = roleRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public Role getRoleById(Long id) {
-        return roleRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Role", "id", id));
+    public RoleDto getRoleById(Integer roleId) {
+        Role role = roleRepository.findById(roleId).orElseThrow(() -> new EntityNotFoundException("Role not found"));
+        return modelMapper.map(role, RoleDto.class);
     }
 
-    public Role createRole(Role role) {
-        return roleRepository.save(role);
+    public RoleDto createRole(RoleDto roleDto) {
+        Role role = modelMapper.map(roleDto, Role.class);
+        Role createdRole = roleRepository.save(role);
+        return modelMapper.map(createdRole, RoleDto.class);
     }
 
-    public Role updateRole(Long id, Role roleDetails) {
-        Role role = getRoleById(id);
-
-        role.setName(roleDetails.getName());
-        return roleRepository.save(role);
+    public RoleDto updateRole(Integer roleId, RoleDto roleDto) {
+        Role role = roleRepository.findById(roleId).orElseThrow(() -> new EntityNotFoundException("Role not found"));
+        modelMapper.map(roleDto, role);
+        Role updatedRole = roleRepository.save(role);
+        return modelMapper.map(updatedRole, RoleDto.class);
     }
 
-//    public void deleteRole(Long id) {
-//        Role role = getRoleById(id);
-//        roleRepository.delete(role);
-//    }
-    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-    public class ResourceNotFoundException extends RuntimeException {
-        public ResourceNotFoundException(String resourceName, String fieldName, Long fieldValue) {
-            super(String.format("%s not found with %s : '%s'", resourceName, fieldName, fieldValue));
-        }
+    public void deleteRole(Integer roleId) {
+        roleRepository.deleteById(roleId);
+    }
+
+    public List<RoleDto> getAllRoles() {
+        List<Role> roles = roleRepository.findAll();
+        return roles.stream()
+                .map(role -> modelMapper.map(role, RoleDto.class))
+                .collect(Collectors.toList());
     }
 }

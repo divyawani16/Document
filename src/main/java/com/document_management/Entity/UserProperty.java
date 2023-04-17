@@ -1,40 +1,31 @@
 package com.document_management.Entity;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.io.Serializable;
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "UserProperty")
 public class UserProperty {
 
-    @EmbeddedId
-    private UserPropertyId userPropertyId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "UserPropertyId")
+    private Integer userPropertyId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("userId")
-    @JoinColumn(name = "UserId")
+    @JoinColumn(name = "UserId",referencedColumnName = "UserId")
     private Users user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @MapsId("propertyId")
-    @JoinColumn(name = "PropertyId")
+    @JoinColumn(name = "PropertyId",referencedColumnName = "PropertyId")
     private Property property;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "roleId")
+    @JoinColumn(name = "roleId",referencedColumnName = "roleId")
     private Role role;
 
-    @EqualsAndHashCode
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @Embeddable
-    public static class UserPropertyId implements Serializable {
-
-        private Long userId;
-        private Integer propertyId;
-
-
-    }
 }
+

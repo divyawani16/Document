@@ -15,29 +15,27 @@ import javax.persistence.*;
 public class Property {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="propertyId")
+    @Column(name = "PropertyId")
     private Integer propertyId;
 
-    @Column(name="propertyName")
+    @Column(name = "PropertyName")
     private String propertyName;
 
-    @Column(name="address")
+    @Column(name = "Address")
     private String address;
 
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
 
-    @Column(name="pincode")
+    @Column(name = "pincode")
     private String pincode;
 
-    @Column(name="building")
+    @Column(name = "Building")
     private String building;
 
-    @Column(name="floorNumber")
-    private Integer floorNumber;
+    @Column(name = "FloorNumber")
+    private int floorNumber;
 
-    @Column(name="flatNumber")
-    private Integer flatNumber;
-
-
+    @Column(name = "Flatnumber")
+    private int flatNumber;
 }

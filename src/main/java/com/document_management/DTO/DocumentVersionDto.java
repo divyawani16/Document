@@ -1,17 +1,31 @@
 package com.document_management.DTO;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
-
+import java.time.LocalDateTime;
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DocumentVersionDto {
 
-    private int DocumentVersionId;
-    private int versionNumber;
+    private Integer documentVersionId;
+
+    private Integer documentId;
+
+    private Integer versionNumber;
+
     private String location;
+
     private String createdBy;
-    private Date createdDate;
+
+    private LocalDateTime createdDate;
+
     private String updatedBy;
-    private Date updatedDate;
+
+    private LocalDateTime updatedDate;
+
 }
