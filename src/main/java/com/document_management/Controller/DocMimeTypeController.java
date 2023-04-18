@@ -1,57 +1,50 @@
 package com.document_management.Controller;
-import com.document_management.Entity.DocMimeType;
-        import com.document_management.Service.DocMimeTypeService;
-
-        import org.slf4j.LoggerFactory;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.http.HttpStatus;
-        import org.springframework.http.ResponseEntity;
-        import org.springframework.web.bind.annotation.*;
-        import java.util.List;
-        import java.util.Optional;
-
+import com.document_management.DTO.DocMimeTypeDto;
+import com.document_management.Service.DocMimeTypeService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
 @RestController
 @RequestMapping("/doc-mime-types")
 public class DocMimeTypeController {
-
-    @Autowired
     private DocMimeTypeService docMimeTypeService;
-
-    @GetMapping("/")
-    public ResponseEntity<List<DocMimeType>> getAllDocMimeTypes() {
-        List<DocMimeType> docMimeTypes = docMimeTypeService.getAllDocMimeTypes();
-
-        return new ResponseEntity<>(docMimeTypes, HttpStatus.OK);
+    private static final Logger logger = LogManager.getLogger(DocMimeTypeController.class);
+    @Autowired
+    public DocMimeTypeController(DocMimeTypeService docMimeTypeService) {
+        this.docMimeTypeService = docMimeTypeService;
+    }
+    @GetMapping("/{docMimeTypeId}")
+    public ResponseEntity<DocMimeTypeDto> getDocMimeTypeById(@PathVariable Integer docMimeTypeId) {
+        logger.info("Getting all document  ........");
+        DocMimeTypeDto docMimeTypeDto = docMimeTypeService.getDocMimeTypeById(docMimeTypeId);
+        return ResponseEntity.ok(docMimeTypeDto);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<DocMimeType> getDocMimeTypeById(@PathVariable Long id) {
-        Optional<DocMimeType> docMimeType = docMimeTypeService.getDocMimeTypeById(id);
-        return docMimeType.map(mimeType -> new ResponseEntity<>(mimeType, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    @PostMapping
+    public ResponseEntity<DocMimeTypeDto> createDocMimeType(@RequestBody DocMimeTypeDto docMimeTypeDto) {
+        DocMimeTypeDto createdDocMimeTypeDto = docMimeTypeService.createDocMimeType(docMimeTypeDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdDocMimeTypeDto);
     }
 
-    @PostMapping("/")
-    public ResponseEntity<DocMimeType> createDocMimeType(@RequestBody DocMimeType docMimeType) {
-        DocMimeType createdMimeType = docMimeTypeService.createDocMimeType(docMimeType);
-        return new ResponseEntity<>(createdMimeType, HttpStatus.CREATED);
+    @PutMapping("/{docMimeTypeId}")
+    public ResponseEntity<DocMimeTypeDto> updateDocMimeType(@PathVariable Integer docMimeTypeId, @RequestBody DocMimeTypeDto docMimeTypeDto) {
+        DocMimeTypeDto updatedDocMimeTypeDto = docMimeTypeService.updateDocMimeType(docMimeTypeId, docMimeTypeDto);
+        return ResponseEntity.ok(updatedDocMimeTypeDto);
     }
 
-
-    @PutMapping("/{id}")
-    public ResponseEntity<DocMimeType> updateDocMimeType(@PathVariable("id") Long id, @RequestBody DocMimeType docMimeType) {
-        DocMimeType updatedDocMimeType = docMimeTypeService.updateDocMimeType(id, docMimeType);
-        if (updatedDocMimeType != null) {
-            return new ResponseEntity<>(updatedDocMimeType, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    @DeleteMapping("/{docMimeTypeId}")
+    public ResponseEntity<Void> deleteDocMimeType(@PathVariable Integer docMimeTypeId) {
+        docMimeTypeService.deleteDocMimeType(docMimeTypeId);
+        return ResponseEntity.noContent().build();
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteDocMimeType(@PathVariable("id") Long id) {
-//        docMimeTypeService.deleteDocMimeType(id);
-//        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//    }
-
+    @GetMapping("")
+    public ResponseEntity<List<DocMimeTypeDto>> getAllDocMimeTypes() {
+        List<DocMimeTypeDto> docMimeTypeDtos = docMimeTypeService.getAllDocMimeTypes();
+        return ResponseEntity.ok(docMimeTypeDtos);
+    }
 }

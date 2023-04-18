@@ -1,93 +1,52 @@
 package com.document_management.Controller;
-   //     import com.document_management.DTO.PropertyDTO;
-        import com.document_management.DTO.PropertyDto;
-        import com.document_management.DTO.PropertyMapper;
-        import com.document_management.Entity.Property;
-        import com.document_management.Entity.Users;
-        import com.document_management.Repository.PropertyRepository;
-        import com.document_management.Repository.UsersRepository;
-        import com.document_management.Service.PropertyService;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.http.HttpStatus;
-        import org.springframework.http.ResponseEntity;
-        import org.springframework.web.bind.annotation.*;
-        import java.util.List;
-        import java.util.Map;
+
+import com.document_management.DTO.PropertyDto;
+import com.document_management.Service.PropertyService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/properties")
+@RequestMapping("/api/properties/")
 public class PropertyController {
-    @Autowired
     private PropertyService propertyService;
-    private PropertyRepository propertyRepository;
-private UsersRepository userRepository;
-
-
-    private final PropertyMapper propertyMapper;
 
     @Autowired
-    public PropertyController(PropertyService propertyService, PropertyMapper propertyMapper) {
+    public PropertyController(PropertyService propertyService) {
         this.propertyService = propertyService;
-        this.propertyMapper = propertyMapper;
-    }
-
-    @PostMapping("/")
-    public PropertyDto createProperty(@RequestBody PropertyDto propertyDto) {
-        return propertyMapper.toPropertyDto(propertyService.createProperty(propertyMapper.toProperty(propertyDto)));
     }
 
     @GetMapping("/{id}")
-    public PropertyDto getPropertyById(@PathVariable Integer id) {
-        return propertyMapper.toPropertyDto(propertyService.getPropertyById(id));
+    public ResponseEntity<PropertyDto> getPropertyById(@PathVariable Integer id) {
+        PropertyDto propertyDto = propertyService.getPropertyById(id);
+        return ResponseEntity.ok(propertyDto);
+    }
+
+    @PostMapping
+    public ResponseEntity<PropertyDto> createProperty(@RequestBody @Valid PropertyDto propertyDto) {
+        PropertyDto createdPropertyDto = propertyService.createProperty(propertyDto);
+        return new ResponseEntity<>(createdPropertyDto, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<PropertyDto> updateProperty(@PathVariable Integer id, @RequestBody @Valid PropertyDto propertyDto) {
+        PropertyDto updatedPropertyDto = propertyService.updateProperty(id, propertyDto);
+        return ResponseEntity.ok(updatedPropertyDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteProperty(@PathVariable Integer id) {
+        propertyService.deleteProperty(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<PropertyDto>> getAllProperties() {
+        List<PropertyDto> propertyDtos = propertyService.getAllProperties();
+        return ResponseEntity.ok(propertyDtos);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    @GetMapping("/")
-//    public List<Property> getAllProperties() {
-//        return propertyService.getAllProperties();
-//    }
-//
-//    @GetMapping("/{id}")
-//    public Property getPropertyById(@PathVariable int id) {
-//        return propertyService.getPropertyById(id);
-//    }
-//
-//    @PostMapping("/")
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Property createProperty(@RequestBody Property property) {
-//        return propertyService.createProperty(property);
-//    }
-////    @PostMapping("/create")
-////    public ResponseEntity<Property> createProperty(@RequestBody Property property) {
-////        Property savedProperty = propertyService.createProperty(property);
-////        return new ResponseEntity<>(savedProperty, HttpStatus.CREATED);
-////    }
-//
-//
-//    @PutMapping("/{id}")
-//    public Property updateProperty(@PathVariable int id, @RequestBody Property propertyDetails) {
-//        return propertyService.updateProperty(id, propertyDetails);
-//    }
-
-//    @DeleteMapping("/{id}")
-//    @ResponseStatus(HttpStatus.NO_CONTENT)
-//    public void deleteProperty(@PathVariable int id) {
-//        propertyService.deleteProperty(id);
-//    }
-
-//}

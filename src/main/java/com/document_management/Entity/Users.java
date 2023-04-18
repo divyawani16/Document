@@ -1,22 +1,20 @@
 package com.document_management.Entity;
+//import com.document_management.CustomValidation.PhoneNoValidation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-
-
 @Entity
 @Data
 @Table(name = "Users")
 @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @NoArgsConstructor
 public class Users {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "UserId")
-    private long UserId;
-
+    private Integer userId;
 
     @Column(name = "FirstName")
     private String firstName;
@@ -24,30 +22,42 @@ public class Users {
     @Column(name = "LastName")
     private String lastName;
 
-
-    @Column(name = "PhoneNumber")
-    private String phoneNumber;
-
-
-    @Column(name = "EmailId")
-    private String emailId;
-
-    @Column(name = "UserName")
+    @Column(name = "Username")
     private String username;
 
     @Column(name = "Password")
     private String password;
 
-    @ManyToOne
-    @JoinColumn(name = "roleId")
-    private Role role;
+    @Column(name = "Phonenumber")
+    private String phoneNumber;
 
+    @Column(name = "EmailId")
+    private String emailId;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "UserId")
+//    private long UserId;
+//
+//    @Column(name = "FirstName")
+//    private String firstName;
+//
+//    @Column(name = "LastName")
+//    private String lastName;
+//
+//   //@PhoneNoValidation
+//    @Column(name = "PhoneNumber")
+//    private String phoneNumber;
+//
+//
+//    @Column(name = "EmailId")
+//    private String emailId;
+//
+//    @Column(name = "UserName")
+//    private String username;
+//
+//    @Column(name = "Password")
+//    private String password;
 
-    public Users(String username, String password, Role role) {
-        this.username = username;
-        this.password = password;
-        this.role = role;
-    }
 
 
 }

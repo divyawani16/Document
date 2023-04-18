@@ -11,10 +11,11 @@ import javax.persistence.*;
 
 public class Role {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="roleId")
-    private Long id;
+    @Column(name = "roleId")
+    private Integer roleId;
 
     @Column(name = "name")
     private String name;

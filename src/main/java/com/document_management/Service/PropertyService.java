@@ -1,97 +1,53 @@
 package com.document_management.Service;
-        import com.document_management.Entity.Property;
-        import com.document_management.Entity.Users;
-        import com.document_management.Repository.PropertyRepository;
-        import com.document_management.Repository.UsersRepository;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.http.HttpStatus;
-        import org.springframework.stereotype.Service;
-        import org.springframework.web.bind.annotation.RequestBody;
-        import org.springframework.web.bind.annotation.ResponseStatus;
-        import javax.persistence.criteria.CriteriaBuilder;
-        import java.util.List;
-        import java.util.Optional;
 
+import com.document_management.DTO.PropertyDto;
+import com.document_management.Entity.Property;
+import com.document_management.Repository.PropertyRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.persistence.EntityNotFoundException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class PropertyService {
-    @Autowired
     private PropertyRepository propertyRepository;
-    private UsersRepository usersRepository;
+    private ModelMapper modelMapper;
+
     @Autowired
-    public PropertyService(PropertyRepository propertyRepository) {
+    public PropertyService(PropertyRepository propertyRepository, ModelMapper modelMapper) {
         this.propertyRepository = propertyRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public Property createProperty(Property property) {
-        return propertyRepository.save(property);
+    public PropertyDto getPropertyById(Integer propertyId) {
+        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new EntityNotFoundException("Property not found"));
+        return modelMapper.map(property, PropertyDto.class);
     }
 
-    public Property getPropertyById(Integer id) {
-        Optional<Property> property = propertyRepository.findById(id);
-        return property.orElse(null);
+    public PropertyDto createProperty(PropertyDto propertyDto) {
+        Property property = modelMapper.map(propertyDto, Property.class);
+        Property createdProperty = propertyRepository.save(property);
+        return modelMapper.map(createdProperty, PropertyDto.class);
+    }
+
+    public PropertyDto updateProperty(Integer propertyId, PropertyDto propertyDto) {
+        Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new EntityNotFoundException("Property not found"));
+        modelMapper.map(propertyDto, property);
+        Property updatedProperty = propertyRepository.save(property);
+        return modelMapper.map(updatedProperty, PropertyDto.class);
+    }
+
+    public void deleteProperty(Integer propertyId) {
+        propertyRepository.deleteById(propertyId);
+    }
+
+    public List<PropertyDto> getAllProperties() {
+        List<Property> properties = propertyRepository.findAll();
+        return properties.stream()
+                .map(property -> modelMapper.map(property, PropertyDto.class))
+                .collect(Collectors.toList());
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public List<Property> getAllProperties() {
-//        return propertyRepository.findAll();
-//    }
-//
-//    public Property getPropertyById(int id) {
-//        return propertyRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Property", "id", id));
-//    }
-//
-//    public Property createProperty(Property property) {
-//        return propertyRepository.save(property);
-//    }
-////public Property createProperty(Property property) {
-////    return propertyRepository.save(property);
-////}
-////    public Property createProperty(Property property) {
-////        Users users = property.getUsers();
-////        if (users != null) {
-////            users = usersRepository.save(users);
-////            property.setUsers(users);
-////        }
-////        return propertyRepository.save(property);
-////    }
-//
-//
-//    public Property updateProperty(int id, Property propertyDetails) {
-//        Property property = getPropertyById(id);
-//
-//        property.setPropertyName(propertyDetails.getPropertyName());
-//        property.setAddress(propertyDetails.getAddress());
-//        property.setCity(propertyDetails.getCity());
-//        property.setPincode(propertyDetails.getPincode());
-//        property.setBuilding(propertyDetails.getBuilding());
-//        property.setFloorNumber(propertyDetails.getFloorNumber());
-//        property.setFlatNumber(propertyDetails.getFlatNumber());
-//
-//        return propertyRepository.save(property);
-//    }
-//
-////    public void deleteProperty(int id) {
-////        Property property = getPropertyById(id);
-////        propertyRepository.delete(property);
-////    }
-//    @ResponseStatus(value = HttpStatus.NOT_FOUND)
-//    public class ResourceNotFoundException extends RuntimeException {
-//        public ResourceNotFoundException(String resourceName, String fieldName, int fieldValue) {
-//            super(String.format("%s not found with %s : '%s'", resourceName, fieldName, fieldValue));
-//        }
-//    }
-
-//}

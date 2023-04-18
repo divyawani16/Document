@@ -1,4 +1,5 @@
 package com.document_management.Entity;
+import io.swagger.models.auth.In;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ public class DocMimeType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="docMimeTypeId")
-    private Long id;
+    private Integer docMimeTypeId;
 
     @Column(name = "docMimeName")
     private String name;

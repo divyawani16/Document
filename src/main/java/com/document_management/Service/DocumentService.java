@@ -1,60 +1,53 @@
 package com.document_management.Service;
 
 import com.document_management.DTO.DocumentDto;
-import com.document_management.DTO.DocumentMapper;
+import com.document_management.DTO.RoleDto;
 import com.document_management.Entity.Document;
+import com.document_management.Entity.Role;
 import com.document_management.Repository.DocumentRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Service
 public class DocumentService {
-    @Autowired
-    private DocumentRepository documentRepository;
+    private final DocumentRepository documentRepository;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    private DocumentMapper documentMapper;
+    public DocumentService(DocumentRepository documentRepository, ModelMapper modelMapper) {
+        this.documentRepository = documentRepository;
+        this.modelMapper = modelMapper;
+    }
 
-public List<DocumentDto> getAllDocuments() {
-    List<Document> documents = documentRepository.findAll();
-    return documents.stream()
-            .map(document -> documentMapper.toDocumentDto(document))
-            .collect(Collectors.toList());
-}
-      public DocumentDto getDocumentById(Long id) {
-        Document document = documentRepository.findById(id).orElse(null);
-        if (document == null) {
-            return null;
-        }
-        return documentMapper.toDocumentDto(document);
+    public DocumentDto getDocumentById(Integer documentId) {
+        Document document = documentRepository.findById(documentId).orElseThrow(() -> new RuntimeException("Document not found"));
+        return modelMapper.map(document, DocumentDto.class);
     }
 
     public DocumentDto createDocument(DocumentDto documentDto) {
-        Document document = documentMapper.toDocument(documentDto);
+        Document document = modelMapper.map(documentDto, Document.class);
         Document savedDocument = documentRepository.save(document);
-        return documentMapper.toDocumentDto(savedDocument);
+        return modelMapper.map(savedDocument, DocumentDto.class);
+    }
+    public DocumentDto updateDocument(Integer documentId, DocumentDto documentDto) {
+        Document document = documentRepository.findById(documentId).orElseThrow(() -> new RuntimeException("Document not found"));
+        modelMapper.map(documentDto, document);
+        Document updatedDocument = documentRepository.save(document);
+        return modelMapper.map(updatedDocument, DocumentDto.class);
     }
 
+    public void deleteDocument(Integer documentId) {
+        documentRepository.deleteById(documentId);
+    }
 
-
-
-//    public DocumentDto updateDocument(Long id, DocumentDto documentDto) {
-//        Document document = documentRepository.findById(id).orElse(null);
-//        if (document == null) {
-//            return null;
-//        }
-//        document.setName(documentDto.getName());
-//        document.setUserId(documentDto.getUserId());
-//        document.setPropertyId(documentDto.getPropertyId());
-//        document.setDocTypeId(documentDto.getDocTypeId());
-//        document.setDocMimeTypeId(documentDto.getDocMimeTypeId());
-//        Document updatedDocument = documentRepository.save(document);
-//        return documentMapper.toDocumentDto(updatedDocument);
+//    public List<DocumentDto> getAllDocumentsByUserId(Integer userId) {
+//        List<Document> documents = documentRepository.findByUserId(userId);
+//        return documents.stream().map(d -> modelMapper.map(d, DocumentDto.class)).collect(Collectors.toList());
+//    }
+//
+//    public List<DocumentDto> getAllDocumentsByPropertyId(Integer propertyId) {
+//        List<Document> documents = documentRepository.findByPropertyId(propertyId);
+//        return documents.stream().map(d -> modelMapper.map(d, DocumentDto.class)).collect(Collectors.toList());
 //    }
 }
-
-

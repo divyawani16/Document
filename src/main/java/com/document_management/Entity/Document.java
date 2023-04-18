@@ -1,38 +1,40 @@
 package com.document_management.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-
 @Entity
 @Table(name="Documents")
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="documentId")
-    private Long id;
+    @Column(name = "DocumentId")
+    private Integer documentId;
 
-    @Column(name="name")
-    private String name;
 
-    @ManyToOne
+    @Column(name = "DocumentName")
+    private String documentName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserId",referencedColumnName = "UserId")
-    private Users users;
-
-    @OneToOne
-    @JoinColumn(name = "DocTypeId", referencedColumnName = "docTypeId")
-    private DocType docType;
+    private Users user;
 
 
-    @OneToOne
-    @JoinColumn(name = "docMimeTypeId", referencedColumnName = "docMimeTypeId")
-    private DocMimeType docMimeType;
-
-    @ManyToOne
-    @JoinColumn(name = "propertyId",referencedColumnName="propertyId" )
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PropertyId",referencedColumnName="PropertyId" )
     private Property property;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DocTypeId",referencedColumnName="DocTypeId" )
+    private DocType docType;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DocMimeTypeId",referencedColumnName="docMimeTypeId" )
+    private DocMimeType docMimeType;
 }

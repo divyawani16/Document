@@ -1,42 +1,51 @@
 package com.document_management.Service;
-        import com.document_management.Entity.DocMimeType;
-        import com.document_management.Repository.DocMimeTypeRepository;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.stereotype.Service;
 
-        import java.util.List;
-        import java.util.Optional;
-
+import com.document_management.DTO.DocMimeTypeDto;
+import com.document_management.Entity.DocMimeType;
+import com.document_management.Repository.DocMimeTypeRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import javax.persistence.EntityNotFoundException;
+import java.util.List;
+import java.util.stream.Collectors;
 @Service
 public class DocMimeTypeService {
+    private DocMimeTypeRepository docMimeTypeRepository;
+    private ModelMapper modelMapper;
 
     @Autowired
-    private DocMimeTypeRepository docMimeTypeRepository;
-
-    public List<DocMimeType> getAllDocMimeTypes() {
-        return docMimeTypeRepository.findAll();
+    public DocMimeTypeService(DocMimeTypeRepository docMimeTypeRepository, ModelMapper modelMapper) {
+        this.docMimeTypeRepository = docMimeTypeRepository;
+        this.modelMapper = modelMapper;
     }
 
-    public Optional<DocMimeType> getDocMimeTypeById(Long id) {
-        return docMimeTypeRepository.findById(id);
+    public DocMimeTypeDto getDocMimeTypeById(Integer docMimeTypeId) {
+        DocMimeType docMimeType = docMimeTypeRepository.findById(docMimeTypeId).orElseThrow(() -> new EntityNotFoundException("Document mime type not found"));
+        return modelMapper.map(docMimeType, DocMimeTypeDto.class);
     }
 
-    public DocMimeType createDocMimeType(DocMimeType docMimeType) {
-        return docMimeTypeRepository.save(docMimeType);
+    public DocMimeTypeDto createDocMimeType(DocMimeTypeDto docMimeTypeDto) {
+        DocMimeType docMimeType = modelMapper.map(docMimeTypeDto, DocMimeType.class);
+        DocMimeType createdDocMimeType = docMimeTypeRepository.save(docMimeType);
+        return modelMapper.map(createdDocMimeType, DocMimeTypeDto.class);
     }
 
-    public DocMimeType updateDocMimeType(Long id, DocMimeType docMimeType) {
-        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findById(id);
-        if (optionalDocMimeType.isPresent()) {
-            DocMimeType existingDocMimeType = optionalDocMimeType.get();
-            existingDocMimeType.setName(docMimeType.getName());
-            return docMimeTypeRepository.save(existingDocMimeType);
-        } else {
-            return null;
-        }
+    public DocMimeTypeDto updateDocMimeType(Integer docMimeTypeId, DocMimeTypeDto docMimeTypeDto) {
+        DocMimeType docMimeType = docMimeTypeRepository.findById(docMimeTypeId).orElseThrow(() -> new EntityNotFoundException("Document mime type not found"));
+        modelMapper.map(docMimeTypeDto, docMimeType);
+        DocMimeType updatedDocMimeType = docMimeTypeRepository.save(docMimeType);
+        return modelMapper.map(updatedDocMimeType, DocMimeTypeDto.class);
     }
 
-//    public void deleteDocMimeType(Long id) {
-//        docMimeTypeRepository.deleteById(id);
-//    }
+    public void deleteDocMimeType(Integer docMimeTypeId) {
+        docMimeTypeRepository.deleteById(docMimeTypeId);
+    }
+
+    public List<DocMimeTypeDto> getAllDocMimeTypes() {
+        List<DocMimeType> docMimeTypes = docMimeTypeRepository.findAll();
+        return docMimeTypes.stream()
+                .map(docMimeType -> modelMapper.map(docMimeType, DocMimeTypeDto.class))
+                .collect(Collectors.toList());
+    }
 }

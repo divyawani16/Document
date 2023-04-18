@@ -3,7 +3,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -11,14 +13,19 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+
 public class DocumentVersion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "DocumentVersionId")
-    private int DocumentVersionId;
+    private Integer documentVersionId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DocumentID")
+    private Document document;
 
     @Column(name = "VersionNumber")
-    private int versionNumber;
+    private Integer versionNumber;
 
     @Column(name = "Location")
     private String location;
@@ -27,14 +34,12 @@ public class DocumentVersion {
     private String createdBy;
 
     @Column(name = "CreatedDate")
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
     @Column(name = "UpdatedBy")
     private String updatedBy;
 
     @Column(name = "UpdatedDate")
-    private Date updatedDate;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "documentId", referencedColumnName = "documentId")
-    private Document document;
+    private LocalDateTime updatedDate;
+
 }
