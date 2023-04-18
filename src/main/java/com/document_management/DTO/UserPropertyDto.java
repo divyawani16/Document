@@ -1,3 +1,4 @@
+
  package com.document_management.DTO;
         import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
         import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,14 +13,13 @@
  @NoArgsConstructor
  @AllArgsConstructor
  @JsonInclude(JsonInclude.Include.NON_NULL)
-// @JsonIgnoreProperties(ignoreUnknown = true)
  public class UserPropertyDto {
 
      private Integer userPropertyId;
      private Integer userId;
      private Integer propertyId;
      private Integer roleId;
- //    private UserDto user;
 
  }
+
 
