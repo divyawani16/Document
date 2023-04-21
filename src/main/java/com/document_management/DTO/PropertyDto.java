@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
     @AllArgsConstructor
     public class PropertyDto {
         private Integer propertyId;
-
+        
         private String propertyName;
 
         private String address;
