@@ -1,5 +1,4 @@
 package com.document_management.Entity;
-//import com.document_management.CustomValidation.PhoneNoValidation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,30 +32,6 @@ public class Users {
 
     @Column(name = "EmailId")
     private String emailId;
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "UserId")
-//    private long UserId;
-//
-//    @Column(name = "FirstName")
-//    private String firstName;
-//
-//    @Column(name = "LastName")
-//    private String lastName;
-//
-//   //@PhoneNoValidation
-//    @Column(name = "PhoneNumber")
-//    private String phoneNumber;
-//
-//
-//    @Column(name = "EmailId")
-//    private String emailId;
-//
-//    @Column(name = "UserName")
-//    private String username;
-//
-//    @Column(name = "Password")
-//    private String password;
 
 
 

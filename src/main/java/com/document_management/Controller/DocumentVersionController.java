@@ -1,29 +1,29 @@
 package com.document_management.Controller;
 
 import com.document_management.DTO.DocumentVersionDto;
+import com.document_management.Entity.DocumentVersion;
 import com.document_management.Service.DocumentVersionService;
-import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.net.URI;
-
 @RestController
-@RequestMapping("/api/documentVersions")
-@AllArgsConstructor
+@RequestMapping("/api/v1/documentVersions")
 public class DocumentVersionController {
 
-    private final DocumentVersionService documentVersionService;
+    @Autowired
+    private DocumentVersionService documentVersionService;
 
-    @GetMapping("/{docVersionId}")
-    public ResponseEntity<DocumentVersionDto> getDocumentVersionById(@PathVariable int docVersionId) {
-        DocumentVersionDto documentVersionDto = documentVersionService.getDocumentVersionById(docVersionId);
-        return ResponseEntity.ok().body(documentVersionDto);
-    }
+    @Autowired
+    private ModelMapper modelMapper;
 
     @PostMapping
-    public ResponseEntity<DocumentVersionDto> createDocumentVersion(@RequestBody DocumentVersionDto documentVersionDto) {
-        DocumentVersionDto createdDocumentVersionDto = documentVersionService.createDocumentVersion(documentVersionDto);
-        return ResponseEntity.created(URI.create("/api/documentVersions/" + createdDocumentVersionDto.getDocumentVersionId())).body(createdDocumentVersionDto);
+    public ResponseEntity<DocumentVersionDto> addDocumentVersion(@RequestBody DocumentVersionDto documentVersionDto) {
+        DocumentVersion documentVersion = modelMapper.map(documentVersionDto, DocumentVersion.class);
+        documentVersion = documentVersionService.addDocumentVersion(documentVersion);
+        DocumentVersionDto response = modelMapper.map(documentVersion, DocumentVersionDto.class);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 }

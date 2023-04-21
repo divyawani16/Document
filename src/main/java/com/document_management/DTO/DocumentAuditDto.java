@@ -3,12 +3,14 @@ package com.document_management.DTO;
 import com.document_management.Entity.Stage;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
 public class DocumentAuditDto {
-    private Long documentAuditId;
-    private Stage stage;
+    private Integer documentAuditId;
+    private Integer stageId;
     private String finishedBy;
-    private Date finishedOn;
+    private LocalDate finishedOn;
+    private Integer documentVersionId;
 }
