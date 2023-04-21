@@ -1,0 +1,70 @@
+2023-04-21 11:41:01,834 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:41:01,864 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 3252 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:41:01,867 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:41:02,386 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:41:02,452 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:41:03,194 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:41:03,196 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:41:03,196 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:41:03,282 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:41:03,462 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:41:03,521 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:41:03,614 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:41:03,672 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:41:03,760 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:41:03,769 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:41:04,515 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:41:04,521 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:04,758 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:04,760 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-21 11:41:04,767 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-21 11:41:04,769 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]
+2023-04-21 11:41:29,284 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:41:29,312 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 39144 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:41:29,314 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:41:29,796 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:41:29,862 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:41:30,530 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:41:30,531 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:41:30,531 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:41:30,621 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:41:30,783 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:41:30,840 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:41:30,927 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:41:31,036 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:41:31,145 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:41:31,155 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:41:31,837 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:41:31,843 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:32,067 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:32,069 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-21 11:41:32,078 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-21 11:41:32,080 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]
+2023-04-21 11:46:07,676 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:46:07,708 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 36060 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:46:07,710 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:46:08,213 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:46:08,273 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:46:08,997 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:46:08,998 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:46:08,998 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:46:09,087 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:46:09,260 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:46:09,312 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:46:09,422 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:46:09,492 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:46:09,578 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:46:09,588 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:46:10,278 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:46:10,284 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:46:11,178 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-21 11:46:11,509 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:46:11,551 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-21 11:46:11,609 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-21 11:46:11,671 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-21 11:46:11,944 INFO c.d.HelloApplication [main] Started HelloApplication in 4.453 seconds (JVM running for 4.979)
+2023-04-21 11:46:18,403 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-21 11:46:18,403 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-21 11:46:18,404 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-2] Completed initialization in 1 ms
+2023-04-21 11:46:18,431 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-2] Getting all document  ........
+2023-04-21 14:15:01,392 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m49s628ms478µs400ns).
