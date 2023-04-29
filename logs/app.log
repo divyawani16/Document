@@ -1,140 +1,186 @@
-2023-04-17 11:20:11,500 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 11:20:11,536 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 19588 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 11:20:11,540 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 11:20:12,127 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 11:20:12,196 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 63 ms. Found 12 JPA repository interfaces.
-2023-04-17 11:20:13,116 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 11:20:13,118 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 11:20:13,118 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 11:20:13,224 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 11:20:13,396 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 11:20:13,473 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 11:20:13,591 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 11:20:13,674 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 11:20:13,765 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 11:20:13,773 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 11:20:14,539 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 11:20:14,546 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 11:20:15,625 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 11:20:16,066 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 11:20:16,112 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 11:20:16,129 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 11:20:16,164 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 11:20:16,384 INFO c.d.HelloApplication [main] Started HelloApplication in 5.103 seconds (JVM running for 5.693)
-2023-04-17 11:20:20,341 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 11:20:20,341 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 11:20:20,342 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 1 ms
-2023-04-17 11:20:20,386 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-1] Getting all document  ........
-2023-04-17 11:20:47,721 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-3] Getting all document  ........
-2023-04-17 11:20:52,187 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-4] Getting all document  ........
-2023-04-17 11:47:46,334 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-1] Getting all document  ........
-2023-04-17 19:12:41,275 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 19:12:41,303 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-17 19:12:41,317 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-17 20:37:12,795 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 20:37:12,835 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 1972 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 20:37:12,839 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 20:37:13,440 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 20:37:13,530 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 80 ms. Found 12 JPA repository interfaces.
-2023-04-17 20:37:14,648 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:37:14,649 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 20:37:14,650 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 20:37:14,869 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 20:37:15,200 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 20:37:15,317 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 20:37:15,635 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 20:37:15,890 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 20:37:16,267 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 20:37:16,297 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 20:37:17,414 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 20:37:17,425 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:37:18,840 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 20:37:19,425 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:37:19,463 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 20:37:19,486 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 20:37:19,535 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 20:37:19,968 INFO c.d.HelloApplication [main] Started HelloApplication in 7.503 seconds (JVM running for 8.259)
-2023-04-17 20:37:23,040 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 20:37:23,040 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 20:37:23,042 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 2 ms
-2023-04-17 20:37:58,679 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8089-exec-7] SQL Error: 1364, SQLState: HY000
-2023-04-17 20:37:58,679 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8089-exec-7] Field 'documentid' doesn't have a default value
-2023-04-17 20:37:58,706 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement] with root cause
-java.sql.SQLException: Field 'documentid' doesn't have a default value
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.32.jar:8.0.32]
-	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-4.0.3.jar:?]
-	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-4.0.3.jar:?]
-	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.dialect.identity.GetGeneratedKeysDelegate.executeAndExtract(GetGeneratedKeysDelegate.java:58) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.id.insert.AbstractReturningDelegate.performInsert(AbstractReturningDelegate.java:43) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3279) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3914) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:84) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:329) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:286) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:192) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:122) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultMergeEventListener.saveTransientEntity(DefaultMergeEventListener.java:273) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsTransient(DefaultMergeEventListener.java:246) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:320) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:175) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:74) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:829) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:816) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:362) ~[spring-orm-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy125.merge(Unknown Source) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:315) ~[spring-orm-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy125.merge(Unknown Source) ~[?:?]
-	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:669) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:289) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:137) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:121) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:530) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:286) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:640) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:164) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:139) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:81) ~[spring-data-commons-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy135.save(Unknown Source) ~[?:?]
-	at com.document_management.Service.DocumentVersionService.createDocumentVersion(DocumentVersionService.java:32) ~[classes/:?]
-	at com.document_management.Controller.DocumentVersionController.createDocumentVersion(DocumentVersionController.java:26) ~[classes/:?]
+2023-04-21 11:41:01,834 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:41:01,864 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 3252 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:41:01,867 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:41:02,386 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:41:02,452 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:41:03,194 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:41:03,196 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:41:03,196 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:41:03,282 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:41:03,462 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:41:03,521 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:41:03,614 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:41:03,672 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:41:03,760 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:41:03,769 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:41:04,515 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:41:04,521 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:04,758 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:04,760 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-21 11:41:04,767 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-21 11:41:04,769 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]
+2023-04-21 11:41:29,284 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:41:29,312 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 39144 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:41:29,314 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:41:29,796 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:41:29,862 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:41:30,530 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:41:30,531 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:41:30,531 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:41:30,621 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:41:30,783 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:41:30,840 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:41:30,927 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:41:31,036 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:41:31,145 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:41:31,155 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:41:31,837 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:41:31,843 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:32,067 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:41:32,069 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-21 11:41:32,078 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-21 11:41:32,080 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]
+2023-04-21 11:46:07,676 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-21 11:46:07,708 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 36060 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-21 11:46:07,710 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-21 11:46:08,213 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-21 11:46:08,273 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 55 ms. Found 12 JPA repository interfaces.
+2023-04-21 11:46:08,997 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:46:08,998 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-21 11:46:08,998 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-21 11:46:09,087 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-21 11:46:09,260 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-21 11:46:09,312 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-21 11:46:09,422 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-21 11:46:09,492 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-21 11:46:09,578 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-21 11:46:09,588 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-21 11:46:10,278 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-21 11:46:10,284 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-21 11:46:11,178 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-21 11:46:11,509 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-21 11:46:11,551 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-21 11:46:11,609 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-21 11:46:11,671 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-21 11:46:11,944 INFO c.d.HelloApplication [main] Started HelloApplication in 4.453 seconds (JVM running for 4.979)
+2023-04-21 11:46:18,403 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-21 11:46:18,403 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-04-21 11:46:18,404 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-2] Completed initialization in 1 ms
+2023-04-21 11:46:18,431 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-2] Getting all document  ........
+2023-04-21 14:15:01,392 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=31m49s628ms478µs400ns).
+2023-04-21 17:56:02,216 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=57s121ms318µs500ns).
+2023-04-22 08:24:10,197 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h23m37s909ms461µs200ns).
+2023-04-22 08:29:39,440 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-22 08:29:39,464 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-22 08:29:39,481 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-24 17:48:17,624 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-24 17:48:17,659 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 30144 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-24 17:48:17,662 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-24 17:48:18,430 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-24 17:48:18,514 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 12 JPA repository interfaces.
+2023-04-24 17:48:19,211 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-24 17:48:19,212 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-24 17:48:19,212 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-24 17:48:19,296 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-24 17:48:19,418 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-24 17:48:19,483 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-24 17:48:19,664 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-24 17:48:19,801 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-24 17:48:20,100 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-24 17:48:20,114 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-24 17:48:21,135 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-24 17:48:21,143 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-24 17:48:21,841 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-24 17:48:22,069 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-24 17:48:22,092 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-24 17:48:22,107 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-24 17:48:22,135 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-24 17:48:22,347 INFO c.d.HelloApplication [main] Started HelloApplication in 4.961 seconds (JVM running for 5.697)
+2023-04-24 18:02:58,520 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-24 18:02:58,525 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-24 18:02:58,531 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-24 18:03:25,748 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-24 18:03:25,798 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 18024 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-24 18:03:25,803 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-24 18:03:26,466 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-24 18:03:26,531 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 58 ms. Found 12 JPA repository interfaces.
+2023-04-24 18:03:27,276 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-24 18:03:27,277 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-24 18:03:27,277 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-24 18:03:27,380 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-24 18:03:27,542 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-24 18:03:27,611 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-24 18:03:27,776 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-24 18:03:27,906 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-24 18:03:28,020 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-24 18:03:28,035 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-24 18:03:28,946 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-24 18:03:28,953 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-24 18:03:29,640 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-24 18:03:29,848 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-24 18:03:29,868 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-24 18:03:29,884 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-24 18:03:29,912 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-24 18:03:30,108 INFO c.d.HelloApplication [main] Started HelloApplication in 4.599 seconds (JVM running for 5.15)
+2023-04-24 18:10:00,957 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-24 18:10:00,962 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-24 18:10:00,982 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-24 18:10:16,074 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-24 18:10:16,099 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 15972 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-24 18:10:16,101 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-24 18:10:16,658 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-24 18:10:16,724 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 60 ms. Found 12 JPA repository interfaces.
+2023-04-24 18:10:17,358 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-24 18:10:17,359 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-24 18:10:17,359 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-24 18:10:17,493 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-24 18:10:17,631 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-24 18:10:17,684 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-24 18:10:17,822 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-24 18:10:17,907 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-24 18:10:18,025 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-24 18:10:18,038 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-24 18:10:18,805 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-24 18:10:18,811 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-24 18:10:19,397 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-24 18:10:19,608 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-24 18:10:19,624 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-24 18:10:19,637 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-24 18:10:19,665 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-24 18:10:19,821 INFO c.d.HelloApplication [main] Started HelloApplication in 3.972 seconds (JVM running for 4.539)
+2023-04-24 19:17:17,896 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-24 19:17:17,904 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-04-24 19:17:17,984 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 80 ms
+2023-04-24 19:19:42,237 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
+
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
+
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
+
+1 error] with root cause
+org.modelmapper.ConfigurationException: ModelMapper configuration errors:
+
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
+
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
+
+1 error
+	at org.modelmapper.internal.Errors.throwConfigurationExceptionIfErrorsExist(Errors.java:241) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.ImplicitMappingBuilder.matchDestination(ImplicitMappingBuilder.java:159) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:90) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:75) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:131) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:106) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:112) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:71) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.ModelMapper.mapInternal(ModelMapper.java:573) ~[modelmapper-2.4.4.jar:?]
+	at org.modelmapper.ModelMapper.map(ModelMapper.java:406) ~[modelmapper-2.4.4.jar:?]
+	at com.document_management.Service.UserPropertyService.createUserProperty(UserPropertyService.java:44) ~[classes/:?]
+	at com.document_management.Controller.UserPropertyController.createUserProperty(UserPropertyController.java:30) ~[classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -185,52 +231,32 @@ java.sql.SQLException: Field 'documentid' doesn't have a default value
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-17 20:40:47,369 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:40:47,370 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-17 20:40:47,374 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-17 20:40:51,759 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 20:40:51,802 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 25000 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 20:40:51,806 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 20:40:52,567 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 20:40:52,689 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 110 ms. Found 12 JPA repository interfaces.
-2023-04-17 20:40:53,913 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:40:53,914 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 20:40:53,915 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 20:40:54,054 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 20:40:54,245 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 20:40:54,291 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 20:40:54,413 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 20:40:54,499 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 20:40:54,613 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 20:40:54,628 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 20:40:55,541 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 20:40:55,550 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:40:56,552 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 20:40:56,961 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:40:57,011 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 20:40:57,056 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 20:40:57,139 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 20:40:57,659 INFO c.d.HelloApplication [main] Started HelloApplication in 6.161 seconds (JVM running for 6.71)
-2023-04-17 20:41:09,052 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 20:41:09,052 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 20:41:09,053 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 1 ms
-2023-04-17 20:41:31,178 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('d' (code 100)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('d' (code 100)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 6, column: 19]]
-2023-04-17 20:41:58,616 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
+2023-04-24 19:21:30,687 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-8] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 20, column: 6] (through reference chain: com.document_management.Entity.UserProperty["user"])]
+2023-04-24 19:22:08,775 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 20, column: 6] (through reference chain: com.document_management.Entity.UserProperty["user"])]
+2023-04-24 19:22:16,998 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 20, column: 6] (through reference chain: com.document_management.Entity.UserProperty["user"])]
+2023-04-24 19:22:49,097 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 20, column: 6] (through reference chain: com.document_management.Entity.UserProperty["user"])]
+2023-04-24 19:23:00,346 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unexpected character ('"' (code 34)): was expecting comma to separate Object entries<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 20, column: 6] (through reference chain: com.document_management.Entity.UserProperty["user"])]
+2023-04-24 21:05:25,806 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h38m36s381ms925µs400ns).
+2023-04-25 09:06:23,038 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=11h27m26s668ms832µs600ns).
+2023-04-25 10:06:06,360 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$487YMUgg["firstName"])]
+2023-04-25 10:06:26,896 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$487YMUgg["firstName"])]
+2023-04-25 10:06:41,856 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 2; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 2 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$487YMUgg["firstName"])]
+2023-04-25 10:08:57,347 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
 
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
 
 1 error] with root cause
 org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
 
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
 
 1 error
 	at org.modelmapper.internal.Errors.throwConfigurationExceptionIfErrorsExist(Errors.java:241) ~[modelmapper-2.4.4.jar:?]
@@ -243,8 +269,8 @@ org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:71) ~[modelmapper-2.4.4.jar:?]
 	at org.modelmapper.ModelMapper.mapInternal(ModelMapper.java:573) ~[modelmapper-2.4.4.jar:?]
 	at org.modelmapper.ModelMapper.map(ModelMapper.java:406) ~[modelmapper-2.4.4.jar:?]
-	at com.document_management.Service.DocumentVersionService.createDocumentVersion(DocumentVersionService.java:33) ~[classes/:?]
-	at com.document_management.Controller.DocumentVersionController.createDocumentVersion(DocumentVersionController.java:26) ~[classes/:?]
+	at com.document_management.Service.UserPropertyService.createUserProperty(UserPropertyService.java:44) ~[classes/:?]
+	at com.document_management.Controller.UserPropertyController.createUserProperty(UserPropertyController.java:30) ~[classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -295,22 +321,22 @@ org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-17 20:54:49,405 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
+2023-04-25 10:10:00,811 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-5] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
 
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
 
 1 error] with root cause
 org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
+1) The destination property com.document_management.DTO.UserPropertyDto.setUserId() matches multiple source property hierarchies:
 
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
+	com.document_management.Entity.UserProperty.getUserPropertyId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getEmailId()
+	com.document_management.Entity.UserProperty.getUser()/com.document_management.Entity.Users.getUserId()
 
 1 error
 	at org.modelmapper.internal.Errors.throwConfigurationExceptionIfErrorsExist(Errors.java:241) ~[modelmapper-2.4.4.jar:?]
@@ -323,207 +349,8 @@ org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:71) ~[modelmapper-2.4.4.jar:?]
 	at org.modelmapper.ModelMapper.mapInternal(ModelMapper.java:573) ~[modelmapper-2.4.4.jar:?]
 	at org.modelmapper.ModelMapper.map(ModelMapper.java:406) ~[modelmapper-2.4.4.jar:?]
-	at com.document_management.Service.DocumentVersionService.getDocumentVersionById(DocumentVersionService.java:26) ~[classes/:?]
-	at com.document_management.Controller.DocumentVersionController.getDocumentVersionById(DocumentVersionController.java:20) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-17 20:55:06,818 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:55:06,821 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-17 20:55:06,842 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-17 20:55:17,817 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 20:55:17,878 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 16620 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 20:55:17,886 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 20:55:18,703 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 20:55:18,828 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 117 ms. Found 12 JPA repository interfaces.
-2023-04-17 20:55:20,228 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:55:20,228 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 20:55:20,229 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 20:55:20,394 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 20:55:20,623 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 20:55:20,703 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 20:55:20,879 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 20:55:21,011 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 20:55:21,179 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 20:55:21,199 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 20:55:22,567 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 20:55:22,576 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:55:23,859 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 20:55:24,371 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:55:24,421 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 20:55:24,469 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 20:55:24,529 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 20:55:24,843 INFO c.d.HelloApplication [main] Started HelloApplication in 7.389 seconds (JVM running for 8.278)
-2023-04-17 20:55:50,092 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 20:55:50,092 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 20:55:50,095 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 3 ms
-2023-04-17 20:56:32,446 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Document with id 0; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Document with id 0 (through reference chain: com.document_management.DTO.DocumentVersionDto["document"]->com.document_management.Entity.Document$HibernateProxy$BK4dwi4G["documentName"])]
-2023-04-17 20:57:31,485 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:57:31,487 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-17 20:57:31,499 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-17 20:57:35,762 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 20:57:35,814 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 2092 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 20:57:35,820 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 20:57:36,683 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 20:57:36,792 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 100 ms. Found 12 JPA repository interfaces.
-2023-04-17 20:57:37,905 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:57:37,906 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 20:57:37,906 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 20:57:38,042 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 20:57:38,358 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 20:57:38,462 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 20:57:38,665 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 20:57:38,809 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 20:57:39,005 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 20:57:39,020 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 20:57:40,268 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 20:57:40,276 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 20:57:41,510 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 20:57:41,829 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 20:57:41,853 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 20:57:41,868 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 20:57:41,896 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 20:57:42,147 INFO c.d.HelloApplication [main] Started HelloApplication in 6.737 seconds (JVM running for 7.524)
-2023-04-17 20:57:51,150 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 20:57:51,150 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 20:57:51,151 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 1 ms
-2023-04-17 20:57:51,390 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-1] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Document with id 0; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Document with id 0 (through reference chain: com.document_management.DTO.DocumentVersionDto["document"]->com.document_management.Entity.Document$HibernateProxy$hxESkYJy["documentName"])]
-2023-04-17 20:58:34,696 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-2] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Document with id 0; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Document with id 0 (through reference chain: com.document_management.DTO.DocumentVersionDto["document"]->com.document_management.Entity.Document$HibernateProxy$hxESkYJy["documentName"])]
-2023-04-17 21:05:31,633 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 21:05:31,636 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-17 21:05:31,651 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-17 21:05:41,783 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-17 21:05:41,830 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 14648 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-17 21:05:41,836 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-17 21:05:42,596 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-17 21:05:42,714 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 110 ms. Found 12 JPA repository interfaces.
-2023-04-17 21:05:44,063 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-17 21:05:44,063 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-17 21:05:44,064 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-17 21:05:44,228 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-17 21:05:44,510 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-17 21:05:44,691 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-17 21:05:44,914 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-17 21:05:45,120 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-17 21:05:45,281 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-17 21:05:45,296 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-17 21:05:46,605 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-17 21:05:46,613 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-17 21:05:48,258 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-17 21:05:48,909 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-17 21:05:48,983 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-17 21:05:49,037 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-17 21:05:49,149 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-17 21:05:49,604 INFO c.d.HelloApplication [main] Started HelloApplication in 8.138 seconds (JVM running for 8.802)
-2023-04-17 21:05:54,319 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-17 21:05:54,325 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-17 21:05:54,328 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 3 ms
-2023-04-18 07:55:02,576 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=10h43m19s759ms296µs400ns).
-2023-04-18 07:55:56,350 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-18 07:55:56,353 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-18 07:55:56,360 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-18 07:56:02,783 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-18 07:56:02,822 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 25844 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-18 07:56:02,830 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-18 07:56:03,528 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-18 07:56:03,639 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 104 ms. Found 12 JPA repository interfaces.
-2023-04-18 07:56:04,509 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-18 07:56:04,509 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-18 07:56:04,510 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-18 07:56:04,663 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-18 07:56:04,899 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-18 07:56:04,996 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-18 07:56:05,221 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-18 07:56:05,326 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-18 07:56:05,434 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-18 07:56:05,448 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-18 07:56:06,274 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-18 07:56:06,286 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-18 07:56:07,385 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-18 07:56:07,716 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-18 07:56:07,738 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-18 07:56:07,757 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-18 07:56:07,789 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-18 07:56:08,000 INFO c.d.HelloApplication [main] Started HelloApplication in 5.51 seconds (JVM running for 6.225)
-2023-04-18 07:56:08,107 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-18 07:56:08,107 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-18 07:56:08,109 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 1 ms
-2023-04-18 07:56:25,514 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-6] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
-
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
-
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
-
-1 error] with root cause
-org.modelmapper.ConfigurationException: ModelMapper configuration errors:
-
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
-
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
-
-1 error
-	at org.modelmapper.internal.Errors.throwConfigurationExceptionIfErrorsExist(Errors.java:241) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.matchDestination(ImplicitMappingBuilder.java:159) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:90) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:75) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:131) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:106) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:112) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:71) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.ModelMapper.mapInternal(ModelMapper.java:573) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.ModelMapper.map(ModelMapper.java:406) ~[modelmapper-2.4.4.jar:?]
-	at com.document_management.Controller.DocumentVersionController.addDocumentVersion(DocumentVersionController.java:26) ~[classes/:?]
+	at com.document_management.Service.UserPropertyService.createUserProperty(UserPropertyService.java:44) ~[classes/:?]
+	at com.document_management.Controller.UserPropertyController.createUserProperty(UserPropertyController.java:30) ~[classes/:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
 	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
 	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
@@ -574,719 +401,110 @@ org.modelmapper.ConfigurationException: ModelMapper configuration errors:
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
 	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-18 07:57:03,781 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.modelmapper.ConfigurationException: ModelMapper configuration errors:
-
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
-
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
-
-1 error] with root cause
-org.modelmapper.ConfigurationException: ModelMapper configuration errors:
-
-1) The destination property com.document_management.DTO.DocumentVersionDto.setDocument() matches multiple source property hierarchies:
-
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentId()
-	com.document_management.Entity.DocumentVersion.getDocument()/com.document_management.Entity.Document.getDocumentName()
-	com.document_management.Entity.DocumentVersion.getDocumentVersionId()
-
-1 error
-	at org.modelmapper.internal.Errors.throwConfigurationExceptionIfErrorsExist(Errors.java:241) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.matchDestination(ImplicitMappingBuilder.java:159) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:90) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.ImplicitMappingBuilder.build(ImplicitMappingBuilder.java:75) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:131) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.TypeMapStore.getOrCreate(TypeMapStore.java:106) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:112) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.internal.MappingEngineImpl.map(MappingEngineImpl.java:71) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.ModelMapper.mapInternal(ModelMapper.java:573) ~[modelmapper-2.4.4.jar:?]
-	at org.modelmapper.ModelMapper.map(ModelMapper.java:406) ~[modelmapper-2.4.4.jar:?]
-	at com.document_management.Controller.DocumentVersionController.addDocumentVersion(DocumentVersionController.java:26) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:528) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-18 08:06:44,633 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-18 08:06:44,636 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-18 08:06:44,647 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-18 08:06:54,880 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-18 08:06:54,923 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 30340 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-18 08:06:54,927 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-18 08:06:55,526 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-18 08:06:55,608 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 12 JPA repository interfaces.
-2023-04-18 08:06:56,505 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-18 08:06:56,505 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-18 08:06:56,506 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-18 08:06:56,618 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-18 08:06:56,767 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-18 08:06:56,808 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-18 08:06:56,937 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-18 08:06:57,024 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-18 08:06:57,138 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-18 08:06:57,148 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-18 08:06:58,040 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-18 08:06:58,047 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-18 08:06:59,425 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-18 08:06:59,887 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-18 08:06:59,937 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-18 08:06:59,969 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-18 08:07:00,059 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-18 08:07:00,427 INFO c.d.HelloApplication [main] Started HelloApplication in 5.822 seconds (JVM running for 6.495)
-2023-04-18 08:07:06,185 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-18 08:07:06,186 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-18 08:07:06,187 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 1 ms
-2023-04-18 08:26:11,535 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-18 08:26:11,537 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-18 08:26:11,557 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-04-21 09:11:30,549 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
-2023-04-21 09:11:30,585 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 20056 (C:\hello\target\classes started by wanid001 in C:\hello)
-2023-04-21 09:11:30,588 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
-2023-04-21 09:11:31,167 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-04-21 09:11:31,264 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 89 ms. Found 12 JPA repository interfaces.
-2023-04-21 09:11:32,046 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
-2023-04-21 09:11:32,046 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
-2023-04-21 09:11:32,046 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
-2023-04-21 09:11:32,139 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
-2023-04-21 09:11:32,263 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-04-21 09:11:32,343 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
-2023-04-21 09:11:32,477 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-04-21 09:11:32,573 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
-2023-04-21 09:11:32,757 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-04-21 09:11:32,780 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2023-04-21 09:11:33,589 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-04-21 09:11:33,595 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-04-21 09:11:34,623 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
-2023-04-21 09:11:34,902 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
-2023-04-21 09:11:34,932 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
-2023-04-21 09:11:34,970 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
-2023-04-21 09:11:35,018 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
-2023-04-21 09:11:35,278 INFO c.d.HelloApplication [main] Started HelloApplication in 4.939 seconds (JVM running for 5.65)
-2023-04-21 09:11:52,047 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-04-21 09:11:52,047 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-04-21 09:11:52,047 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-1] Completed initialization in 0 ms
-2023-04-21 09:11:52,065 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-1] Getting all document  ........
-2023-04-21 09:11:52,096 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-1] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Document mime type not found] with root cause
-javax.persistence.EntityNotFoundException: Document mime type not found
-	at com.document_management.Service.DocMimeTypeService.lambda$getDocMimeTypeById$0(DocMimeTypeService.java:24) ~[classes/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.getDocMimeTypeById(DocMimeTypeService.java:24) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.getDocMimeTypeById(DocMimeTypeController.java:23) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:12:50,750 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-4] Getting all document  ........
-2023-04-21 09:12:50,757 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Document mime type not found] with root cause
-javax.persistence.EntityNotFoundException: Document mime type not found
-	at com.document_management.Service.DocMimeTypeService.lambda$getDocMimeTypeById$0(DocMimeTypeService.java:24) ~[classes/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.getDocMimeTypeById(DocMimeTypeService.java:24) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.getDocMimeTypeById(DocMimeTypeController.java:23) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:13:25,580 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-7] Getting all document  ........
-2023-04-21 09:13:25,582 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Document mime type not found] with root cause
-javax.persistence.EntityNotFoundException: Document mime type not found
-	at com.document_management.Service.DocMimeTypeService.lambda$getDocMimeTypeById$0(DocMimeTypeService.java:24) ~[classes/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.getDocMimeTypeById(DocMimeTypeService.java:24) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.getDocMimeTypeById(DocMimeTypeController.java:23) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:13:26,543 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-9] Getting all document  ........
-2023-04-21 09:13:26,549 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-9] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is javax.persistence.EntityNotFoundException: Document mime type not found] with root cause
-javax.persistence.EntityNotFoundException: Document mime type not found
-	at com.document_management.Service.DocMimeTypeService.lambda$getDocMimeTypeById$0(DocMimeTypeService.java:24) ~[classes/:?]
-	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.getDocMimeTypeById(DocMimeTypeService.java:24) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.getDocMimeTypeById(DocMimeTypeController.java:23) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:502) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:14:12,229 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-1] Getting all document  ........
-2023-04-21 09:14:51,178 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-3] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null; nested exception is org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null] with root cause
-org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.checkId(DefaultFlushEntityEventListener.java:82) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.getValues(DefaultFlushEntityEventListener.java:207) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.onFlushEntity(DefaultFlushEntityEventListener.java:166) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEntities(AbstractFlushingEventListener.java:229) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:93) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy128.save(Unknown Source) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.updateDocMimeType(DocMimeTypeService.java:37) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.updateDocMimeType(DocMimeTypeController.java:35) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:531) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:38:59,331 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-4] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null; nested exception is org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null] with root cause
-org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.checkId(DefaultFlushEntityEventListener.java:82) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.getValues(DefaultFlushEntityEventListener.java:207) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.onFlushEntity(DefaultFlushEntityEventListener.java:166) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEntities(AbstractFlushingEventListener.java:229) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:93) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy128.save(Unknown Source) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.updateDocMimeType(DocMimeTypeService.java:37) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.updateDocMimeType(DocMimeTypeController.java:35) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:531) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:39:06,562 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-7] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null; nested exception is org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null] with root cause
-org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.checkId(DefaultFlushEntityEventListener.java:82) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.getValues(DefaultFlushEntityEventListener.java:207) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.onFlushEntity(DefaultFlushEntityEventListener.java:166) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEntities(AbstractFlushingEventListener.java:229) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:93) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy128.save(Unknown Source) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.updateDocMimeType(DocMimeTypeService.java:37) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.updateDocMimeType(DocMimeTypeController.java:35) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:531) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:39:36,637 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-10] Getting all document  ........
-2023-04-21 09:39:51,870 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] [http-nio-8089-exec-2] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null; nested exception is org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null] with root cause
-org.hibernate.HibernateException: identifier of an instance of com.document_management.Entity.DocMimeType was altered from 1 to null
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.checkId(DefaultFlushEntityEventListener.java:82) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.getValues(DefaultFlushEntityEventListener.java:207) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEntityEventListener.onFlushEntity(DefaultFlushEntityEventListener.java:166) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEntities(AbstractFlushingEventListener.java:229) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:93) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1407) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:489) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3303) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2438) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:449) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-5.6.15.Final.jar:5.6.15.Final]
-	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:654) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:407) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137) ~[spring-tx-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:174) ~[spring-data-jpa-2.7.10.jar:2.7.10]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.3.26.jar:5.3.26]
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) ~[spring-aop-5.3.26.jar:5.3.26]
-	at jdk.proxy2.$Proxy128.save(Unknown Source) ~[?:?]
-	at com.document_management.Service.DocMimeTypeService.updateDocMimeType(DocMimeTypeService.java:37) ~[classes/:?]
-	at com.document_management.Controller.DocMimeTypeController.updateDocMimeType(DocMimeTypeController.java:35) ~[classes/:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
-	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
-	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
-	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:920) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:531) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.3.26.jar:5.3.26]
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:596) ~[tomcat-embed-core-9.0.73.jar:4.0.FR]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117) ~[spring-web-5.3.26.jar:5.3.26]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.73.jar:9.0.73]
-	at java.lang.Thread.run(Thread.java:833) ~[?:?]
-2023-04-21 09:40:08,230 INFO c.d.C.DocMimeTypeController [http-nio-8089-exec-5] Getting all document  ........
-2023-04-21 09:40:59,562 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-4] Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "get"]
-2023-04-21 10:41:44,848 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-04-21 10:41:44,922 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-04-21 10:41:44,939 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 10:13:04,654 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:13:04,669 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 10:13:04,677 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 10:13:10,858 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-25 10:13:10,903 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 27404 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-25 10:13:10,907 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 10:13:11,607 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 10:13:11,716 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 102 ms. Found 12 JPA repository interfaces.
+2023-04-25 10:13:12,498 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-25 10:13:12,498 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-25 10:13:12,498 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-25 10:13:12,654 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-25 10:13:12,828 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 10:13:12,890 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 10:13:13,035 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 10:13:13,166 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 10:13:13,301 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 10:13:13,315 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-25 10:13:14,149 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 10:13:14,156 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 10:13:15,046 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-25 10:13:15,431 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-25 10:13:15,451 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-25 10:13:15,475 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-25 10:13:15,517 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-25 10:13:15,815 INFO c.d.HelloApplication [main] Started HelloApplication in 5.408 seconds (JVM running for 6.136)
+2023-04-25 10:13:54,442 INFO o.a.c.c.C.[.[.[/] [http-nio-8089-exec-5] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-25 10:13:54,442 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-5] Initializing Servlet 'dispatcherServlet'
+2023-04-25 10:13:54,444 INFO o.s.w.s.DispatcherServlet [http-nio-8089-exec-5] Completed initialization in 1 ms
+2023-04-25 10:13:54,551 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-5] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:17:44,962 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:17:48,666 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:17:54,317 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-9] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:18:00,370 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-10] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:19:31,470 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-5] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:29:31,433 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 10:31:14,211 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-7] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 11:52:56,752 WARN o.s.w.s.m.s.DefaultHandlerExceptionResolver [http-nio-8089-exec-3] Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: Unable to find com.document_management.Entity.Users with id 1; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Unable to find com.document_management.Entity.Users with id 1 (through reference chain: com.document_management.Entity.UserProperty["user"]->com.document_management.Entity.Users$HibernateProxy$874oBIWW["firstName"])]
+2023-04-25 21:20:48,407 WARN c.z.h.p.HikariPool [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2h24m56s517ms497µs400ns).
+2023-04-25 21:32:31,273 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 21:32:31,320 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-04-25 21:32:31,355 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-04-25 21:32:57,950 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-25 21:32:58,015 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 43788 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-25 21:32:58,023 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-25 21:32:59,243 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-25 21:32:59,395 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 141 ms. Found 12 JPA repository interfaces.
+2023-04-25 21:33:00,778 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-25 21:33:00,778 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-25 21:33:00,779 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-25 21:33:01,085 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-25 21:33:01,332 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-25 21:33:01,452 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-25 21:33:01,662 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-25 21:33:01,943 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-25 21:33:02,145 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-25 21:33:02,169 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-25 21:33:03,669 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-25 21:33:03,682 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-25 21:33:05,892 INFO s.d.s.w.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2023-04-25 21:33:06,344 INFO o.a.c.h.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8089"]
+2023-04-25 21:33:06,377 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Context refreshed
+2023-04-25 21:33:06,409 INFO s.d.s.w.p.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2023-04-25 21:33:06,466 INFO s.d.s.w.s.ApiListingReferenceScanner [main] Scanning for api listing references
+2023-04-25 21:33:06,807 INFO c.d.HelloApplication [main] Started HelloApplication in 9.321 seconds (JVM running for 10.568)
+2023-04-27 09:03:30,787 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-27 09:03:30,823 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 47936 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-27 09:03:30,833 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-27 09:03:31,494 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-27 09:03:31,578 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 12 JPA repository interfaces.
+2023-04-27 09:03:32,344 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-27 09:03:32,345 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-27 09:03:32,345 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-27 09:03:32,492 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-27 09:03:32,660 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-27 09:03:32,714 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-27 09:03:32,871 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-27 09:03:32,971 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-27 09:03:33,172 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-27 09:03:33,186 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-27 09:03:34,050 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-27 09:03:34,057 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 09:03:34,864 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 09:03:34,867 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-27 09:03:34,869 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-27 09:03:34,872 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]
+2023-04-27 09:04:02,990 INFO o.h.v.i.u.Version [background-preinit] HV000001: Hibernate Validator 6.2.5.Final
+2023-04-27 09:04:03,019 INFO c.d.HelloApplication [main] Starting HelloApplication using Java 17.0.6 on BBD-DW with PID 46744 (C:\hello\target\classes started by wanid001 in C:\hello)
+2023-04-27 09:04:03,023 INFO c.d.HelloApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-04-27 09:04:03,607 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-27 09:04:03,676 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 64 ms. Found 12 JPA repository interfaces.
+2023-04-27 09:04:04,385 INFO o.a.c.h.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8089"]
+2023-04-27 09:04:04,385 INFO o.a.c.c.StandardService [main] Starting service [Tomcat]
+2023-04-27 09:04:04,386 INFO o.a.c.c.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-04-27 09:04:04,495 INFO o.a.c.c.C.[.[.[/] [main] Initializing Spring embedded WebApplicationContext
+2023-04-27 09:04:04,649 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-27 09:04:04,685 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-04-27 09:04:04,782 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-04-27 09:04:04,883 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2023-04-27 09:04:05,013 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-04-27 09:04:05,024 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-04-27 09:04:05,831 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-27 09:04:05,837 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 09:04:06,532 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-27 09:04:06,534 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown initiated...
+2023-04-27 09:04:06,539 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Shutdown completed.
+2023-04-27 09:04:06,540 INFO o.a.c.c.StandardService [main] Stopping service [Tomcat]

@@ -3,7 +3,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 @Entity
 @Table(name="Documents")
@@ -17,14 +16,12 @@ public class Document {
     @Column(name = "DocumentId")
     private Integer documentId;
 
-
     @Column(name = "DocumentName")
     private String documentName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "UserId",referencedColumnName = "UserId")
     private Users user;
-
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PropertyId",referencedColumnName="PropertyId" )
