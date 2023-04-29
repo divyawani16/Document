@@ -26,7 +26,10 @@ public class StageController {
         Stage stage = stageService.getStageById(id);
         return ResponseEntity.ok(stage);
     }
-
+@GetMapping("/abc")
+public String hi(){
+        return "abc";
+}
     @PostMapping("/")
     public ResponseEntity<Stage> saveStage(@RequestBody Stage stage) {
         Stage savedStage = stageService.saveStage(stage);

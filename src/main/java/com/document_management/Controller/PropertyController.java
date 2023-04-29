@@ -1,5 +1,4 @@
 package com.document_management.Controller;
-
 import com.document_management.DTO.PropertyDto;
 import com.document_management.Service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
