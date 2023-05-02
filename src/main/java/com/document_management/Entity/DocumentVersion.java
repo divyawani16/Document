@@ -22,7 +22,7 @@ public class DocumentVersion {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "DocumentId", referencedColumnName = "DocumentId")
-    private Document document;
+    private Document documentId;
 
     @Column(name = "VersionNumber")
     private Integer versionNumber;

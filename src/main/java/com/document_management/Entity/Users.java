@@ -30,9 +30,9 @@ public class Users {
     @Column(name = "Phonenumber")
     private String phoneNumber;
 
-    @Column(name = "EmailId")
-    private String emailId;
-
+//    @Column(name = "EmailId")
+//    private String emailId;
+//
 
 
 }

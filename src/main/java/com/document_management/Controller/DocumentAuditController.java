@@ -1,48 +1,43 @@
-//package com.document_management.Controller;
-//
-//import com.document_management.DTO.DocumentAuditDto;
-//import com.document_management.DTO.DocumentAuditRequestDto;
-//import com.document_management.Service.DocumentAuditService;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.http.ResponseEntity;
-//import org.springframework.web.bind.annotation.*;
-//
-//import java.util.List;
-//
-//@RestController
-//@RequestMapping("/api/document-audits")
-//public class DocumentAuditController {
-//
-//    @Autowired
-//    private DocumentAuditService documentAuditService;
-//
-//    @PostMapping
-//    public ResponseEntity<DocumentAuditDto> createDocumentAudit(@RequestBody DocumentAuditRequestDto documentAuditRequestDto) {
-//        DocumentAuditDto documentAuditDto = documentAuditService.createDocumentAudit(documentAuditRequestDto);
-//        return ResponseEntity.ok(documentAuditDto);
+package com.document_management.Controller;
+
+import com.document_management.DTO.DocumentAuditDto;
+import com.document_management.Entity.DocumentAudit;
+import com.document_management.Repository.DocumentAuditRepository;
+import com.document_management.Service.DocumentAuditService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+@RestController
+@RequestMapping("/document-audit")
+public class DocumentAuditController {
+
+    private final DocumentAuditService documentAuditService;
+    private ModelMapper modelMapper;
+
+    @Autowired
+    public DocumentAuditController(DocumentAuditService documentAuditService, ModelMapper modelMapper) {
+        this.documentAuditService = documentAuditService;
+        this.modelMapper = modelMapper;
+    }
+
+    @PostMapping("/audit")
+    public ResponseEntity<DocumentAuditDto> createDocumentAudit(@RequestBody DocumentAuditDto documentAuditDto) {
+        DocumentAudit documentAudit = modelMapper.map(documentAuditDto, DocumentAudit.class);
+        documentAudit = documentAuditService.createDocumentAudit(documentAudit);
+        DocumentAuditDto createdDocumentAuditDto = modelMapper.map(documentAudit, DocumentAuditDto.class);
+        return new ResponseEntity<>(createdDocumentAuditDto, HttpStatus.CREATED);
+    }
+
+
+//    @GetMapping("/{documentAuditId}")
+//    public ResponseEntity<DocumentAuditDto> getDocumentAuditById(@PathVariable Integer documentAuditId) {
+//        DocumentAuditDto documentAudit = documentAuditService.getDocumentAuditById(documentAuditId);
+//        return ResponseEntity.ok(documentAudit);
 //    }
-//
-//    @GetMapping("/{id}")
-//    public ResponseEntity<DocumentAuditDto> getDocumentAuditById(@PathVariable("id") Integer id) {
-//        DocumentAuditDto documentAuditDto = documentAuditService.getDocumentAuditById(id);
-//        return ResponseEntity.ok(documentAuditDto);
-//    }
-//
-//    @GetMapping
-//    public ResponseEntity<List<DocumentAuditDto>> getAllDocumentAudits() {
-//        List<DocumentAuditDto> documentAuditDtos = documentAuditService.getAllDocumentAudits();
-//        return ResponseEntity.ok(documentAuditDtos);
-//    }
-//
-//    @PutMapping("/{id}")
-//    public ResponseEntity<DocumentAuditDto> updateDocumentAudit(@PathVariable("id") Integer id, @RequestBody DocumentAuditRequestDto documentAuditRequestDto) {
-//        DocumentAuditDto documentAuditDto = documentAuditService.updateDocumentAudit(id, documentAuditRequestDto);
-//        return ResponseEntity.ok(documentAuditDto);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<String> deleteDocumentAudit(@PathVariable("id") Integer id) {
-//        documentAuditService.deleteDocumentAudit(id);
-//        return ResponseEntity.ok("Document audit with id " + id + " has been deleted successfully.");
-//    }
-//}
+}
