@@ -27,4 +27,5 @@ public class UserProperty {
     @JoinColumn(name = "roleId",referencedColumnName = "roleId")
     private Role role;
 
+   
 }

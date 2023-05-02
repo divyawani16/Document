@@ -21,8 +21,8 @@ public class DocumentVersion {
     private Integer documentVersionId;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "DocumentID")
-    private Document document;
+    @JoinColumn(name = "DocumentId", referencedColumnName = "DocumentId")
+    private Document documentId;
 
     @Column(name = "VersionNumber")
     private Integer versionNumber;
@@ -41,5 +41,6 @@ public class DocumentVersion {
 
     @Column(name = "UpdatedDate")
     private LocalDateTime updatedDate;
+
 
 }
