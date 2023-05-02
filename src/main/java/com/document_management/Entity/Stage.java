@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "Stage")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,10 +14,9 @@ public class Stage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="StageId")
-    private Long StageId;
+    private Integer stageId;
 
-    @Column(name="stageName")
-    private String name;
+    @Column(name = "StageName")
+    private String stageName;
+
 }
-
