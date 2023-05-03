@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/api/roles")
 public class RoleController {
 
+    @Autowired
     private RoleService roleService;
 
     @GetMapping("/{roleId}")

@@ -46,6 +46,7 @@ public class UsersController {
                 return ResponseEntity.status(HttpStatus.CREATED).body(createdUserDto);
         }
 
+
         @PutMapping("/{userId}")
         public ResponseEntity<UserDto> updateUser(@PathVariable Integer userId, @RequestBody @Valid UserDto userDto) {
                 try {
