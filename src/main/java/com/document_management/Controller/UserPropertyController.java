@@ -28,6 +28,7 @@ public class UserPropertyController {
     private ModelMapper modelMapper;
     @Autowired
     private UserPropertyRepository userPropertyRepository;
+    @Autowired
     private UserPropertyService userPropertyService;
 
     @PostMapping("/add")
@@ -61,4 +62,5 @@ public class UserPropertyController {
         }
         return new ResponseEntity<>(userPropertyDtos, HttpStatus.OK);
     }
+
 }

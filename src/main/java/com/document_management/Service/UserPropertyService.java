@@ -21,17 +21,16 @@ import java.util.stream.Collectors;
 public class UserPropertyService {
 
     @Autowired
-
     private UserPropertyRepository userPropertyRepository;
     @Autowired
     private UsersRepository userRepository;
     @Autowired
-
     private PropertyRepository propertyRepository;
     @Autowired
     private RoleRepository roleRepository;
     @Autowired
     private ModelMapper modelMapper;
+
     public UserProperty addUserProperty(UserProperty userProperty) {
         return userPropertyRepository.save(userProperty);
     }

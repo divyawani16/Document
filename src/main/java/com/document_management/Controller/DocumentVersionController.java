@@ -1,6 +1,4 @@
 package com.document_management.Controller;
-
-import com.document_management.DTO.DocMimeTypeDto;
 import com.document_management.DTO.DocumentVersionDto;
 import com.document_management.Entity.DocumentVersion;
 import com.document_management.Service.DocumentVersionService;
@@ -9,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -55,6 +52,4 @@ public class DocumentVersionController {
         DocumentVersionDto response = modelMapper.map(documentVersion, DocumentVersionDto.class);
         return ResponseEntity.ok(response);
     }
-
-
 }
