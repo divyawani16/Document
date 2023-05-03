@@ -4,20 +4,22 @@ import com.document_management.Entity.JwtRequest;
 import com.document_management.Entity.JwtResponse;
 import com.document_management.Entity.UserProperty;
 import com.document_management.Entity.Users;
-import com.document_management.Repository.UserPropertyRepository;
+//import com.document_management.Repository.UserPropertyRepository;
 import com.document_management.Repository.UsersRepository;
 import com.document_management.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,25 +28,27 @@ public class JwtService implements UserDetailsService {
     @Autowired
     private UsersRepository usersRepository;
 
-    @Autowired
-    private UserPropertyRepository userPropertyRepository;
+//    @Autowired
+//    private UserPropertyRepository userPropertyRepository;
     @Autowired
     private JwtUtil jwtUtil;
 
-//    @Autowired
-//    private AuthenticationManager authenticationManager;
-//
-//    public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
-//        String username = jwtRequest.getUserName();
-//        String password = jwtRequest.getUserPassword();
-//        authenticate(username, password);
-//
-//        UserDetails userDetails = loadUserByUsername(username);
-//        String newGeneratedToken = jwtUtil.generateToken(userDetails);
-//
-//        Users user = usersRepository.findByUsername(username);
-//        return new JwtResponse(user, newGeneratedToken);
-//    }
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
+        System.out.println("Method call");
+        String username = jwtRequest.getUserName();
+        String password = jwtRequest.getUserPassword();
+        System.out.println(username + "  " + password);
+        authenticate(username, password);
+
+        UserDetails userDetails = loadUserByUsername(username);
+        String newGeneratedToken = jwtUtil.generateToken(userDetails);
+
+        Users user = usersRepository.findByUsername(username).get();
+        return new JwtResponse(user, newGeneratedToken);
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -63,10 +67,10 @@ public class JwtService implements UserDetailsService {
 
 
 
-        private Set getAuthority (Users tblUser){
+        private Set getAuthority (Users user){
             Set<SimpleGrantedAuthority> authorities = new HashSet<>();
 
-          List<String> Roles = usersRepository.getRole(tblUser.getUserId());
+          List<String> Roles = usersRepository.getRole(user.getUserId());
             for (String Role : Roles) {
                 authorities.add(new SimpleGrantedAuthority("ROLE_" + Role));
             };
@@ -75,15 +79,15 @@ public class JwtService implements UserDetailsService {
 
         }
 
-//        private void authenticate(String username, String password) throws Exception {
-//            try {
-//                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
-//            } catch (DisabledException e) {
-//                throw new Exception("User is disabled", e);
-//            } catch (BadCredentialsException e) {
-//                throw new Exception("Bad credentials from user",e);
-//            }
-//        }
+        private void authenticate(String username, String password) throws Exception {
+            try {
+                authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+            } catch (DisabledException e) {
+                throw new Exception("User is disabled", e);
+            } catch (BadCredentialsException e) {
+                throw new Exception("Bad credentials from user",e);
+            }
+        }
     }
 
 

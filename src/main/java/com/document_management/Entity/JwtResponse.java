@@ -1,21 +1,20 @@
 package com.document_management.Entity;
 
-import java.util.Optional;
 
 public class JwtResponse {
-    private Optional<Users> user;
+    private Users user;
     private String jwtToken;
 
-    public JwtResponse(Optional<Users> user, String jwtToken) {
+    public JwtResponse(Users user, String jwtToken) {
         this.user = user;
         this.jwtToken = jwtToken;
     }
 
-    public Optional<Users> getUser() {
+    public Users getUser() {
         return user;
     }
 
-    public void setUser(Optional<Users> user) {
+    public void setUser(Users user) {
         this.user = user;
     }
 

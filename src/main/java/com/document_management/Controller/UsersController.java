@@ -30,17 +30,17 @@ public class UsersController {
                 List<UserDto> userDtos = usersService.getAllUsers();
                 return ResponseEntity.ok(userDtos);
         }
-        @GetMapping("/{userId}")
-        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
-                try {
-                        UserDto userDto = usersService.getUserById(userId);
-                        return ResponseEntity.ok(userDto);
-                } catch (EntityNotFoundException e) {
-                        return ResponseEntity.notFound().build();
-                }
-        }
+//        @GetMapping("/{userId}")
+//        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
+//                try {
+//                        UserDto userDto = usersService.getUserById(userId);
+//                        return ResponseEntity.ok(userDto);
+//                } catch (EntityNotFoundException e) {
+//                        return ResponseEntity.notFound().build();
+//                }
+//        }
 
-        @PostMapping("/")
+        @PostMapping("/createUser")
         public ResponseEntity<UserDto> createUser(@RequestBody @Valid UserDto userDto) {
                 UserDto createdUserDto = usersService.createUser(userDto);
                 return ResponseEntity.status(HttpStatus.CREATED).body(createdUserDto);
@@ -70,7 +70,7 @@ public class UsersController {
                 return  "This url is only accessible to admin";
         }
 
-        @GetMapping("/users/{findByUsername}")
+        @GetMapping("/{username}")
         public Optional<Users> findByUsername(@PathVariable String username)
         {
                 return this.usersService.findByUsername(username);
