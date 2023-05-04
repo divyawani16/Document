@@ -20,7 +20,7 @@ import java.util.Map;
 @Component
 public class JwtUtil {
 
-    private static final String SECRET_KEY = "Voting_and_Approval_system";
+    private static final String SECRET_KEY = "Document_Management";
     private static final int TOKEN_VALIDITY = 3600 * 5;
     public String getUserNameFromToken(String token){
 

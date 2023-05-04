@@ -38,7 +38,7 @@ public class UsersService {
 
     public UserDto createUser(UserDto userDto) {
 
-        userDto.setPassword(getEncodedPassword(userDto.getPassword()));
+     userDto.setPassword(getEncodedPassword(userDto.getPassword()));
         Users user = modelMapper.map(userDto, Users.class);
         Users createdUser = usersRepository.save(user);
         return modelMapper.map(createdUser, UserDto.class);

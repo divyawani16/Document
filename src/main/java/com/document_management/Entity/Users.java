@@ -101,7 +101,7 @@ public class Users {
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserProperty> userProperties;
-    private boolean enabled;
+   private boolean enabled;
 
     // getters and setters
     public List<UserProperty> getUserProperties() {
@@ -110,37 +110,11 @@ public class Users {
 
     public void setUserProperties(List<UserProperty> userProperties) {
         this.userProperties = userProperties;
-    }
-    public boolean isEnabled() {
+    }public boolean isEnabled() {
         return this.enabled;
     }
 
 
-
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "UserId")
-//    private long UserId;
-//
-//    @Column(name = "FirstName")
-//    private String firstName;
-//
-//    @Column(name = "LastName")
-//    private String lastName;
-//
-//   //@PhoneNoValidation
-//    @Column(name = "PhoneNumber")
-//    private String phoneNumber;
-//
-//
-//    @Column(name = "EmailId")
-//    private String emailId;
-//
-//    @Column(name = "UserName")
-//    private String username;
-//
-//    @Column(name = "Password")
-//    private String password;
 
 
 

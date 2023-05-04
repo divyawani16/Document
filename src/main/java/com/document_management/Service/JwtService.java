@@ -13,7 +13,6 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -70,7 +69,7 @@ public class JwtService implements UserDetailsService {
         private Set getAuthority (Users user){
             Set<SimpleGrantedAuthority> authorities = new HashSet<>();
 
-          List<String> Roles = usersRepository.getRole(user.getUserId());
+       List<String> Roles = usersRepository.getRole(user.getUserId());
             for (String Role : Roles) {
                 authorities.add(new SimpleGrantedAuthority("ROLE_" + Role));
             };
@@ -86,6 +85,8 @@ public class JwtService implements UserDetailsService {
                 throw new Exception("User is disabled", e);
             } catch (BadCredentialsException e) {
                 throw new Exception("Bad credentials from user",e);
+            } catch (Exception e) {
+                throw e;
             }
         }
     }
