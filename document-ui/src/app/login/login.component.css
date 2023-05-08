@@ -1,0 +1,128 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.login-container {
+  background-color: #f2e6ff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(30, 30, 30, 30); 
+  padding: 50px;
+}
+
+.login-form {
+  max-width: 250px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+}
+
+
+.mat-card-header {
+  display: flex;
+  justify-content: center;
+}
+h2 {
+  font-weight: bold;
+}
+
+
+
+/* 
+.mat-label {
+  font-weight: bold;
+}
+
+.mat-card-header{
+  text-align: center;
+  color:#fcfbfb;
+}
+.parent-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 50%;
+  background-color: #f2e6ff;
+}
+
+.login-form {
+  max-width: 250px;
+  background-color: #fcfbfb;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(30, 30, 30, 30); 
+  margin-top: 100px;
+}
+
+.password-container mat-form-field  {
+  display: flex;
+  align-items: center;
+  width: 150%;
+} */
+
+/* .mat-form-field-appearance-fill .mat-form-field-underline {
+  width: 300px;
+} */
+
+/* ::ng-deep .mat-form-field-underline {
+  border-bottom: 2px;
+  width: 200%
+} */
+
+/* .login-button {
+  margin-top: 16px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-button button {
+  width: 100%;
+}
+
+.login-button span {
+  margin: 0 auto;
+}
+
+  
+  .login-button button {
+    width: 100%;
+  }
+  
+  .login-button span {
+    margin: 0 auto;
+  }
+  .body {
+    height: 100vh;
+    background-image: url('/assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+  } */
+  /* .login-page {
+    background-image: url('/assets/images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+   */

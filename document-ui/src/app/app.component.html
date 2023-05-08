@@ -1,0 +1,13 @@
+
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav *ngIf="sideBarOpen"></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header *ngIf="showHeader" (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <router-outlet></router-outlet>
+    <ng-container *ngIf="!showHeader">
+     
+    </ng-container>
+  </mat-drawer-content>
+</mat-drawer-container>
