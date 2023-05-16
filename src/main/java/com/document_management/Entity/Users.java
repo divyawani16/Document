@@ -92,29 +92,30 @@ public class Users {
         this.emailId = emailId;
     }
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+
+
+
+//    public void setEnabled(boolean enabled) {
+//        this.enabled = enabled;
+//    }
 
 
 
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<UserProperty> userProperties;
-   private boolean enabled;
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<UserProperty> userProperties;
+//   private boolean enabled;
 
     // getters and setters
-    public List<UserProperty> getUserProperties() {
-        return userProperties;
-    }
-
-    public void setUserProperties(List<UserProperty> userProperties) {
-        this.userProperties = userProperties;
-    }public boolean isEnabled() {
-        return this.enabled;
-    }
-
-
+//    public List<UserProperty> getUserProperties() {
+//        return userProperties;
+//    }
+//
+//    public void setUserProperties(List<UserProperty> userProperties) {
+//        this.userProperties = userProperties;
+//    }public boolean isEnabled() {
+//        return this.enabled;
+//    }
 
 
 

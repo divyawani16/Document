@@ -2,6 +2,7 @@ package com.document_management.util;
 
 import com.document_management.Entity.Role;
 import com.document_management.Entity.UserProperty;
+import com.document_management.Repository.UsersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -27,18 +28,21 @@ public class JwtUtil {
         return getClaimFromToken(token, Claims::getSubject);
 
     }
+
     private <T> T getClaimFromToken(String token, Function<Claims, T> claimResolver) {
         final Claims claims = getAllClaimsFromToken(token);
         return claimResolver.apply(claims);
 
     }
     private Claims getAllClaimsFromToken(String token){
-        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJwt(token).getBody();
+        return Jwts.parser().setSigningKey(SECRET_KEY).parseClaimsJws(token).getBody();
     }
 
     public boolean validateToken(String token, UserDetails userDetails){
         String userName = getUserNameFromToken(token);
-        return (userName.equals(userDetails.getUsername()) && isTokenExpired(token));
+
+
+        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
 
     }
 

@@ -35,18 +35,26 @@ public class JwtService implements UserDetailsService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+
+
     public JwtResponse createJwtToken(JwtRequest jwtRequest) throws Exception {
         System.out.println("Method call");
         String username = jwtRequest.getUserName();
         String password = jwtRequest.getUserPassword();
-        System.out.println(username + "  " + password);
-        authenticate(username, password);
+//        System.out.println(username + "  " + password);
+        //authenticate(username, password);
 
-        UserDetails userDetails = loadUserByUsername(username);
+        UserDetails userDetails = loadUserByUsername(username);//here you can get userid
+        //implement logic to get rolid from roll(get data from request) op:rollid
+        //find data in userproperty table by (userid,rollid)
+
+        List<String> userRoles =  usersRepository.getUsrRoleByUserName(username);
+
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 
         Users user = usersRepository.findByUsername(username).get();
-        return new JwtResponse(user, newGeneratedToken);
+//        UserProperty userProperty = UserProperty();
+        return new JwtResponse(user, userRoles,newGeneratedToken);
     }
 
     @Override
@@ -80,6 +88,7 @@ public class JwtService implements UserDetailsService {
 
         private void authenticate(String username, String password) throws Exception {
             try {
+
                 authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
             } catch (DisabledException e) {
                 throw new Exception("User is disabled", e);

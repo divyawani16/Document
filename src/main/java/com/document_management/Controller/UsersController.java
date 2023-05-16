@@ -6,6 +6,7 @@ import com.document_management.Service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
@@ -66,9 +67,31 @@ public class UsersController {
                         return ResponseEntity.notFound().build();
                 }
         }
+
+
         @GetMapping({"/forAdmin"})
+        @PreAuthorize("hasRole('Admin')")
         public String forAdmin() {
-                return  "This url is only accessible to admin";
+                try {
+                        return  "This url is only accessible to admin";
+
+                }
+                catch (Exception e){
+throw new RuntimeException("Invalid Token");
+                }
+        }
+
+
+        @GetMapping({"/forUser"})
+        @PreAuthorize("hasRole('User')")
+        public String forUser()
+        {
+                try {
+                        return  "This url is only accessible to User";
+                }
+                catch (Exception ex){
+                        throw new RuntimeException("Invalid token");
+                }
         }
 
         @GetMapping("/{username}")

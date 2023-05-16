@@ -4,6 +4,19 @@ public class JwtRequest {
     private String userName;
     private String userPassword;
 
+    private String roleId;
+
+//    public String getRoleName() {
+
+
+    public String getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(String roleId) {
+        this.roleId = roleId;
+    }
+
     public String getUserName() {
         return userName;
     }
