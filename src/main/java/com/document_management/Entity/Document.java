@@ -32,4 +32,6 @@ public class Document {
     @ManyToOne
     @JoinColumn(name = "docMimeTypeId", referencedColumnName = "docMimeTypeId")
     private DocMimeType docMimeType;
+    @OneToOne
+    private DocumentVersion documentVersion;
 }

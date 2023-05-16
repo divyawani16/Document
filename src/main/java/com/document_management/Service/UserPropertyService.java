@@ -1,10 +1,6 @@
- package com.document_management.Service;
-import com.document_management.DTO.PropertyDto;
+package com.document_management.Service;
 import com.document_management.DTO.UserPropertyDto;
-import com.document_management.Entity.Property;
-import com.document_management.Entity.Role;
 import com.document_management.Entity.UserProperty;
-import com.document_management.Entity.Users;
 import com.document_management.Repository.PropertyRepository;
 import com.document_management.Repository.RoleRepository;
 import com.document_management.Repository.UserPropertyRepository;
@@ -12,8 +8,6 @@ import com.document_management.Repository.UsersRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,17 +15,16 @@ import java.util.stream.Collectors;
 public class UserPropertyService {
 
     @Autowired
-
     private UserPropertyRepository userPropertyRepository;
     @Autowired
     private UsersRepository userRepository;
     @Autowired
-
     private PropertyRepository propertyRepository;
     @Autowired
     private RoleRepository roleRepository;
     @Autowired
     private ModelMapper modelMapper;
+
     public UserProperty addUserProperty(UserProperty userProperty) {
         return userPropertyRepository.save(userProperty);
     }

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Builder
 public class DocumentAuditDto {
 
-    private Integer id;
+    private Integer documentAuditId;
 
     private Integer stageId;
 

@@ -12,12 +12,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/properties/")
+@CrossOrigin(origins = "http://localhost:4200")
 public class PropertyController {
     private PropertyService propertyService;
 
     @Autowired
     public PropertyController(PropertyService propertyService) {
         this.propertyService = propertyService;
+    }
+    @GetMapping("/count")
+    public ResponseEntity<Integer> countProperties() {
+        int count = propertyService.getAllProperties().size();
+        return ResponseEntity.ok(count);
     }
 
     @GetMapping("/{id}")
@@ -44,7 +50,7 @@ public class PropertyController {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping
+    @GetMapping("/get")
     public ResponseEntity<List<PropertyDto>> getAllProperties() {
         List<PropertyDto> propertyDtos = propertyService.getAllProperties();
         return ResponseEntity.ok(propertyDtos);
