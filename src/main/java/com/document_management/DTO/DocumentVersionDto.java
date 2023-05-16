@@ -13,7 +13,8 @@ import java.time.LocalDateTime;
 public class DocumentVersionDto {
 
     private Integer documentVersionId;
-    private Integer documentId;
+    private Integer documentName;
+    private Integer stageName;
     private Integer versionNumber;
     private String location;
     private String createdBy;

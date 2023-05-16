@@ -14,6 +14,7 @@ public class Stage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="stageId")
     private Integer stageId;
 
     @Column(name = "StageName")

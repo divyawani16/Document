@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
 
         private UsersService usersService;
@@ -22,11 +23,11 @@ public class UsersController {
                 this.usersService = usersService;
         }
 
-        @GetMapping("/{username}")
-        public Optional<Users> findByusername(@PathVariable String username)
-        {
-                return this.usersService.findByusername(username);
-        }
+//        @GetMapping("/{username}")
+//        public Optional<Users> findByusername(@PathVariable String username)
+//        {
+//                return this.usersService.findByusername(username);
+//        }
 
         @GetMapping("/")
         public ResponseEntity<List<UserDto>> getAllUsers() {

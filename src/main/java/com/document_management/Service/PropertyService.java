@@ -32,7 +32,10 @@ public class PropertyService {
         Property createdProperty = propertyRepository.save(property);
         return modelMapper.map(createdProperty, PropertyDto.class);
     }
-
+    public int countProperties() {
+        List<Property> properties = propertyRepository.findAll();
+        return properties.size();
+    }
     public PropertyDto updateProperty(Integer propertyId, PropertyDto propertyDto) {
         Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new EntityNotFoundException("Property not found"));
         modelMapper.map(propertyDto, property);
