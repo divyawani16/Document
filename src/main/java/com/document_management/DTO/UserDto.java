@@ -11,7 +11,7 @@ public class UserDto {
     private String username;
     private String password;
     private String phoneNumber;
-    //private String emailId;
+    private String emailId;
 //    private String firstName;
 //    private String lastName;
 //    private String phoneNumber;

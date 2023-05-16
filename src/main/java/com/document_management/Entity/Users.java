@@ -78,8 +78,8 @@ public class Users {
         this.phoneNumber = phoneNumber;
     }
 
-    //    @Column(name = "EmailId")
-//    private String emailId;
+        @Column(name = "EmailId")
+    private String emailId;
 //
 
 
