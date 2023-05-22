@@ -37,6 +37,12 @@ public class DocumentVersion {
     @Column(name = "CreatedDate")
     private LocalDateTime createdDate;
 
+//    @OneToOne(orphanRemoval = true)
+//    @JoinTable(name = "document_version_document",
+//            joinColumns = @JoinColumn(name = "document_version_document_version_id"),
+//            inverseJoinColumns = @JoinColumn(name = "document_document_id"))
+//    private Document document;
+
     public Stage getStage() {
         return stage;
     }
