@@ -1,6 +1,7 @@
 package com.document_management.Controller;
 
 //import com.document_management.DTO.DocumentDetailsDto;
+import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentDto;
 import com.document_management.Entity.*;
 import com.document_management.Repository.DocumentRepository;
