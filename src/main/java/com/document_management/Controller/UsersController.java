@@ -1,5 +1,4 @@
 package com.document_management.Controller;
-
 import com.document_management.DTO.UserDto;
 import com.document_management.Entity.Users;
 import com.document_management.Service.UsersService;
@@ -8,24 +7,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/api/users")
 public class UsersController {
-
         private UsersService usersService;
-
         @Autowired
         public UsersController(UsersService usersService) {
                 this.usersService = usersService;
         }
-
-
         @GetMapping("/")
         public ResponseEntity<List<UserDto>> getAllUsers() {
                 List<UserDto> userDtos = usersService.getAllUsers();
@@ -46,8 +39,6 @@ public class UsersController {
                 UserDto createdUserDto = usersService.createUser(userDto);
                 return ResponseEntity.status(HttpStatus.CREATED).body(createdUserDto);
         }
-
-
         @PutMapping("/{userId}")
         public ResponseEntity<UserDto> updateUser(@PathVariable Integer userId, @RequestBody @Valid UserDto userDto) {
                 try {
@@ -57,7 +48,6 @@ public class UsersController {
                         return ResponseEntity.notFound().build();
                 }
         }
-
         @DeleteMapping("/{userId}")
         public ResponseEntity<Void> deleteUser(@PathVariable Integer userId) {
                 try {
@@ -67,8 +57,6 @@ public class UsersController {
                         return ResponseEntity.notFound().build();
                 }
         }
-
-
         @GetMapping({"/forAdmin"})
         @PreAuthorize("hasRole('Admin')")
         public String forAdmin() {
@@ -80,20 +68,28 @@ public class UsersController {
 throw new RuntimeException("Invalid Token");
                 }
         }
-
-
-        @GetMapping({"/forUser"})
-        @PreAuthorize("hasRole('User')")
-        public String forUser()
+        @GetMapping({"/forPropertyOwner"})
+        @PreAuthorize("hasRole('PropertyOwner')")
+        public String forPropertyOwner()
         {
                 try {
-                        return  "This url is only accessible to User";
+                        return  "This url is only accessible to PropertyOwner";
                 }
                 catch (Exception ex){
                         throw new RuntimeException("Invalid token");
                 }
         }
-
+        @GetMapping({"/forTenant"})
+        @PreAuthorize("hasRole('Tenant')")
+        public String forTenant()
+        {
+                try {
+                        return  "This url is only accessible to Tenant";
+                }
+                catch (Exception ex){
+                        throw new RuntimeException("Invalid token");
+                }
+        }
         @GetMapping("/{username}")
         public Optional<Users> findByUsername(@PathVariable String username)
         {
