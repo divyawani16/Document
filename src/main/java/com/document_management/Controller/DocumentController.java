@@ -26,7 +26,6 @@ public class DocumentController {
     private final DocumentRepository documentRepository;
     private DocTypeRepository docTypeRepository;
     private DocMimeTypeRepository docMimeTypeRepository;
-
     @Autowired
     public DocumentController(DocumentService documentService, UsersRepository usersRepository, ModelMapper modelMapper,
       DocumentRepository documentRepository, PropertyRepository propertyRepository, DocMimeTypeRepository docMimeTypeRepository,DocTypeRepository docTypeRepository) {
@@ -38,7 +37,6 @@ public class DocumentController {
         this.docTypeRepository = docTypeRepository;
         this.docMimeTypeRepository = docMimeTypeRepository;
     }
-
     @GetMapping("/count")
     public ResponseEntity<Integer> countDocument() {
         int count = documentService.getAllDocuments().size();
@@ -48,16 +46,13 @@ public class DocumentController {
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
         List<DocumentDetailsDto> documentDetails = new ArrayList<>();
-
         for (Document document : documents) {
             DocumentDetailsDto details = new DocumentDetailsDto();
             details.setDocumentName(document.getDocumentName());
-
             Users user = document.getUser();
             if (user != null) {
                 details.setUserName(user.getUsername());
             }
-
             Property property = document.getProperty();
             if (property != null) {
                 details.setPropertyName(property.getPropertyName());
@@ -74,7 +69,14 @@ public class DocumentController {
         }
         return documentDetails;
     }
-
+    @GetMapping("/documents/propertyname")
+    public List<Document> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
+        return documentRepository.findByPropertyPropertyName(propertyName);
+    }
+    @GetMapping("/documents/username")
+    public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
+        return documentService.searchDocumentsByUsername(username);
+    }
 @PostMapping
 public ResponseEntity<String> addDocument(
         @RequestParam("file") MultipartFile file,

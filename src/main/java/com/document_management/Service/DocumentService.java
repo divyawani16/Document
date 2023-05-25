@@ -57,7 +57,12 @@ private DocMimeTypeRepository docMimeTypeRepository;
 //        document.incrementDocumentVersion();
 //        return documentRepository.save(document);
 //    }
-
+public List<Document> searchDocumentsByPropertyName(String propertyName) {
+    return documentRepository.findByPropertyPropertyName(propertyName);
+}
+    public List<Document> searchDocumentsByUsername(String username) {
+        return documentRepository.findByUserUsername(username);
+    }
     public String saveFile(MultipartFile file) throws IOException {
         String storagePath = "D://xyz"; // Specify the desired storage path here
 
