@@ -10,11 +10,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
+import org.springframework.http.HttpHeaders;
+
 @RestController
 @RequestMapping("api/documents")
 @CrossOrigin("*")
@@ -28,7 +34,7 @@ public class DocumentController {
     private DocMimeTypeRepository docMimeTypeRepository;
     @Autowired
     public DocumentController(DocumentService documentService, UsersRepository usersRepository, ModelMapper modelMapper,
-      DocumentRepository documentRepository, PropertyRepository propertyRepository, DocMimeTypeRepository docMimeTypeRepository,DocTypeRepository docTypeRepository) {
+                              DocumentRepository documentRepository, PropertyRepository propertyRepository, DocMimeTypeRepository docMimeTypeRepository,DocTypeRepository docTypeRepository) {
         this.documentService = documentService;
         this.usersRepository = usersRepository;
         this.modelMapper = modelMapper;
@@ -57,7 +63,7 @@ public class DocumentController {
             if (property != null) {
                 details.setPropertyName(property.getPropertyName());
             }
-           DocType docType=document.getDocType();
+            DocType docType=document.getDocType();
             if(docType !=null){
                 details.setDocTypeName(docType.getDocTypeName());
             }
@@ -77,45 +83,45 @@ public class DocumentController {
     public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
         return documentService.searchDocumentsByUsername(username);
     }
-@PostMapping
-public ResponseEntity<String> addDocument(
-        @RequestParam("file") MultipartFile file,
-        @RequestParam("documentName") String documentName,
-        @RequestParam("username") String username,
-        @RequestParam("propertyName") String propertyName,
-        @RequestParam("docTypeName") String docTypeName,
-        @RequestParam("docMimeTypeName") String docMimeTypeName
-) {
-    try {
-        Document document = new Document();
-        document.setDocumentName(documentName);
+    @PostMapping
+    public ResponseEntity<String> addDocument(
+            @RequestParam("file") MultipartFile file,
+            @RequestParam("documentName") String documentName,
+            @RequestParam("username") String username,
+            @RequestParam("propertyName") String propertyName,
+            @RequestParam("docTypeName") String docTypeName,
+            @RequestParam("docMimeTypeName") String docMimeTypeName
+    ) {
+        try {
+            Document document = new Document();
+            document.setDocumentName(documentName);
 
-        Users user = usersRepository.findByUsername(username)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
-        document.setUser(user);
+            Users user = usersRepository.findByUsername(username)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
+            document.setUser(user);
 
-        Property property = propertyRepository.findByPropertyName(propertyName)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
-        document.setProperty(property);
+            Property property = propertyRepository.findByPropertyName(propertyName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
+            document.setProperty(property);
 
-        DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
-        document.setDocType(docType);
+            DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
+            document.setDocType(docType);
 
-        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
-        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
-        document.setDocMimeType(docMimeType);
+            Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
+            DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
+            document.setDocMimeType(docMimeType);
 
-        String storagePath = documentService.saveFile(file);
-        document.setFilePath(storagePath);
+            String storagePath = documentService.saveFile(file);
+            document.setFilePath(storagePath);
 
-        documentService.addDocument(document);
+            documentService.addDocument(document);
 
-        return ResponseEntity.ok("Document added successfully.");
-    } catch (IOException e) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add document.");
+            return ResponseEntity.ok("Document added successfully.");
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add document.");
+        }
     }
-}
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteDocument(@PathVariable Integer id) {
         documentService.deleteDocument(id);
@@ -130,133 +136,17 @@ public ResponseEntity<String> addDocument(
         return ResponseEntity.ok(documentDtos);
     }
     @GetMapping("/{documentId}")
-    public ResponseEntity<DocumentDto> getDocumentById(@PathVariable Integer documentId) {
-        DocumentDto document = documentService.getDocumentById(documentId);
+    public ResponseEntity<Document> getDocumentById(@PathVariable Integer documentId) {
+        Document document = documentService.getDocumentById(documentId);
         return ResponseEntity.ok(document);
     }
+
+    @GetMapping("/{documentId}/download")
+    public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
+        Resource fileResource = documentService.downloadDocument(documentId);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileResource.getFilename() + "\"")
+                .body(fileResource);
+    }
 }
-//    @GetMapping("/documents/{documentId}/details")
-//    public ResponseEntity<DocumentDetailsDto> getDocumentDetails(@PathVariable int documentId) {
-//        DocumentDetailsDto documentDetails = documentService.getDocumentDetails(documentId);
-//        if (documentDetails == null) {
-//            return ResponseEntity.notFound().build();
-//        } else {
-//            return ResponseEntity.ok(documentDetails);
-//        }
-//    }
-
-//    @PostMapping
-//    public ResponseEntity<DocumentDto> createDocument(@RequestBody DocumentDto documentDto) {
-//        DocumentDto createdDocument = documentService.createDocument(documentDto);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdDocument);
-//    }
-//@PostMapping("/documents")
-//    @PostMapping
-//    public Document createDocument(@RequestBody Document document) {
-//        DocumentVersion documentVersion = new DocumentVersion();
-//        documentVersion.setVersionNumber(1);
-//        documentVersion.setLocation("location/of/document/version");
-//        documentVersion.setCreatedBy("user");
-//
-//        // Set the associated stage based on your requirements
-//        // documentVersion.setStage(stage);
-//
-//        document.setDocumentVersion(documentVersion);
-//        documentService.createDocument(document);
-//        return document;
-//    }
-//public ResponseEntity<String> addDocument(
-//        @RequestParam("file") MultipartFile file,
-//        @RequestParam("documentName") String documentName,
-//        @RequestParam("userId") Integer userId,
-//        @RequestParam("propertyId") Integer propertyId,
-//        @RequestParam("docTypeId") Integer docTypeId,
-//        @RequestParam("docMimeTypeId") Integer docMimeTypeId
-//) {
-//    try {
-//        Document document = new Document();
-//        document.setDocumentName(documentName);
-//
-//        Users user = usersRepository.getOne(userId);
-//        document.setUser(user);
-//
-//        Property property = documentService.getPropertyById(propertyId);
-//        document.setProperty(property);
-//
-//        DocType docType = documentService.getDocTypeById(docTypeId);
-//        document.setDocType(docType);
-//
-//        DocMimeType docMimeType = documentService.getDocMimeTypeById(docMimeTypeId);
-//        document.setDocMimeType(docMimeType);
-//
-//        String storagePath = documentService.saveFile(file);
-//
-//        document.setFilePath(storagePath);
-//
-//        documentService.addDocument(document);
-//
-//        return ResponseEntity.ok("Document added successfully.");
-//    } catch (IOException e) {
-//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add document.");
-//    }
-//}
-
-
-//    @PostMapping
-//    public ResponseEntity<DocumentDto> createDocument(@RequestBody DocumentDto documentDto) {
-//        Document document = modelMapper.map(documentDto, Document.class);
-//        document.setUser(usersRepository.getOne(documentDto.getUserId()));
-//        document = documentService.addDocument(document);
-//        DocumentDto createdDocumentDto = modelMapper.map(document, DocumentDto.class);
-//        return new ResponseEntity<>(createdDocumentDto, HttpStatus.CREATED);
-//    }
-
-
-
-//
-//@RestController
-//@RequestMapping("/api/documents")
-//public class DocumentController {
-//    private DocumentService documentService;
-//
-//    @Autowired
-//    public DocumentController(DocumentService documentService) {
-//        this.documentService = documentService;
-//    }
-//
-//    @GetMapping("/{documentId}")
-//    public ResponseEntity<DocumentDto> getDocumentById(@PathVariable Integer documentId) {
-//        DocumentDto documentDto = documentService.getDocumentById(documentId);
-//        return ResponseEntity.ok(documentDto);
-//    }
-//
-//    @PostMapping("/")
-//    public ResponseEntity<DocumentDto> createDocument(@RequestBody DocumentDto documentDto) {
-//        DocumentDto createdDocumentDto = documentService.createDocument(documentDto);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(createdDocumentDto);
-//    }
-//
-//    @PutMapping("/{documentId}")
-//    public ResponseEntity<DocumentDto> updateDocument(@PathVariable Integer documentId, @RequestBody DocumentDto documentDto) {
-//            DocumentDto updatedDocumentDto = documentService.updateDocument(documentId, documentDto);
-//        return ResponseEntity.ok(updatedDocumentDto);
-//    }
-//
-//    @DeleteMapping("/{documentId}")
-//    public ResponseEntity<Void> deleteDocument(@PathVariable Integer documentId) {
-//        documentService.deleteDocument(documentId);
-//        return ResponseEntity.noContent().build();
-//    }
-//
-////    @GetMapping("/user/{userId}")
-////    public ResponseEntity<List<DocumentDto>> getAllDocumentsByUserId(@PathVariable Integer userId) {
-////        List<DocumentDto> documentDtoList = documentService.getAllDocumentsByUserId(userId);
-////        return ResponseEntity.ok(documentDtoList);
-////    }
-////
-////    @GetMapping("/property/{propertyId}")
-////    public ResponseEntity<List<DocumentDto>> getAllDocumentsByPropertyId(@PathVariable Integer propertyId) {
-////        List<DocumentDto> documentDtoList = documentService.getAllDocumentsByPropertyId(propertyId);
-////        return ResponseEntity.ok(documentDtoList);
-////    }
-//}
