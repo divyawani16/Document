@@ -32,6 +32,10 @@ public class UsersController {
         @GetMapping("/")
         public ResponseEntity<List<UserDto>> getAllUsers() {
                 List<UserDto> userDtos = usersService.getAllUsers();
+                for (UserDto userDto : userDtos) {
+                        userDto.setPassword("*****");
+                }
+
                 return ResponseEntity.ok(userDtos);
         }
 ////        @GetMapping("/{userId}")

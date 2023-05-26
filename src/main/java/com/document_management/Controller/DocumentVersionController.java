@@ -1,11 +1,9 @@
 package com.document_management.Controller;
 import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentVersionDto;
-import com.document_management.Entity.Document;
-import com.document_management.Entity.DocumentVersion;
-import com.document_management.Entity.Property;
-import com.document_management.Entity.Users;
+import com.document_management.Entity.*;
 import com.document_management.Repository.DocumentVersionRepository;
+import com.document_management.Repository.StageRepository;
 import com.document_management.Service.DocumentVersionService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +21,8 @@ public class DocumentVersionController {
 
     @Autowired
     private DocumentVersionService documentVersionService;
-
+    @Autowired
+    private StageRepository stageRepository;
     @Autowired
     private ModelMapper modelMapper;
     @Autowired
@@ -36,6 +35,8 @@ public class DocumentVersionController {
         DocumentVersionDto response = modelMapper.map(documentVersion, DocumentVersionDto.class);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
+
+
     @GetMapping("/")
     public ResponseEntity<List<DocumentVersionDto>> getAllDocumentVersion() {
         List<DocumentVersionDto> documentVersionDtos = documentVersionService.getAllDocumentVersion();
