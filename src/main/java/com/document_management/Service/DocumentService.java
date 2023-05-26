@@ -17,15 +17,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.core.io.Resource;
 
 @Service
 public class DocumentService {
     @Autowired
-private DocTypeRepository docTypeRepository;
-@Autowired
-private PropertyRepository propertyRepository;
+    private DocTypeRepository docTypeRepository;
     @Autowired
-private DocMimeTypeRepository docMimeTypeRepository;
+    private PropertyRepository propertyRepository;
+    @Autowired
+    private DocMimeTypeRepository docMimeTypeRepository;
     private final DocumentRepository documentRepository;
     private final ModelMapper modelMapper;
 
@@ -34,12 +36,15 @@ private DocMimeTypeRepository docMimeTypeRepository;
         this.documentRepository = documentRepository;
         this.modelMapper = modelMapper;
     }
+
     public List<Document> getAllDocuments() {
         return documentRepository.findAll();
     }
+
     public void deleteDocument(Integer documentId) {
         documentRepository.deleteById(documentId);
     }
+
     public List<DocumentDetailsDto> getAllDocumentDetails() {
         List<Document> documents = documentRepository.findAll();
         List<DocumentDetailsDto> documentDetailsDtos = new ArrayList<>();
@@ -53,13 +58,15 @@ private DocMimeTypeRepository docMimeTypeRepository;
 
         return documentDetailsDtos;
     }
-//    public Document createDocument(Document document) {
+
+    //    public Document createDocument(Document document) {
 //        document.incrementDocumentVersion();
 //        return documentRepository.save(document);
 //    }
-public List<Document> searchDocumentsByPropertyName(String propertyName) {
-    return documentRepository.findByPropertyPropertyName(propertyName);
-}
+    public List<Document> searchDocumentsByPropertyName(String propertyName) {
+        return documentRepository.findByPropertyPropertyName(propertyName);
+    }
+
     public List<Document> searchDocumentsByUsername(String username) {
         return documentRepository.findByUserUsername(username);
     }
@@ -82,10 +89,32 @@ public List<Document> searchDocumentsByPropertyName(String propertyName) {
 
         return filePath;
     }
+
+//    public String saveFile(MultipartFile file) throws IOException {
+//        String storagePath = "D://xyz"; // Specify the desired storage path here
+//
+//        // Create the necessary directories if they don't exist
+//        File storageDir = new File(storagePath);
+//        if (!storageDir.exists()) {
+//            storageDir.mkdirs();
+//        }
+//
+//        // Construct the file path by concatenating the storage path and the original file name
+//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+//        String filePath = storagePath + File.separator + fileName;
+//
+//        // Transfer the file to the target location
+//        File targetFile = new File(filePath);
+//        file.transferTo(targetFile);
+//
+//        return filePath;
+//    }
+
     public DocMimeType getDocMimeTypeById(Integer docMimeTypeId) {
         return docMimeTypeRepository.findById(docMimeTypeId)
                 .orElseThrow(() -> new NotFoundException("DocMimeType not found"));
     }
+
     public Property getPropertyById(Integer propertyId) {
         return propertyRepository.findById(propertyId)
                 .orElseThrow(() -> new NotFoundException("Property not found"));
@@ -95,9 +124,11 @@ public List<Document> searchDocumentsByPropertyName(String propertyName) {
         return docTypeRepository.findById(docTypeId)
                 .orElseThrow(() -> new NotFoundException("DocType not found"));
     }
+
     public void addDocument(Document document) {
         documentRepository.save(document);
     }
+
     public int countDocument() {
         List<Document> documents = documentRepository.findAll();
         return documents.size();
@@ -110,12 +141,17 @@ public List<Document> searchDocumentsByPropertyName(String propertyName) {
     }
 
 
-
-    public DocumentDto getDocumentById(Integer documentId) {
+    public Document getDocumentById(Integer documentId) {
         Document document = documentRepository.findById(documentId)
                 .orElseThrow(() -> new RuntimeException("Document not found"));
-        return modelMapper.map(document, DocumentDto.class);
+        return modelMapper.map(document, Document.class);
     }
+//    public DocumentDto getDocumentById(Integer documentId) {
+//        Document document = documentRepository.findById(documentId)
+//                .orElseThrow(() -> new RuntimeException("Document not found"));
+//        return modelMapper.map(document, DocumentDto.class);
+//    }
+
     public Optional<Property> getPropertyByName(String propertyName) {
         return propertyRepository.findByPropertyName(propertyName);
     }
@@ -123,56 +159,19 @@ public List<Document> searchDocumentsByPropertyName(String propertyName) {
     public Optional<DocType> getDocTypeByName(String docTypeName) {
         return docTypeRepository.findByDocTypeName(docTypeName);
     }
+
     public Optional<DocMimeType> getDocMimeTypeByName(String docMimeTypeName) {
         return docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
     }
+    public Resource downloadDocument(Integer documentId) {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new NotFoundException("Document not found"));
 
-//
+        File file = new File(document.getFilePath());
+        if (!file.exists()) {
+            throw new NotFoundException("File not found");
+        }
 
-//    public DocumentDto updateDocument(Integer documentId, DocumentDto documentDto) {
-//        Document document = documentRepository.findById(documentId)
-//                .orElseThrow(() -> new RuntimeException("Document not found"));
-//        modelMapper.map(documentDto, document);
-//        document = documentRepository.save(document);
-//        return modelMapper.map(document, DocumentDto.class);
-//    }
-//
-//    public void deleteDocument(Integer documentId) {
-//        documentRepository.deleteById(documentId);
-//    }
-
-    // Add more methods as needed...
+        return new FileSystemResource(file);
+    }
 }
-
-//
-//    public DocumentDto getDocumentById(Integer documentId) {
-//        Document document = documentRepository.findById(documentId).orElseThrow(() -> new RuntimeException("Document not found"));
-//        return modelMapper.map(document, DocumentDto.class);
-//    }
-//
-//    public DocumentDto createDocument(DocumentDto documentDto) {
-//        Document document = modelMapper.map(documentDto, Document.class);
-//        Document savedDocument = documentRepository.save(document);
-//        return modelMapper.map(savedDocument, DocumentDto.class);
-//    }
-//    public DocumentDto updateDocument(Integer documentId, DocumentDto documentDto) {
-//        Document document = documentRepository.findById(documentId).orElseThrow(() -> new RuntimeException("Document not found"));
-//        modelMapper.map(documentDto, document);
-//        Document updatedDocument = documentRepository.save(document);
-//        return modelMapper.map(updatedDocument, DocumentDto.class);
-//    }
-//
-//    public void deleteDocument(Integer documentId) {
-//        documentRepository.deleteById(documentId);
-//    }
-//
-////    public List<DocumentDto> getAllDocumentsByUserId(Integer userId) {
-////        List<Document> documents = documentRepository.findByUserId(userId);
-////        return documents.stream().map(d -> modelMapper.map(d, DocumentDto.class)).collect(Collectors.toList());
-////    }
-////
-////    public List<DocumentDto> getAllDocumentsByPropertyId(Integer propertyId) {
-////        List<Document> documents = documentRepository.findByPropertyId(propertyId);
-////        return documents.stream().map(d -> modelMapper.map(d, DocumentDto.class)).collect(Collectors.toList());
-////    }
-//}
