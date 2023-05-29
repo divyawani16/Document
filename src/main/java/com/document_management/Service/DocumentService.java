@@ -3,10 +3,7 @@ import com.amazonaws.services.apigateway.model.NotFoundException;
 import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentDto;
 import com.document_management.Entity.*;
-import com.document_management.Repository.DocMimeTypeRepository;
-import com.document_management.Repository.DocTypeRepository;
-import com.document_management.Repository.DocumentRepository;
-import com.document_management.Repository.PropertyRepository;
+import com.document_management.Repository.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +25,9 @@ public class DocumentService {
     private PropertyRepository propertyRepository;
     @Autowired
     private DocMimeTypeRepository docMimeTypeRepository;
+
+    @Autowired
+    private UsersRepository usersRepository;
     private final DocumentRepository documentRepository;
     private final ModelMapper modelMapper;
 
@@ -174,4 +174,40 @@ public class DocumentService {
 
         return new FileSystemResource(file);
     }
+
+    public void updateDocument(Integer documentId, DocumentDto documentDto) {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new NotFoundException("Document not found"));
+
+
+        document.setDocumentName(documentDto.getDocumentName());
+
+
+        if (documentDto.getUserId() != null) {
+            Users user = usersRepository.findById(documentDto.getUserId())
+                    .orElseThrow(() -> new NotFoundException("User not found"));
+            document.setUser(user);
+        }
+
+        if (documentDto.getPropertyId() != null) {
+            Property property = propertyRepository.findById(documentDto.getPropertyId())
+                    .orElseThrow(() -> new NotFoundException("Property not found"));
+            document.setProperty(property);
+        }
+
+        if (documentDto.getDocTypeId() != null) {
+            DocType docType = docTypeRepository.findById(documentDto.getDocTypeId())
+                    .orElseThrow(() -> new NotFoundException("DocType not found"));
+            document.setDocType(docType);
+        }
+
+        if (documentDto.getDocMimeTypeId() != null) {
+            DocMimeType docMimeType = docMimeTypeRepository.findById(documentDto.getDocMimeTypeId())
+                    .orElseThrow(() -> new NotFoundException("DocMimeType not found"));
+            document.setDocMimeType(docMimeType);
+        }
+
+        documentRepository.save(document);
+    }
+
 }

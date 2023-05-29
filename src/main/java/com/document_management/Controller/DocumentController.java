@@ -1,4 +1,5 @@
 package com.document_management.Controller;
+import com.amazonaws.services.apigateway.model.NotFoundException;
 import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentDto;
 import com.document_management.Entity.*;
@@ -149,4 +150,22 @@ public class DocumentController {
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileResource.getFilename() + "\"")
                 .body(fileResource);
     }
+
+    @PutMapping("/{documentId}")
+    public ResponseEntity<String> updateDocument(
+            @PathVariable Integer documentId,
+            @RequestBody DocumentDto documentDto
+    ) {
+        try {
+            documentService.updateDocument(documentId, documentDto);
+            return ResponseEntity.ok("Document updated successfully.");
+        } catch (NotFoundException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update document.");
+        }
+    }
+
+
+
 }
