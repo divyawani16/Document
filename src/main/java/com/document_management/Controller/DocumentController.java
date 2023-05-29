@@ -151,22 +151,47 @@ public class DocumentController {
                 .body(fileResource);
     }
 
-    @PutMapping("/{documentId}")
-
+    @PutMapping("/{id}")
     public ResponseEntity<String> updateDocument(
-            @PathVariable Integer documentId,
-            @RequestBody DocumentDto documentDto
+            @PathVariable Integer id,
+            @RequestParam("documentName") String documentName,
+            @RequestParam("username") String username,
+            @RequestParam("propertyName") String propertyName,
+            @RequestParam("docTypeName") String docTypeName,
+            @RequestParam("docMimeTypeName") String docMimeTypeName
     ) {
         try {
-            documentService.updateDocument(documentId, documentDto);
+            Document document = documentService.getDocumentById(id);
+
+            if (document == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            document.setDocumentName(documentName);
+
+            Users user = usersRepository.findByUsername(username)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
+            document.setUser(user);
+
+            Property property = propertyRepository.findByPropertyName(propertyName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
+            document.setProperty(property);
+
+            DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
+            document.setDocType(docType);
+
+            Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
+            DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
+            document.setDocMimeType(docMimeType);
+
+            documentService.addDocument(document);
+
             return ResponseEntity.ok("Document updated successfully.");
-        } catch (NotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update document.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-
 
 
 }
