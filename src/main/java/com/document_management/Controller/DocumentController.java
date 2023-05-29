@@ -152,6 +152,7 @@ public class DocumentController {
     }
 
     @PutMapping("/{documentId}")
+
     public ResponseEntity<String> updateDocument(
             @PathVariable Integer documentId,
             @RequestBody DocumentDto documentDto
