@@ -58,9 +58,18 @@ public class PropertyController {
         List<PropertyDto> propertyDtos = propertyService.getAllProperties();
         return ResponseEntity.ok(propertyDtos);
     }
-    @GetMapping("/propertyname")
-    public ResponseEntity<Optional<Property>> findByPropertyName(@RequestParam("name") String propertyName) {
-        Optional<Property> properties = propertyService.findByPropertyName(propertyName);
-        return ResponseEntity.ok(properties);
-    }
+//    @GetMapping("/propertyname")
+//    public ResponseEntity<Optional<Property>> findByPropertyName(@RequestParam("name") String propertyName) {
+//        Optional<Property> properties = propertyService.findByPropertyName(propertyName);
+//        return ResponseEntity.ok(properties);
+//    }
+
+
+@GetMapping("/propertyname")
+public ResponseEntity<Optional<Property>> findByPropertyName() {
+    String propertyName = "Smartworks";
+    Optional<Property> properties = propertyService.findByPropertyName(propertyName);
+    return ResponseEntity.ok(properties);
+}
+
 }
