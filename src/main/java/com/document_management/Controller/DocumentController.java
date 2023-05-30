@@ -192,6 +192,11 @@ public class DocumentController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
-
+    @PutMapping("/{documentId}/approval")
+    public ResponseEntity<DocumentDto> updateDocumentApproval(@PathVariable int documentId,
+                                                              @RequestParam boolean approved) {
+        DocumentDto updatedDocumentDto = documentService.updateDocumentApproval(documentId, approved);
+        return ResponseEntity.ok(updatedDocumentDto);
+    }
 
 }

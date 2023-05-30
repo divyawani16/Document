@@ -17,6 +17,8 @@ import java.util.Optional;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 public class DocumentService {
     @Autowired
@@ -88,6 +90,21 @@ public class DocumentService {
         file.transferTo(targetFile);
 
         return filePath;
+    }
+
+    public DocumentDto updateDocumentApproval(int documentId, boolean approved) {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new EntityNotFoundException("Document not found"));
+
+        document.setApproved(approved);
+        Document savedDocument = documentRepository.save(document);
+        return mapDocumentToDocumentDto(savedDocument);
+    }
+
+    // Other existing methods...
+
+    private DocumentDto mapDocumentToDocumentDto(Document document) {
+        return new DocumentDto(document.getDocumentId(), document.getDocumentName(), document.isApproved());
     }
 
 //    public String saveFile(MultipartFile file) throws IOException {
