@@ -28,8 +28,31 @@ public class Document {
     @ManyToOne
     @JoinColumn(name = "docTypeId", referencedColumnName = "docTypeId")
     private DocType docType;
-
+    @Column(name = "filePath") // Add a new attribute for storing the file path
+    private String filePath;
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "document_file_id")
+    private DocumentFile documentFile;
     @ManyToOne
     @JoinColumn(name = "docMimeTypeId", referencedColumnName = "docMimeTypeId")
     private DocMimeType docMimeType;
-}
+    @OneToOne
+    private DocumentVersion documentVersion;
+//@OneToOne(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//private DocumentVersion documentVersion;
+
+//
+//    public void setDocumentVersion(DocumentVersion documentVersion) {
+//        this.documentVersion = documentVersion;
+//        documentVersion.setDocument(this);
+//    }
+
+//    public void incrementDocumentVersion() {
+//        if (documentVersion != null) {
+//            documentVersion.setVersionNumber(documentVersion.getVersionNumber() + 1);
+//        }
+    }
+

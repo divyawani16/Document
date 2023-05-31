@@ -1,22 +1,16 @@
 package com.document_management.Controller;
-import com.document_management.DTO.PropertyDto;
 import com.document_management.DTO.UserPropertyDto;
-import com.document_management.Entity.Property;
 import com.document_management.Entity.UserProperty;
 import com.document_management.Repository.PropertyRepository;
 import com.document_management.Repository.RoleRepository;
 import com.document_management.Repository.UserPropertyRepository;
 import com.document_management.Service.UserPropertyService;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/userProperty")
@@ -28,6 +22,7 @@ public class UserPropertyController {
     private ModelMapper modelMapper;
     @Autowired
     private UserPropertyRepository userPropertyRepository;
+    @Autowired
     private UserPropertyService userPropertyService;
 
     @PostMapping("/add")
@@ -61,4 +56,5 @@ public class UserPropertyController {
         }
         return new ResponseEntity<>(userPropertyDtos, HttpStatus.OK);
     }
+
 }

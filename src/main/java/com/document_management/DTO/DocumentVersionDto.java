@@ -14,6 +14,7 @@ public class DocumentVersionDto {
 
     private Integer documentVersionId;
     private Integer documentId;
+    private Integer stageId;
     private Integer versionNumber;
     private String location;
     private String createdBy;

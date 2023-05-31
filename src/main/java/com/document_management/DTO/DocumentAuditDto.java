@@ -14,9 +14,9 @@ import java.time.LocalDateTime;
 @Builder
 public class DocumentAuditDto {
 
-    private Integer id;
-
-    private Integer stageId;
+    private Integer documentAuditId;
+    private String stageName;
+    private String documentName;
 
     private String finishedBy;
 
@@ -26,10 +26,4 @@ public class DocumentAuditDto {
 
 }
 
-//public class DocumentAuditDto {
-//    private Integer documentAuditId;
-//    private Integer stageId;
-//    private String finishedBy;
-//    private LocalDate finishedOn;
-//    private Integer documentVersionId;
-//}
+

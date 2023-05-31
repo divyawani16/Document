@@ -1,16 +1,14 @@
 package com.document_management.Service;
-
 import com.document_management.DTO.PropertyDto;
 import com.document_management.Entity.Property;
 import com.document_management.Repository.PropertyRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-
 @Service
 public class PropertyService {
     private PropertyRepository propertyRepository;
@@ -20,6 +18,10 @@ public class PropertyService {
     public PropertyService(PropertyRepository propertyRepository, ModelMapper modelMapper) {
         this.propertyRepository = propertyRepository;
         this.modelMapper = modelMapper;
+    }
+
+    public Optional<Property> findByPropertyName(String propertyName) {
+        return propertyRepository.findByPropertyName(propertyName);
     }
 
     public PropertyDto getPropertyById(Integer propertyId) {
@@ -32,13 +34,19 @@ public class PropertyService {
         Property createdProperty = propertyRepository.save(property);
         return modelMapper.map(createdProperty, PropertyDto.class);
     }
-
+    public int countProperties() {
+        List<Property> properties = propertyRepository.findAll();
+        return properties.size();
+    }
     public PropertyDto updateProperty(Integer propertyId, PropertyDto propertyDto) {
         Property property = propertyRepository.findById(propertyId).orElseThrow(() -> new EntityNotFoundException("Property not found"));
         modelMapper.map(propertyDto, property);
         Property updatedProperty = propertyRepository.save(property);
         return modelMapper.map(updatedProperty, PropertyDto.class);
     }
+//    public List<Property> searchByPropertyName(String propertyName) {
+//        return propertyRepository.findByPropertyName(propertyName);
+//    }
 
     public void deleteProperty(Integer propertyId) {
         propertyRepository.deleteById(propertyId);
