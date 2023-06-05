@@ -188,6 +188,8 @@ public class DocumentController {
         return ResponseEntity.ok(document);
     }
 
+
+
 //    @GetMapping("/{documentId}/download")
 //    public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
 //        Resource fileResource = documentService.downloadDocument(documentId);
