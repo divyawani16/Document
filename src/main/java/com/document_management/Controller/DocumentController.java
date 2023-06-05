@@ -162,6 +162,66 @@ public class DocumentController {
         Document document = documentService.getDocumentById(documentId);
         return ResponseEntity.ok(document);
     }
+
+
+    @GetMapping("/{documentId}/download")
+    public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
+        Resource fileResource = documentService.downloadDocument(documentId);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileResource.getFilename() + "\"")
+                .body(fileResource);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<String> updateDocument(
+            @PathVariable Integer id,
+            @RequestParam("documentName") String documentName,
+            @RequestParam("username") String username,
+            @RequestParam("propertyName") String propertyName,
+            @RequestParam("docTypeName") String docTypeName,
+            @RequestParam("docMimeTypeName") String docMimeTypeName
+    ) {
+        try {
+            Document document = documentService.getDocumentById(id);
+
+            if (document == null) {
+                return ResponseEntity.notFound().build();
+            }
+
+            document.setDocumentName(documentName);
+
+            Users user = usersRepository.findByUsername(username)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
+            document.setUser(user);
+
+            Property property = propertyRepository.findByPropertyName(propertyName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
+            document.setProperty(property);
+
+            DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
+                    .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
+            document.setDocType(docType);
+
+            Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
+            DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
+            document.setDocMimeType(docMimeType);
+
+            documentService.addDocument(document);
+
+            return ResponseEntity.ok("Document updated successfully.");
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+        }
+    }
+    @PutMapping("/{documentId}/approval")
+    public ResponseEntity<DocumentDto> updateDocumentApproval(@PathVariable int documentId,
+                                                              @RequestParam boolean approved) {
+        DocumentDto updatedDocumentDto = documentService.updateDocumentApproval(documentId, approved);
+        return ResponseEntity.ok(updatedDocumentDto);
+    }
+
+
 }
     //    @PostMapping
 //    public ResponseEntity<String> addDocument(

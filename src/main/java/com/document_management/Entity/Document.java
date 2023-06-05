@@ -41,6 +41,8 @@ public class Document {
     private DocMimeType docMimeType;
     @OneToOne
     private DocumentVersion documentVersion;
+
+    private boolean approved;
 //@OneToOne(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //private DocumentVersion documentVersion;
 
