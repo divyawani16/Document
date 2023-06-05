@@ -13,20 +13,17 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
-import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("api/documents")
-@CrossOrigin("*")
+
 public class DocumentController {
     private final DocumentService documentService;
     private UsersRepository usersRepository;
@@ -51,11 +48,25 @@ public class DocumentController {
         this.docMimeTypeRepository = docMimeTypeRepository;
         this.awsS3Service = awsS3Service;
     }
+
     @GetMapping("/count")
     public ResponseEntity<Integer> countDocument() {
         int count = documentService.getAllDocuments().size();
         return ResponseEntity.ok(count);
     }
+    @GetMapping("/{documentId}/download")
+    public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
+        return documentService.downloadDocument(documentId);
+    }
+
+//    @GetMapping("/{documentId}/download")
+//    public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
+//        Resource fileResource = documentService.downloadDocument(documentId);
+//        return ResponseEntity.ok()
+//                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileResource.getFilename() + "\"")
+//                .body(fileResource);
+//    }
+
 
     @GetMapping("/documentsdetails")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
@@ -72,26 +83,29 @@ public class DocumentController {
             if (property != null) {
                 details.setPropertyName(property.getPropertyName());
             }
-            DocType docType=document.getDocType();
-            if(docType !=null){
+            DocType docType = document.getDocType();
+            if (docType != null) {
                 details.setDocTypeName(docType.getDocTypeName());
             }
-            DocMimeType docMimeType=document.getDocMimeType();
-            if(docMimeType !=null){
+            DocMimeType docMimeType = document.getDocMimeType();
+            if (docMimeType != null) {
                 details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
             }
             documentDetails.add(details);
         }
         return documentDetails;
     }
+
     @GetMapping("/documents/propertyname")
     public List<Document> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
         return documentRepository.findByPropertyPropertyName(propertyName);
     }
+
     @GetMapping("/documents/username")
     public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
         return documentService.searchDocumentsByUsername(username);
     }
+
     @PostMapping
     public ResponseEntity<String> addDocument(
             @RequestParam("file") MultipartFile file,
@@ -128,8 +142,27 @@ public class DocumentController {
         return ResponseEntity.ok("Document added successfully.");
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteDocument(@PathVariable Integer id) {
+        documentService.deleteDocument(id);
+        return ResponseEntity.noContent().build();
+    }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<DocumentDto>> getAllDocuments() {
+        List<Document> documents = documentService.getAllDocuments();
+        List<DocumentDto> documentDtos = documents.stream()
+                .map(document -> modelMapper.map(document, DocumentDto.class))
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(documentDtos);
+    }
 
+    @GetMapping("/{documentId}")
+    public ResponseEntity<Document> getDocumentById(@PathVariable Integer documentId) {
+        Document document = documentService.getDocumentById(documentId);
+        return ResponseEntity.ok(document);
+    }
+}
     //    @PostMapping
 //    public ResponseEntity<String> addDocument(
 //            @RequestParam("file") MultipartFile file,
@@ -169,24 +202,7 @@ public class DocumentController {
 //            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add document.");
 //        }
 //    }
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteDocument(@PathVariable Integer id) {
-        documentService.deleteDocument(id);
-        return ResponseEntity.noContent().build();
-    }
-    @GetMapping("/get")
-    public ResponseEntity<List<DocumentDto>> getAllDocuments() {
-        List<Document> documents = documentService.getAllDocuments();
-        List<DocumentDto> documentDtos = documents.stream()
-                .map(document -> modelMapper.map(document, DocumentDto.class))
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(documentDtos);
-    }
-    @GetMapping("/{documentId}")
-    public ResponseEntity<Document> getDocumentById(@PathVariable Integer documentId) {
-        Document document = documentService.getDocumentById(documentId);
-        return ResponseEntity.ok(document);
-    }
+
 
 
 
@@ -198,4 +214,3 @@ public class DocumentController {
 //                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileResource.getFilename() + "\"")
 //                .body(fileResource);
 //    }
-}

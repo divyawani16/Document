@@ -17,17 +17,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.server.ResponseStatusException;
+
 
 @Service
 public class DocumentService {
@@ -49,9 +54,58 @@ public class DocumentService {
         this.documentRepository = documentRepository;
         this.modelMapper = modelMapper;
         this.awsS3Service = awsS3Service;
+    }
+    public ResponseEntity<Resource> downloadDocument(Integer documentId) throws IOException {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document not found"));
 
+        AmazonS3 s3Client = awsS3Service.getAmazonS3Client();
+        S3Object s3Object = s3Client.getObject("documentsmanagement", document.getFilePath());
+        S3ObjectInputStream inputStream = s3Object.getObjectContent();
+        InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
+
+        // Extract the filename from the file path
+        String filename = extractFilename(document.getFilePath());
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentDispositionFormData("attachment", filename);
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+
+        return ResponseEntity.ok()
+                .headers(headers)
+                .body(inputStreamResource);
     }
 
+    private String extractFilename(String filePath) {
+        // Use string manipulation to extract the filename
+        String[] pathParts = filePath.split("/");
+        return pathParts[pathParts.length - 1];
+    }
+
+
+
+
+//    private String getFilenameFromPath(String filePath) {
+//        Path path = Paths.get(filePath);
+//        return path.getFileName().toString();
+//    }
+
+//    public Resource downloadDocument(Integer documentId) throws IOException {
+//        Document document = documentRepository.findById(documentId)
+//                .orElseThrow(() -> new NotFoundException("Document not found"));
+//
+//        AmazonS3 s3Client = awsS3Service.getAmazonS3Client();
+//        System.out.println(document.getFilePath());
+//        S3Object s3Object = s3Client.getObject("documentsmanagement", document.getFilePath());
+//
+//        S3ObjectInputStream inputStream = s3Object.getObjectContent();
+//        InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
+//
+//        HttpHeaders headers = new HttpHeaders();
+//        headers.setContentDispositionFormData("attachment", document.getFilePath());
+//        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+//        return inputStreamResource;
+//    }
 
     public List<Document> getAllDocuments() {
         return documentRepository.findAll();
@@ -75,16 +129,10 @@ public class DocumentService {
         return documentDetailsDtos;
     }
     public String saveFile(MultipartFile file) throws IOException {
-        // Upload file to AWS S3 and get the public URL
         String publicURL = awsS3Service.uploadFile(file);
 
         return publicURL;
     }
-
-    //    public Document createDocument(Document document) {
-//        document.incrementDocumentVersion();
-//        return documentRepository.save(document);
-//    }
     public List<Document> searchDocumentsByPropertyName(String propertyName) {
         return documentRepository.findByPropertyPropertyName(propertyName);
     }
