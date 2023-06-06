@@ -5,6 +5,7 @@ import com.document_management.Service.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
@@ -15,13 +16,19 @@ import java.util.Optional;
 @RequestMapping("/api/users")
 @CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
-
         private UsersService usersService;
-
         @Autowired
         public UsersController(UsersService usersService) {
                 this.usersService = usersService;
         }
+
+        @GetMapping("/")
+        public ResponseEntity<List<UserDto>> getAllUsers() {
+                List<UserDto> userDtos = usersService.getAllUsers();
+                return ResponseEntity.ok(userDtos);
+        }
+//        @GetMapping("/{userId}")
+
 
 //        @GetMapping("/{username}")
 //        public Optional<Users> findByusername(@PathVariable String username)
@@ -29,16 +36,17 @@ public class UsersController {
 //                return this.usersService.findByusername(username);
 //        }
 
-        @GetMapping("/")
-        public ResponseEntity<List<UserDto>> getAllUsers() {
-                List<UserDto> userDtos = usersService.getAllUsers();
-                for (UserDto userDto : userDtos) {
-                        userDto.setPassword("*****");
-                }
+//         @GetMapping("/")
+//         public ResponseEntity<List<UserDto>> getAllUsers() {
+//                 List<UserDto> userDtos = usersService.getAllUsers();
+//                 for (UserDto userDto : userDtos) {
+//                         userDto.setPassword("*****");
+//                 }
 
-                return ResponseEntity.ok(userDtos);
-        }
+//                 return ResponseEntity.ok(userDtos);
+//         }
 ////        @GetMapping("/{userId}")
+
 //        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
 //                try {
 //                        UserDto userDto = usersService.getUserById(userId);
@@ -48,12 +56,11 @@ public class UsersController {
 //                }
 //        }
 
-        @PostMapping("/")
+        @PostMapping("/createUser")
         public ResponseEntity<UserDto> createUser(@RequestBody @Valid UserDto userDto) {
                 UserDto createdUserDto = usersService.createUser(userDto);
                 return ResponseEntity.status(HttpStatus.CREATED).body(createdUserDto);
         }
-
         @PutMapping("/{userId}")
         public ResponseEntity<UserDto> updateUser(@PathVariable Integer userId, @RequestBody @Valid UserDto userDto) {
                 try {
@@ -63,7 +70,6 @@ public class UsersController {
                         return ResponseEntity.notFound().build();
                 }
         }
-
         @DeleteMapping("/{userId}")
         public ResponseEntity<Void> deleteUser(@PathVariable Integer userId) {
                 try {
@@ -72,6 +78,45 @@ public class UsersController {
                 } catch (EntityNotFoundException e) {
                         return ResponseEntity.notFound().build();
                 }
+        }
+        @GetMapping({"/forAdmin"})
+        @PreAuthorize("hasRole('Admin')")
+        public String forAdmin() {
+                try {
+                        return  "This url is only accessible to admin";
+
+
+                }
+                catch (Exception e){
+throw new RuntimeException("Invalid Token");
+                }
+        }
+        @GetMapping({"/forPropertyOwner"})
+        @PreAuthorize("hasRole('PropertyOwner')")
+        public String forPropertyOwner()
+        {
+                try {
+                        return  "This url is only accessible to PropertyOwner";
+                }
+                catch (Exception ex){
+                        throw new RuntimeException("Invalid token");
+                }
+        }
+        @GetMapping({"/forTenant"})
+        @PreAuthorize("hasRole('Tenant')")
+        public String forTenant()
+        {
+                try {
+                        return  "This url is only accessible to Tenant";
+                }
+                catch (Exception ex){
+                        throw new RuntimeException("Invalid token");
+                }
+        }
+        @GetMapping("/{username}")
+        public Optional<Users> findByUsername(@PathVariable String username)
+        {
+                return this.usersService.findByUsername(username);
         }
 }
 

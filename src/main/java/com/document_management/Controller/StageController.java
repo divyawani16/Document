@@ -26,10 +26,21 @@ public class StageController {
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStageDto);
     }
 
-    @PutMapping("/{stageId}")
-    public ResponseEntity<StageDto> updateStage(@PathVariable int stageId, @RequestBody StageDto stageDto) {
-        StageDto updatedStageDto = stageService.updateStage(stageId, stageDto);
-        return ResponseEntity.ok(updatedStageDto);
+@GetMapping("/abc")
+public String hi(){
+        return "abc";
+}
+    @PostMapping("/")
+    public ResponseEntity<Stage> saveStage(@RequestBody Stage stage) {
+        Stage savedStage = stageService.saveStage(stage);
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedStage);
+
+
+//     @PutMapping("/{stageId}")
+//     public ResponseEntity<StageDto> updateStage(@PathVariable int stageId, @RequestBody StageDto stageDto) {
+//         StageDto updatedStageDto = stageService.updateStage(stageId, stageDto);
+//         return ResponseEntity.ok(updatedStageDto);
+
     }
 
     @DeleteMapping("/{stageId}")
