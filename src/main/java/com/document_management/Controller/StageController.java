@@ -1,6 +1,7 @@
 package com.document_management.Controller;
 
 import com.document_management.DTO.StageDto;
+import com.document_management.Entity.Stage;
 import com.document_management.Service.StageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
