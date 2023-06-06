@@ -28,7 +28,7 @@ public class StageService {
         Stage stage = stageRepository.findById(stageId)
                 .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
         stage.setStageName(stageDto.getStageName());
-        stage.setApproved(stageDto.isApproved()); // Set the approval status
+        stage.setApproved(stageDto.isApproved());
         Stage savedStage = stageRepository.save(stage);
         return mapStageToStageDto(savedStage);
     }

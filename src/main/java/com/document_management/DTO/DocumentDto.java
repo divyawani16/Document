@@ -13,9 +13,7 @@ public class DocumentDto {
     private Integer propertyId;
     private Integer docTypeId;
     private Integer docMimeTypeId;
-
     private boolean approved;
-
     public DocumentDto(Integer documentId, String documentName, boolean approved) {
         this.documentId = documentId;
         this.documentName = documentName;

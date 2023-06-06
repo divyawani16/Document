@@ -41,20 +41,7 @@ public class Document {
     private DocMimeType docMimeType;
     @OneToOne
     private DocumentVersion documentVersion;
-
     private boolean approved;
-//@OneToOne(mappedBy = "document", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//private DocumentVersion documentVersion;
 
-//
-//    public void setDocumentVersion(DocumentVersion documentVersion) {
-//        this.documentVersion = documentVersion;
-//        documentVersion.setDocument(this);
-//    }
-
-//    public void incrementDocumentVersion() {
-//        if (documentVersion != null) {
-//            documentVersion.setVersionNumber(documentVersion.getVersionNumber() + 1);
-//        }
     }
 

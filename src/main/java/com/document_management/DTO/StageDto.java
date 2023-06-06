@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 public class StageDto {
     private int stageId;
     private String stageName;
-
     private boolean approved;
 }
