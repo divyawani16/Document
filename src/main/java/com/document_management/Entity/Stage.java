@@ -20,4 +20,6 @@ public class Stage {
     @Column(name = "StageName")
     private String stageName;
 
+    private boolean approved;
+
 }

@@ -20,7 +20,7 @@ import org.springframework.core.io.Resource;
 @RestController
 @RequestMapping("api/documents")
 
-    public class DocumentController {
+public class DocumentController {
     private final DocumentService documentService;
     private UsersRepository usersRepository;
     private PropertyRepository propertyRepository;
@@ -85,22 +85,22 @@ import org.springframework.core.io.Resource;
             if (docMimeType != null) {
                 details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
             }
-                documentDetails.add(details);
+            documentDetails.add(details);
         }
         return documentDetails;
     }
 
-//    @GetMapping("/documents/propertyname")
+    //    @GetMapping("/documents/propertyname")
 //    @CrossOrigin(origins = "http://localhost:4200")
 //    public List<Document> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
 //        return documentRepository.findByPropertyPropertyName(propertyName);
 //    }
-@GetMapping("/documents/propertyname")
-@CrossOrigin(origins = "http://localhost:4200")
-public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
-    List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
-    return convertToDocumentDetailsDto(documents);
-}
+    @GetMapping("/documents/propertyname")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
+        List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
+        return convertToDocumentDetailsDto(documents);
+    }
 
     private List<DocumentDetailsDto> convertToDocumentDetailsDto(List<Document> documents) {
         List<DocumentDetailsDto> dtos = new ArrayList<>();
@@ -228,4 +228,12 @@ public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("pro
 
         return ResponseEntity.ok("Document updated successfully.");
     }
+
+    @PutMapping("/{documentId}/approval")
+    public ResponseEntity<DocumentDto> updateDocumentApproval(@PathVariable int documentId,
+                                                              @RequestParam boolean approved) {
+        DocumentDto updatedDocumentDto = documentService.updateDocumentApproval(documentId, approved);
+        return ResponseEntity.ok(updatedDocumentDto);
+    }
+
 }

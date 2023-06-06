@@ -31,6 +31,7 @@ import java.util.Optional;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.server.ResponseStatusException;
+import javax.persistence.EntityNotFoundException;
 
 
 @Service
@@ -42,8 +43,8 @@ public class DocumentService {
     @Autowired
     private DocMimeTypeRepository docMimeTypeRepository;
     private final DocumentRepository documentRepository;
-@Autowired
-private UsersRepository usersRepository;
+    @Autowired
+    private UsersRepository usersRepository;
     @Autowired
     private final ModelMapper modelMapper;
     private final AWSS3Service awsS3Service;
@@ -147,21 +148,21 @@ private UsersRepository usersRepository;
 
         return publicURL;
     }
-//    public List<Document> searchDocumentsByPropertyName(String propertyName) {
+    //    public List<Document> searchDocumentsByPropertyName(String propertyName) {
 //        return documentRepository.findByPropertyPropertyName(propertyName);
 //    }
-public List<Document> searchDocumentsByPropertyName(String propertyName) {
-    List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
-    List<Document> smartworksDocuments = new ArrayList<>();
+    public List<Document> searchDocumentsByPropertyName(String propertyName) {
+        List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
+        List<Document> smartworksDocuments = new ArrayList<>();
 
-    for (Document document : documents) {
-        if (document.getProperty().getPropertyName().equals("Smartworks")) {
-            smartworksDocuments.add(document);
+        for (Document document : documents) {
+            if (document.getProperty().getPropertyName().equals("Smartworks")) {
+                smartworksDocuments.add(document);
+            }
         }
-    }
 
-    return smartworksDocuments;
-}
+        return smartworksDocuments;
+    }
 
     public List<Document> searchDocumentsByUsername(String username) {
         return documentRepository.findByUserUsername(username);
@@ -214,5 +215,22 @@ public List<Document> searchDocumentsByPropertyName(String propertyName) {
     public Optional<DocMimeType> getDocMimeTypeByName(String docMimeTypeName) {
         return docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
     }
+    public DocumentDto updateDocumentApproval(int documentId, boolean approved) {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new EntityNotFoundException("Document not found"));
+
+        document.setApproved(approved);
+        Document savedDocument = documentRepository.save(document);
+        return mapDocumentToDocumentDto(savedDocument);
+    }
+
+    // Other existing methods...
+
+    private DocumentDto mapDocumentToDocumentDto(Document document) {
+        return new DocumentDto(document.getDocumentId(), document.getDocumentName(), document.isApproved());
+    }
+
+
+
 
 }
