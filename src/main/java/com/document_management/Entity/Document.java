@@ -34,13 +34,13 @@ public class Document {
         this.filePath = filePath;
     }
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "document_file_id")
+   // @JoinColumn(name = "document_file_id")
     private DocumentFile documentFile;
     @ManyToOne
     @JoinColumn(name = "docMimeTypeId", referencedColumnName = "docMimeTypeId")
     private DocMimeType docMimeType;
-    @OneToOne
-    private DocumentVersion documentVersion;
+//    @OneToOne
+//    private DocumentVersion documentVersion;
     private boolean approved;
 
     }
