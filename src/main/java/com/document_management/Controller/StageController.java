@@ -1,31 +1,31 @@
 package com.document_management.Controller;
-import com.document_management.Entity.Stage;
+
+import com.document_management.DTO.StageDto;
 import com.document_management.Service.StageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/stages")
 public class StageController {
 
-    private final StageService stageService;
-    public StageController(StageService stageService) {
-        this.stageService = stageService;
+    @Autowired
+    private StageService stageService;
+
+    @GetMapping("/{stageId}")
+    public ResponseEntity<StageDto> getStageById(@PathVariable int stageId) {
+        StageDto stageDto = stageService.getStageById(stageId);
+        return ResponseEntity.ok(stageDto);
     }
 
-    @GetMapping("/")
-    public ResponseEntity<List<Stage>> getAllStages() {
-        List<Stage> stages = stageService.getAllStages();
-        return ResponseEntity.ok(stages);
+    @PostMapping
+    public ResponseEntity<StageDto> createStage(@RequestBody StageDto stageDto) {
+        StageDto createdStageDto = stageService.createStage(stageDto);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdStageDto);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Stage> getStageById(@PathVariable Long id) {
-        Stage stage = stageService.getStageById(id);
-        return ResponseEntity.ok(stage);
-    }
 @GetMapping("/abc")
 public String hi(){
         return "abc";
@@ -34,11 +34,18 @@ public String hi(){
     public ResponseEntity<Stage> saveStage(@RequestBody Stage stage) {
         Stage savedStage = stageService.saveStage(stage);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedStage);
+
+
+//     @PutMapping("/{stageId}")
+//     public ResponseEntity<StageDto> updateStage(@PathVariable int stageId, @RequestBody StageDto stageDto) {
+//         StageDto updatedStageDto = stageService.updateStage(stageId, stageDto);
+//         return ResponseEntity.ok(updatedStageDto);
+
     }
 
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteStageById(@PathVariable Long id) {
-//        stageService.deleteStageById(id);
-//        return ResponseEntity.noContent().build();
-//    }
+    @DeleteMapping("/{stageId}")
+    public ResponseEntity<Void> deleteStage(@PathVariable int stageId) {
+        stageService.deleteStage(stageId);
+        return ResponseEntity.noContent().build();
+    }
 }

@@ -55,6 +55,7 @@ public class UsersService {
         return usersRepository. findByUsername(username);
     }
 
+
     public void deleteUser(Integer userId) {
         usersRepository.deleteById(userId);
     }
@@ -69,3 +70,15 @@ public class UsersService {
         return passwordEncoder.encode(password);
     }
 }
+
+
+
+//    public Optional<Users> findByusername(String username) {
+//        return usersRepository. findByusername(username);
+//    }
+
+//     public void deleteUser(Integer userId) {
+//         usersRepository.deleteById(userId);
+//     }
+// }
+

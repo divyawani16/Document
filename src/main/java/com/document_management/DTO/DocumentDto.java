@@ -1,19 +1,23 @@
 package com.document_management.DTO;
-import com.document_management.Entity.DocMimeType;
-import com.document_management.Entity.DocType;
-import com.document_management.Entity.Property;
-import com.document_management.Entity.Users;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class DocumentDto {
     private Integer documentId;
     private String documentName;
-    private Users user;
-    private Property property;
-    private DocType docType;
-    private DocMimeType docMimeType;
-
-
-
+    private Integer userId;
+    private Integer propertyId;
+    private Integer docTypeId;
+    private Integer docMimeTypeId;
+    private boolean approved;
+    public DocumentDto(Integer documentId, String documentName, boolean approved) {
+        this.documentId = documentId;
+        this.documentName = documentName;
+        this.approved = approved;
+    }
 }
+

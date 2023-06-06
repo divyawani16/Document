@@ -1,41 +1,70 @@
 package com.document_management.Controller;
-
-        import com.document_management.Entity.DocumentAudit;
-        import com.document_management.Service.DocumentAuditService;
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.http.HttpStatus;
-        import org.springframework.http.ResponseEntity;
-        import org.springframework.web.bind.annotation.*;
-        import java.util.List;
-
+import com.document_management.DTO.DocumentAuditDto;
+import com.document_management.Entity.DocumentAudit;
+import com.document_management.Entity.DocumentVersion;
+import com.document_management.Entity.Stage;
+import com.document_management.Repository.DocumentAuditRepository;
+import com.document_management.Service.DocumentAuditService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+import java.util.stream.Collectors;
 @RestController
-@RequestMapping("/api/document-audits")
-public class
-DocumentAuditController {
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/document-audit")
+public class DocumentAuditController {
 
     @Autowired
-    private DocumentAuditService documentAuditService;
+    private DocumentAuditRepository documentAuditRepository;
+    private final DocumentAuditService documentAuditService;
+    private final ModelMapper modelMapper;
+
+    @Autowired
+    public DocumentAuditController(DocumentAuditService documentAuditService, ModelMapper modelMapper) {
+        this.documentAuditService = documentAuditService;
+        this.modelMapper = modelMapper;
+    }
+
+    @PostMapping("/audit")
+    public ResponseEntity<DocumentAuditDto> createDocumentAudit(@RequestBody DocumentAuditDto documentAuditDto) {
+        DocumentAudit documentAudit = convertToEntity(documentAuditDto);
+        documentAudit = documentAuditService.createDocumentAudit(documentAudit);
+        DocumentAuditDto createdDocumentAuditDto = convertToDto(documentAudit);
+        return new ResponseEntity<>(createdDocumentAuditDto, HttpStatus.CREATED);
+    }
+
 
     @GetMapping("/")
-    public ResponseEntity<List<DocumentAudit>> getAllDocumentAudits() {
-        List<DocumentAudit> documentAudits = documentAuditService.getAllDocumentAudits();
-        return ResponseEntity.ok(documentAudits);
+    public List<DocumentAuditDto> getAllDocAudit() {
+        List<DocumentAudit> documentAudits = documentAuditRepository.findAll();
+        return documentAudits.stream()
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<DocumentAudit> getDocumentAuditById(@PathVariable Long id) {
-        DocumentAudit documentAudit = documentAuditService.getDocumentAuditById(id);
-        return ResponseEntity.ok(documentAudit);
+
+    private DocumentAuditDto convertToDto(DocumentAudit documentAudit) {
+        DocumentAuditDto documentAuditDto = modelMapper.map(documentAudit, DocumentAuditDto.class);
+        Stage stage = documentAudit.getStage();
+        if (stage != null) {
+            documentAuditDto.setStageName(stage.getStageName());
+        } else {
+            documentAuditDto.setStageName("Unknown");
+        }
+        documentAuditDto.setDocumentName(documentAudit.getDocumentVersion().getDocumentId().getDocumentName());
+        return documentAuditDto;
     }
-    @PostMapping("/")
-    public ResponseEntity<DocumentAudit> saveDocumentAudit(@RequestBody DocumentAudit documentAudit) {
-        DocumentAudit savedDocumentAudit = documentAuditService.saveDocumentAudit(documentAudit);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedDocumentAudit);
+
+    private DocumentAudit convertToEntity(DocumentAuditDto documentAuditDto) {
+        DocumentAudit documentAudit = modelMapper.map(documentAuditDto, DocumentAudit.class);
+        DocumentVersion documentVersion = new DocumentVersion();
+        documentVersion.setDocumentVersionId(documentAuditDto.getDocumentVersionId());
+        documentAudit.setDocumentVersion(documentVersion);
+        return documentAudit;
     }
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteDocumentAuditById(@PathVariable Long id) {
-//        documentAuditService.deleteDocumentAuditById(id);
-//        return ResponseEntity.noContent().build();
-//    }
+
 
 }
 

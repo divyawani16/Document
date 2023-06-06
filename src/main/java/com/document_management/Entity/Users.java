@@ -1,5 +1,4 @@
 package com.document_management.Entity;
-//import com.document_management.CustomValidation.PhoneNoValidation;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,6 +34,7 @@ public class Users {
 
     @Column(name = "EmailId")
     private String emailId;
+
 
     public Integer getUserId() {
         return userId;
@@ -84,6 +84,7 @@ public class Users {
         this.phoneNumber = phoneNumber;
     }
 
+
     public String getEmailId() {
         return emailId;
     }
@@ -116,6 +117,10 @@ public class Users {
 //    }public boolean isEnabled() {
 //        return this.enabled;
 //    }
+
+//        @Column(name = "EmailId")
+//    private String emailId;
+
 
 
 

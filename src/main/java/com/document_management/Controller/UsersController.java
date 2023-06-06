@@ -11,20 +11,42 @@ import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsersController {
         private UsersService usersService;
         @Autowired
         public UsersController(UsersService usersService) {
                 this.usersService = usersService;
         }
+
         @GetMapping("/")
         public ResponseEntity<List<UserDto>> getAllUsers() {
                 List<UserDto> userDtos = usersService.getAllUsers();
                 return ResponseEntity.ok(userDtos);
         }
 //        @GetMapping("/{userId}")
+
+
+//        @GetMapping("/{username}")
+//        public Optional<Users> findByusername(@PathVariable String username)
+//        {
+//                return this.usersService.findByusername(username);
+//        }
+
+//         @GetMapping("/")
+//         public ResponseEntity<List<UserDto>> getAllUsers() {
+//                 List<UserDto> userDtos = usersService.getAllUsers();
+//                 for (UserDto userDto : userDtos) {
+//                         userDto.setPassword("*****");
+//                 }
+
+//                 return ResponseEntity.ok(userDtos);
+//         }
+////        @GetMapping("/{userId}")
+
 //        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
 //                try {
 //                        UserDto userDto = usersService.getUserById(userId);
@@ -63,6 +85,7 @@ public class UsersController {
                 try {
                         return  "This url is only accessible to admin";
 
+
                 }
                 catch (Exception e){
 throw new RuntimeException("Invalid Token");
@@ -96,6 +119,7 @@ throw new RuntimeException("Invalid Token");
                 return this.usersService.findByUsername(username);
         }
 }
+
 
 
 

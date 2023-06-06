@@ -1,14 +1,29 @@
 package com.document_management.DTO;
-
-import com.document_management.Entity.Stage;
+import io.swagger.models.auth.In;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DocumentAuditDto {
-    private Long documentAuditId;
-    private Stage stage;
+
+    private Integer documentAuditId;
+    private String stageName;
+    private String documentName;
+
     private String finishedBy;
-    private Date finishedOn;
+
+    private LocalDateTime finishedOn;
+
+    private Integer documentVersionId;
+
 }
+
+

@@ -1,25 +1,25 @@
 package com.document_management.Entity;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "Stage")
 @Data
-@NoArgsConstructor
+@Entity
 @AllArgsConstructor
-public class Stage {
+@NoArgsConstructor
+
+public class googlelogin {
 
     @Id
+    @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="stageId")
-    private Integer stageId;
+    private  Integer id;
+    @Column(name = "emailId")
+    private String emailId;
 
-    @Column(name = "StageName")
-    private String stageName;
-
-    private boolean approved;
-
+    @Column(name="Role")
+    private String Role;
 }

@@ -1,35 +1,41 @@
 package com.document_management.Entity;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-
+import lombok.*;
 import javax.persistence.*;
-import java.util.Date;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+import java.time.LocalDateTime;
 @Entity
 @Table(name = "DocumentAudit")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DocumentAudit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long documentAuditId;
+    @Column(name = "DocumentAuditId")
+    private Integer documentAuditId;
 
-    @ManyToOne
-    @JoinColumn(name = "StageId", referencedColumnName = "StageId")
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "StageId")
     private Stage stage;
 
-    @Column(name="finishedBy")
+    @Column(name = "FinishedBy")
     private String finishedBy;
 
-    @Column(name="finishedOn")
-    private Date finishedOn;
+    @Column(name = "FinishedOn")
+    private LocalDateTime finishedOn;
 
-    @ManyToOne
-    @JoinColumn(name = "documentVersionId", referencedColumnName = "DocumentVersionId")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "DocumentVersionId")
     private DocumentVersion documentVersion;
+
+    public String getStageName() {
+        if (stage != null) {
+            return stage.getStageName();
+        }
+        return null;
+    }
 }
+
+
+

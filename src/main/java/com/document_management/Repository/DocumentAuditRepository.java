@@ -6,6 +6,6 @@ package com.document_management.Repository;
 
 
 @Repository
-public interface DocumentAuditRepository extends JpaRepository<DocumentAudit, Long> {
+public interface DocumentAuditRepository extends JpaRepository<DocumentAudit, Integer> {
 
 }

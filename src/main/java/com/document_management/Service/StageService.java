@@ -1,35 +1,49 @@
 package com.document_management.Service;
+import com.document_management.DTO.StageDto;
 import com.document_management.Entity.Stage;
 import com.document_management.Repository.StageRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.persistence.EntityNotFoundException;
-import java.util.List;
 
 @Service
 public class StageService {
 
-    private final StageRepository stageRepository;
+    @Autowired
+    private StageRepository stageRepository;
 
-    public StageService(StageRepository stageRepository) {
-        this.stageRepository = stageRepository;
+    public StageDto getStageById(int stageId) {
+        Stage stage = stageRepository.findById(stageId)
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
+        return mapStageToStageDto(stage);
     }
 
-    public List<Stage> getAllStages() {
-        return stageRepository.findAll();
+    public StageDto createStage(StageDto stageDto) {
+        Stage stage = mapStageDtoToStage(stageDto);
+        Stage savedStage = stageRepository.save(stage);
+        return mapStageToStageDto(savedStage);
     }
 
-    public Stage getStageById(Long id) {
-        return stageRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Stage with id " + id + " not found"));
+    public StageDto updateStage(int stageId, StageDto stageDto) {
+        Stage stage = stageRepository.findById(stageId)
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
+        stage.setStageName(stageDto.getStageName());
+        stage.setApproved(stageDto.isApproved());
+        Stage savedStage = stageRepository.save(stage);
+        return mapStageToStageDto(savedStage);
     }
 
-    public Stage saveStage(Stage stage) {
-        return stageRepository.save(stage);
+    public void deleteStage(int stageId) {
+        Stage stage = stageRepository.findById(stageId)
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
+        stageRepository.delete(stage);
     }
 
-//    public void deleteStageById(Long id) {
-//
-//        stageRepository.deleteById(id);
-//    }
+    private StageDto mapStageToStageDto(Stage stage) {
+        return new StageDto(stage.getStageId(), stage.getStageName(), stage.isApproved());
+    }
 
+    private Stage mapStageDtoToStage(StageDto stageDto) {
+        return new Stage(stageDto.getStageId(), stageDto.getStageName(), stageDto.isApproved());
+    }
 }

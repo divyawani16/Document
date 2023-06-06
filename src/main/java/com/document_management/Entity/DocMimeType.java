@@ -16,6 +16,6 @@ public class DocMimeType {
     @Column(name="docMimeTypeId")
     private Integer docMimeTypeId;
 
-    @Column(name = "docMimeName")
-    private String name;
+    @Column(name = "docMimeTypeName")
+    private String docMimeTypeName;
 }

@@ -1,12 +1,10 @@
 package com.document_management.Service;
-
 import com.document_management.DTO.DocTypeDto;
 import com.document_management.Entity.DocType;
 import com.document_management.Repository.DocTypeRepository;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.stream.Collectors;
