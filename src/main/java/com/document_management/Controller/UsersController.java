@@ -38,6 +38,12 @@ public class UsersController {
 
                 return ResponseEntity.ok(userDtos);
         }
+
+        @GetMapping("/usernames")
+        public ResponseEntity<List<String>> getUsernames() {
+                List<String> usernames = usersService.getUsernames();
+                return ResponseEntity.ok(usernames);
+        }
 ////        @GetMapping("/{userId}")
 //        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
 //                try {
