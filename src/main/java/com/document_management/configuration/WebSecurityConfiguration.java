@@ -38,7 +38,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.cors();
         httpSecurity.csrf().disable()
-                .authorizeRequests().antMatchers("/authenticate","/api/users/createUser","/api/roles/","/api/users/forAdmin","/api/users/forUser","/api/users/forPropertyOwner","/api/users/forTenant").permitAll()
+                .authorizeRequests().antMatchers("/authenticate","/api/users/createUser","/api/roles/","/api/users/forAdmin","/document-audit/","/api/users/forUser","/api/users/forPropertyOwner","/api/users/forTenant","/api/users/","/api/documents/{documentId}/download","/api/documents/count","/api/documents/documentsdetails","/api/documents","/api/documents/{id}","/api/documents/{documentId}","/api/documents/documents/username","/api/documents/documents/propertyname","/api/users/usernames","/doc-mime-types/{docMimeTypeId}","/doc-mime-types","/api/doctypes","/api/doctypes/{id}","/api/properties/","/api/properties/count","/api/properties/{id}","/api/properties/post","/api/properties/{id}","/api/properties/get","/api/properties/propertyname","/api/documents/count","/api/users/count").permitAll()
                 .antMatchers(HttpHeaders.ALLOW).permitAll()
                 .anyRequest().authenticated()
                 .and()

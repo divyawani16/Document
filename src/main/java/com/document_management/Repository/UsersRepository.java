@@ -14,9 +14,9 @@ public interface UsersRepository extends JpaRepository<Users, Integer> {
         List<String> getRole(Integer id);
         Optional<Users> findByUsername(String username);
         @Query(value = "select r.name \n" +
-                "from doc.users u\n" +
-                "inner join doc.user_property up on u.user_id = up.user_id\n" +
-                "inner join doc.roles r on up.role_id = r.role_id\n" +
+                "from documentmanagement.users u\n" +
+                "inner join documentmanagement.user_property up on u.user_id = up.user_id\n" +
+                "inner join documentmanagement.roles r on up.role_id = r.role_id\n" +
                 "where Username = ?", nativeQuery = true)
         List<String> getUsrRoleByUserName(String userName);
 

@@ -88,11 +88,11 @@ public class UsersController {
 
                 }
                 catch (Exception e){
-throw new RuntimeException("Invalid Token");
+                        throw new RuntimeException("Invalid Token");
                 }
         }
         @GetMapping({"/forPropertyOwner"})
-        @PreAuthorize("hasRole('PropertyOwner')")
+        @PreAuthorize("hasRole('owner')")
         public String forPropertyOwner()
         {
                 try {
@@ -103,7 +103,7 @@ throw new RuntimeException("Invalid Token");
                 }
         }
         @GetMapping({"/forTenant"})
-        @PreAuthorize("hasRole('Tenant')")
+        @PreAuthorize("hasRole('tenant')")
         public String forTenant()
         {
                 try {
@@ -117,6 +117,11 @@ throw new RuntimeException("Invalid Token");
         public Optional<Users> findByUsername(@PathVariable String username)
         {
                 return this.usersService.findByUsername(username);
+        }
+        @GetMapping("/usernames")
+        public ResponseEntity<List<String>> getUsernames() {
+                List<String> usernames = usersService.getUsernames();
+                return ResponseEntity.ok(usernames);
         }
 }
 

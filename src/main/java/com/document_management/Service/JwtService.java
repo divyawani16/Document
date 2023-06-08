@@ -47,7 +47,7 @@ public class JwtService implements UserDetailsService {
         UserDetails userDetails = loadUserByUsername(username);//here you can get userid
         //implement logic to get rolid from roll(get data from request) op:rollid
         //find data in userproperty table by (userid,rollid)
-
+        System.out.println("username"+username);
         List<String> userRoles =  usersRepository.getUsrRoleByUserName(username);
 
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
