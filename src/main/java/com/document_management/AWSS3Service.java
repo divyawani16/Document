@@ -28,7 +28,6 @@ public class AWSS3Service implements FileService{
         System.out.println("File name: "+filename);
         String key = filename + "." +filenameExtension;
         ObjectMetadata metaData = new ObjectMetadata();
-
         metaData.setContentLength(file.getSize());
         metaData.setContentType(file.getContentType());
         try {
