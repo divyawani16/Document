@@ -1,5 +1,4 @@
 package com.document_management.Service;
-//import com.amazonaws.services.apigateway.model.NotFoundException;
 import com.amazonaws.services.kms.model.NotFoundException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.S3Object;
@@ -17,18 +16,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.server.ResponseStatusException;
 import javax.persistence.EntityNotFoundException;
@@ -60,13 +52,14 @@ public class DocumentService {
         Document document = documentRepository.findById(documentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document not found"));
 
+        String[] parts = document.getFilePath().split("/");
+        String filename = parts[parts.length - 1];
+        System.out.println(filename);
+
         AmazonS3 s3Client = awsS3Service.getAmazonS3Client();
-        S3Object s3Object = s3Client.getObject("documentsmanagement", document.getFilePath());
+        S3Object s3Object = s3Client.getObject("documentsmanagement", filename);
         S3ObjectInputStream inputStream = s3Object.getObjectContent();
         InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
-
-
-        String filename = extractFilename(document.getFilePath());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData("attachment", filename);
@@ -148,9 +141,6 @@ public class DocumentService {
 
         return publicURL;
     }
-    //    public List<Document> searchDocumentsByPropertyName(String propertyName) {
-//        return documentRepository.findByPropertyPropertyName(propertyName);
-//    }
     public List<Document> searchDocumentsByPropertyName(String propertyName) {
         List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
         List<Document> smartworksDocuments = new ArrayList<>();
@@ -160,7 +150,6 @@ public class DocumentService {
                 smartworksDocuments.add(document);
             }
         }
-
         return smartworksDocuments;
     }
 
@@ -223,8 +212,6 @@ public class DocumentService {
         Document savedDocument = documentRepository.save(document);
         return mapDocumentToDocumentDto(savedDocument);
     }
-
-    // Other existing methods...
 
     private DocumentDto mapDocumentToDocumentDto(Document document) {
         return new DocumentDto(document.getDocumentId(), document.getDocumentName(), document.isApproved());

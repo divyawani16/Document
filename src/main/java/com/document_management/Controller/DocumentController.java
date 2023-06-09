@@ -59,7 +59,6 @@ public class DocumentController {
         return documentService.downloadDocument(documentId);
     }
 
-
     @GetMapping("/documentsdetails")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
@@ -90,11 +89,6 @@ public class DocumentController {
         return documentDetails;
     }
 
-    //    @GetMapping("/documents/propertyname")
-//    @CrossOrigin(origins = "http://localhost:4200")
-//    public List<Document> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
-//        return documentRepository.findByPropertyPropertyName(propertyName);
-//    }
     @GetMapping("/documents/propertyname")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
@@ -116,9 +110,6 @@ public class DocumentController {
         }
         return dtos;
     }
-
-
-
     @GetMapping("/documents/username")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
