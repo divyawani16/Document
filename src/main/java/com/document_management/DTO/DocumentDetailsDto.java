@@ -2,6 +2,9 @@ package com.document_management.DTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -49,16 +52,8 @@ public class DocumentDetailsDto {
         this.docTypeName = docTypeName;
     }
 
-    public String getDocMimeTypeName() {
-        return docMimeTypeName;
-    }
-
-    public void setDocMimeTypeName(String docMimeTypeName) {
-        this.docMimeTypeName = docMimeTypeName;
-    }
-
     private String userName;
     private String PropertyName;
     private String docTypeName;
-    private String docMimeTypeName;
+    private LocalDateTime dateTime;
 }

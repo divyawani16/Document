@@ -12,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,13 +29,13 @@ public class DocumentController {
     private ModelMapper modelMapper;
     private final DocumentRepository documentRepository;
     private DocTypeRepository docTypeRepository;
-    private DocMimeTypeRepository docMimeTypeRepository;
+
     private final AWSS3Service awsS3Service;
 
     @Autowired
     public DocumentController(DocumentService documentService, UsersRepository usersRepository, ModelMapper modelMapper,
                               DocumentRepository documentRepository, PropertyRepository propertyRepository,
-                              DocMimeTypeRepository docMimeTypeRepository, DocTypeRepository docTypeRepository,
+                          DocTypeRepository docTypeRepository,
                               AWSS3Service awsS3Service) {
         this.documentService = documentService;
         this.usersRepository = usersRepository;
@@ -42,7 +43,6 @@ public class DocumentController {
         this.documentRepository = documentRepository;
         this.propertyRepository = propertyRepository;
         this.docTypeRepository = docTypeRepository;
-        this.docMimeTypeRepository = docMimeTypeRepository;
         this.awsS3Service = awsS3Service;
     }
 
@@ -61,7 +61,7 @@ public class DocumentController {
     }
 
     @GetMapping("/documentsdetails")
-    @PreAuthorize("hasRole('Admin')")
+//    @PreAuthorize("hasRole('Admin')")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
@@ -70,6 +70,7 @@ public class DocumentController {
             DocumentDetailsDto details = new DocumentDetailsDto();
             details.setDocumentId(document.getDocumentId());
             details.setDocumentName(document.getDocumentName());
+            details.setDateTime(document.getDateTime());
             Users user = document.getUser();
             if (user != null) {
                 details.setUserName(user.getUsername());
@@ -81,10 +82,6 @@ public class DocumentController {
             DocType docType = document.getDocType();
             if (docType != null) {
                 details.setDocTypeName(docType.getDocTypeName());
-            }
-            DocMimeType docMimeType = document.getDocMimeType();
-            if (docMimeType != null) {
-                details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
             }
             documentDetails.add(details);
         }
@@ -111,10 +108,7 @@ public class DocumentController {
             if (docType != null) {
                 details.setDocTypeName(docType.getDocTypeName());
             }
-            DocMimeType docMimeType = document.getDocMimeType();
-            if (docMimeType != null) {
-                details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
-            }
+
             documentDetails.add(details);
         }
         return documentDetails;
@@ -136,7 +130,7 @@ public class DocumentController {
             dto.setUserName(document.getUser().getUsername());
             dto.setPropertyName(document.getProperty().getPropertyName());
             dto.setDocTypeName(document.getDocType().getDocTypeName());
-            dto.setDocMimeTypeName(document.getDocMimeType().getDocMimeTypeName());
+            dto.setDateTime(document.getDateTime());
             dtos.add(dto);
         }
         return dtos;
@@ -146,7 +140,6 @@ public class DocumentController {
     public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
         return documentService.searchDocumentsByUsername(username);
     }
-
     @PostMapping
     @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<String> addDocument(
@@ -154,8 +147,7 @@ public class DocumentController {
             @RequestParam("documentName") String documentName,
             @RequestParam("username") String username,
             @RequestParam("propertyName") String propertyName,
-            @RequestParam("docTypeName") String docTypeName,
-            @RequestParam("docMimeTypeName") String docMimeTypeName
+            @RequestParam("docTypeName") String docTypeName
     ) {
         Document document = new Document();
         document.setDocumentName(documentName);
@@ -172,17 +164,52 @@ public class DocumentController {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
         document.setDocType(docType);
 
-        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
-        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
-        document.setDocMimeType(docMimeType);
-
         String publicURL = awsS3Service.uploadFile(file);
         document.setFilePath(publicURL);
+
+        document.setDateTime(LocalDateTime.now());
 
         documentService.addDocument(document);
 
         return ResponseEntity.ok("Document added successfully.");
     }
+
+//    @PostMapping
+//    @CrossOrigin(origins = "http://localhost:4200")
+//    public ResponseEntity<String> addDocument(
+//            @RequestParam("file") MultipartFile file,
+//            @RequestParam("documentName") String documentName,
+//            @RequestParam("username") String username,
+//            @RequestParam("propertyName") String propertyName,
+//            @RequestParam("docTypeName") String docTypeName
+//        //    @RequestParam("docMimeTypeName") String docMimeTypeName
+//    ) {
+//        Document document = new Document();
+//        document.setDocumentName(documentName);
+//
+//        Users user = usersRepository.findByUsername(username)
+//                .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
+//        document.setUser(user);
+//
+//        Property property = propertyRepository.findByPropertyName(propertyName)
+//                .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
+//        document.setProperty(property);
+//
+//        DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
+//                .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
+//        document.setDocType(docType);
+//
+////        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
+////        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
+////        document.setDocMimeType(docMimeType);
+//
+//        String publicURL = awsS3Service.uploadFile(file);
+//        document.setFilePath(publicURL);
+//
+//        documentService.addDocument(document);
+//
+//        return ResponseEntity.ok("Document added successfully.");
+//    }
 
     @DeleteMapping("/{id}")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -216,8 +243,7 @@ public class DocumentController {
             @RequestParam("documentName") String documentName,
             @RequestParam("username") String username,
             @RequestParam("propertyName") String propertyName,
-            @RequestParam("docTypeName") String docTypeName,
-            @RequestParam("docMimeTypeName") String docMimeTypeName
+            @RequestParam("docTypeName") String docTypeName
     ) {
         Document document = documentService.getDocumentById(documentId);
 
@@ -238,10 +264,6 @@ public class DocumentController {
         DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
         document.setDocType(docType);
-
-        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
-        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
-        document.setDocMimeType(docMimeType);
 
         String publicURL = awsS3Service.uploadFile(file);
         document.setFilePath(publicURL);
