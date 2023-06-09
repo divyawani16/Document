@@ -62,7 +62,6 @@ public class DocumentController {
 
 
     @GetMapping("/documentsdetails")
-    @PreAuthorize("hasRole('Admin')")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
@@ -266,5 +265,7 @@ public class DocumentController {
         DocumentDto updatedDocumentDto = documentService.updateDocumentApproval(documentId, approved);
         return ResponseEntity.ok(updatedDocumentDto);
     }
+
+
 
 }
