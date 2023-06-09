@@ -13,7 +13,7 @@ public interface DocumentRepository extends JpaRepository<Document, Integer> {
     List<Document> findByUserUsername(String username);
 
     List<Document> findByPropertyPropertyName(@Param("propertyName") String propertyName);
-
+      List<Document> findByUserUserId(Integer userId);
     @Query("SELECT d FROM Document d WHERE d.property.propertyName = 'Smartworks'")
     List<Document> findSmartworksDocuments();
 

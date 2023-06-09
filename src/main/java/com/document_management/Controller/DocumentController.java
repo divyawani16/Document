@@ -89,6 +89,35 @@ public class DocumentController {
         }
         return documentDetails;
     }
+    @GetMapping("/documentsdetails/{userId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<DocumentDetailsDto> getDocumentsByUser(@PathVariable Integer userId) {
+        List<Document> documents = documentRepository.findByUserUserId(userId);
+        List<DocumentDetailsDto> documentDetails = new ArrayList<>();
+        for (Document document : documents) {
+            DocumentDetailsDto details = new DocumentDetailsDto();
+            details.setDocumentId(document.getDocumentId());
+            details.setDocumentName(document.getDocumentName());
+            Users user = document.getUser();
+            if (user != null) {
+                details.setUserName(user.getUsername());
+            }
+            Property property = document.getProperty();
+            if (property != null) {
+                details.setPropertyName(property.getPropertyName());
+            }
+            DocType docType = document.getDocType();
+            if (docType != null) {
+                details.setDocTypeName(docType.getDocTypeName());
+            }
+            DocMimeType docMimeType = document.getDocMimeType();
+            if (docMimeType != null) {
+                details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
+            }
+            documentDetails.add(details);
+        }
+        return documentDetails;
+    }
 
     //    @GetMapping("/documents/propertyname")
 //    @CrossOrigin(origins = "http://localhost:4200")
