@@ -8,6 +8,7 @@ import com.document_management.Service.DocumentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
@@ -60,9 +61,39 @@ public class DocumentController {
     }
 
     @GetMapping("/documentsdetails")
+    @PreAuthorize("hasRole('Admin')")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
+        List<DocumentDetailsDto> documentDetails = new ArrayList<>();
+        for (Document document : documents) {
+            DocumentDetailsDto details = new DocumentDetailsDto();
+            details.setDocumentId(document.getDocumentId());
+            details.setDocumentName(document.getDocumentName());
+            Users user = document.getUser();
+            if (user != null) {
+                details.setUserName(user.getUsername());
+            }
+            Property property = document.getProperty();
+            if (property != null) {
+                details.setPropertyName(property.getPropertyName());
+            }
+            DocType docType = document.getDocType();
+            if (docType != null) {
+                details.setDocTypeName(docType.getDocTypeName());
+            }
+            DocMimeType docMimeType = document.getDocMimeType();
+            if (docMimeType != null) {
+                details.setDocMimeTypeName(docMimeType.getDocMimeTypeName());
+            }
+            documentDetails.add(details);
+        }
+        return documentDetails;
+    }
+    @GetMapping("/documentsdetails/{userId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<DocumentDetailsDto> getDocumentsByUser(@PathVariable Integer userId) {
+        List<Document> documents = documentRepository.findByUserUserId(userId);
         List<DocumentDetailsDto> documentDetails = new ArrayList<>();
         for (Document document : documents) {
             DocumentDetailsDto details = new DocumentDetailsDto();
