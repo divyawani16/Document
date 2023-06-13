@@ -21,7 +21,13 @@ public class UsersService {
         this.modelMapper = modelMapper;
     }
 
-
+    public List<String> getUsernames() {
+        List<Users> users = usersRepository.findAll();
+        List<String> usernames = users.stream()
+                .map(Users::getUsername)
+                .collect(Collectors.toList());
+        return usernames;
+    }
     public List<UserDto> getAllUsers() {
         List<Users> users = usersRepository.findAll();
         return users.stream().map(user -> modelMapper.map(user, UserDto.class)).collect(Collectors.toList());

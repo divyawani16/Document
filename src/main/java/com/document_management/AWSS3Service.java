@@ -1,5 +1,6 @@
 package com.document_management;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,10 @@ public class AWSS3Service implements FileService{
     public String uploadFile(MultipartFile file) {
 
         String filenameExtension = StringUtils.getFilenameExtension(file.getOriginalFilename());
-        String key = UUID.randomUUID().toString() + "." +filenameExtension;
+        String originalFilename = file.getOriginalFilename();
+        String filename = originalFilename.split("\\.",-1)[0];
+        System.out.println("File name: "+filename);
+        String key = filename + "." +filenameExtension;
         ObjectMetadata metaData = new ObjectMetadata();
         metaData.setContentLength(file.getSize());
         metaData.setContentType(file.getContentType());

@@ -1,5 +1,4 @@
 package com.document_management.Service;
-//import com.amazonaws.services.apigateway.model.NotFoundException;
 import com.amazonaws.services.kms.model.NotFoundException;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.S3Object;
@@ -8,10 +7,7 @@ import com.document_management.AWSS3Service;
 import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentDto;
 import com.document_management.Entity.*;
-import com.document_management.Repository.DocMimeTypeRepository;
-import com.document_management.Repository.DocTypeRepository;
-import com.document_management.Repository.DocumentRepository;
-import com.document_management.Repository.PropertyRepository;
+import com.document_management.Repository.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -20,18 +16,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.web.server.ResponseStatusException;
+import javax.persistence.EntityNotFoundException;
 
 
 @Service
@@ -43,7 +35,8 @@ public class DocumentService {
     @Autowired
     private DocMimeTypeRepository docMimeTypeRepository;
     private final DocumentRepository documentRepository;
-
+    @Autowired
+    private UsersRepository usersRepository;
     @Autowired
     private final ModelMapper modelMapper;
     private final AWSS3Service awsS3Service;
@@ -59,13 +52,14 @@ public class DocumentService {
         Document document = documentRepository.findById(documentId)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Document not found"));
 
+        String[] parts = document.getFilePath().split("/");
+        String filename = parts[parts.length - 1];
+        System.out.println(filename);
+
         AmazonS3 s3Client = awsS3Service.getAmazonS3Client();
-        S3Object s3Object = s3Client.getObject("documentsmanagement", document.getFilePath());
+        S3Object s3Object = s3Client.getObject("documentsmanagement", filename);
         S3ObjectInputStream inputStream = s3Object.getObjectContent();
         InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
-
-        // Extract the filename from the file path
-        String filename = extractFilename(document.getFilePath());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData("attachment", filename);
@@ -77,36 +71,50 @@ public class DocumentService {
     }
 
     private String extractFilename(String filePath) {
-        // Use string manipulation to extract the filename
         String[] pathParts = filePath.split("/");
         return pathParts[pathParts.length - 1];
     }
 
+    public ResponseEntity<String> updateDocument(
+            Integer documentId,
+            MultipartFile file,
+            String documentName,
+            String username,
+            String propertyName,
+            String docTypeName,
+            String docMimeTypeName
+    ) throws IOException {
+        Document document = getDocumentById(documentId);
 
+        if (document == null) {
+            return ResponseEntity.notFound().build();
+        }
 
+        document.setDocumentName(documentName);
 
-//    private String getFilenameFromPath(String filePath) {
-//        Path path = Paths.get(filePath);
-//        return path.getFileName().toString();
-//    }
+        Users user = usersRepository.findByUsername(username)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
+        document.setUser(user);
 
-//    public Resource downloadDocument(Integer documentId) throws IOException {
-//        Document document = documentRepository.findById(documentId)
-//                .orElseThrow(() -> new NotFoundException("Document not found"));
-//
-//        AmazonS3 s3Client = awsS3Service.getAmazonS3Client();
-//        System.out.println(document.getFilePath());
-//        S3Object s3Object = s3Client.getObject("documentsmanagement", document.getFilePath());
-//
-//        S3ObjectInputStream inputStream = s3Object.getObjectContent();
-//        InputStreamResource inputStreamResource = new InputStreamResource(inputStream);
-//
-//        HttpHeaders headers = new HttpHeaders();
-//        headers.setContentDispositionFormData("attachment", document.getFilePath());
-//        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-//        return inputStreamResource;
-//    }
+        Property property = propertyRepository.findByPropertyName(propertyName)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
+        document.setProperty(property);
 
+        DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
+        document.setDocType(docType);
+
+        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
+        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
+        document.setDocMimeType(docMimeType);
+
+        String publicURL = awsS3Service.uploadFile(file);
+        document.setFilePath(publicURL);
+
+        addDocument(document);
+
+        return ResponseEntity.ok("Document updated successfully.");
+    }
     public List<Document> getAllDocuments() {
         return documentRepository.findAll();
     }
@@ -134,52 +142,20 @@ public class DocumentService {
         return publicURL;
     }
     public List<Document> searchDocumentsByPropertyName(String propertyName) {
-        return documentRepository.findByPropertyPropertyName(propertyName);
+        List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
+        List<Document> smartworksDocuments = new ArrayList<>();
+
+        for (Document document : documents) {
+            if (document.getProperty().getPropertyName().equals("Smartworks")) {
+                smartworksDocuments.add(document);
+            }
+        }
+        return smartworksDocuments;
     }
 
     public List<Document> searchDocumentsByUsername(String username) {
         return documentRepository.findByUserUsername(username);
     }
-//    public String saveFile(MultipartFile file) throws IOException {
-//        String storagePath = "D://xyz"; // Specify the desired storage path here
-//
-//        // Create the necessary directories if they don't exist
-//        File storageDir = new File(storagePath);
-//        if (!storageDir.exists()) {
-//            storageDir.mkdirs();
-//        }
-//
-//        // Construct the file path by concatenating the storage path and the original file name
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//        String filePath = storagePath + File.separator + fileName;
-//
-//        // Transfer the file to the target location
-//        File targetFile = new File(filePath);
-//        file.transferTo(targetFile);
-//
-//        return filePath;
-//    }
-
-//    public String saveFile(MultipartFile file) throws IOException {
-//        String storagePath = "D://xyz"; // Specify the desired storage path here
-//
-//        // Create the necessary directories if they don't exist
-//        File storageDir = new File(storagePath);
-//        if (!storageDir.exists()) {
-//            storageDir.mkdirs();
-//        }
-//
-//        // Construct the file path by concatenating the storage path and the original file name
-//        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-//        String filePath = storagePath + File.separator + fileName;
-//
-//        // Transfer the file to the target location
-//        File targetFile = new File(filePath);
-//        file.transferTo(targetFile);
-//
-//        return filePath;
-//    }
-
     public DocMimeType getDocMimeTypeById(Integer docMimeTypeId) {
         return docMimeTypeRepository.findById(docMimeTypeId)
                 .orElseThrow(() -> new NotFoundException("DocMimeType not found"));
@@ -216,11 +192,6 @@ public class DocumentService {
                 .orElseThrow(() -> new RuntimeException("Document not found"));
         return modelMapper.map(document, Document.class);
     }
-//    public DocumentDto getDocumentById(Integer documentId) {
-//        Document document = documentRepository.findById(documentId)
-//                .orElseThrow(() -> new RuntimeException("Document not found"));
-//        return modelMapper.map(document, DocumentDto.class);
-//    }
 
     public Optional<Property> getPropertyByName(String propertyName) {
         return propertyRepository.findByPropertyName(propertyName);
@@ -233,15 +204,20 @@ public class DocumentService {
     public Optional<DocMimeType> getDocMimeTypeByName(String docMimeTypeName) {
         return docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
     }
-//    public Resource downloadDocument(Integer documentId) {
-//        Document document = documentRepository.findById(documentId)
-//                .orElseThrow(() -> new NotFoundException("Document not found"));
-//
-//        File file = new File(document.getFilePath());
-//        if (!file.exists()) {
-//            throw new NotFoundException("File not found");
-//        }
-//
-//        return new FileSystemResource(file);
-//    }
+    public DocumentDto updateDocumentApproval(int documentId, boolean approved) {
+        Document document = documentRepository.findById(documentId)
+                .orElseThrow(() -> new EntityNotFoundException("Document not found"));
+
+        document.setApproved(approved);
+        Document savedDocument = documentRepository.save(document);
+        return mapDocumentToDocumentDto(savedDocument);
+    }
+
+    private DocumentDto mapDocumentToDocumentDto(Document document) {
+        return new DocumentDto(document.getDocumentId(), document.getDocumentName(), document.isApproved());
+    }
+
+
+
+
 }

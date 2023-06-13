@@ -14,7 +14,7 @@ public class StageService {
 
     public StageDto getStageById(int stageId) {
         Stage stage = stageRepository.findById(stageId)
-                .orElseThrow(() -> new EntityNotFoundException("Role not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
         return mapStageToStageDto(stage);
     }
 
@@ -26,23 +26,24 @@ public class StageService {
 
     public StageDto updateStage(int stageId, StageDto stageDto) {
         Stage stage = stageRepository.findById(stageId)
-                .orElseThrow(() -> new  EntityNotFoundException("Role not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
         stage.setStageName(stageDto.getStageName());
+        stage.setApproved(stageDto.isApproved());
         Stage savedStage = stageRepository.save(stage);
         return mapStageToStageDto(savedStage);
     }
 
     public void deleteStage(int stageId) {
         Stage stage = stageRepository.findById(stageId)
-                .orElseThrow(() -> new EntityNotFoundException("Role not found"));
+                .orElseThrow(() -> new EntityNotFoundException("Stage not found"));
         stageRepository.delete(stage);
     }
 
     private StageDto mapStageToStageDto(Stage stage) {
-        return new StageDto(stage.getStageId(), stage.getStageName());
+        return new StageDto(stage.getStageId(), stage.getStageName(), stage.isApproved());
     }
 
     private Stage mapStageDtoToStage(StageDto stageDto) {
-        return new Stage(stageDto.getStageId(), stageDto.getStageName());
+        return new Stage(stageDto.getStageId(), stageDto.getStageName(), stageDto.isApproved());
     }
 }
