@@ -9,11 +9,14 @@ import javax.persistence.EntityNotFoundException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 @Service
 public class UsersService {
     private final UsersRepository usersRepository;
     private final ModelMapper modelMapper;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     public UsersService(UsersRepository usersRepository, ModelMapper modelMapper) {
@@ -40,6 +43,8 @@ public class UsersService {
     }
 
     public UserDto createUser(UserDto userDto) {
+
+     userDto.setPassword(getEncodedPassword(userDto.getPassword()));
         Users user = modelMapper.map(userDto, Users.class);
         Users createdUser = usersRepository.save(user);
         return modelMapper.map(createdUser, UserDto.class);
@@ -52,6 +57,25 @@ public class UsersService {
         Users updatedUser = usersRepository.save(user);
         return modelMapper.map(updatedUser, UserDto.class);
     }
+    public Optional<Users> findByUsername(String username) {
+        return usersRepository. findByUsername(username);
+    }
+
+
+    public void deleteUser(Integer userId) {
+        usersRepository.deleteById(userId);
+    }
+
+
+    public Users saveUsers(Users user) {
+        user.setPassword(getEncodedPassword(user.getPassword()));
+        return usersRepository.save(user);
+    }
+
+    public String getEncodedPassword(String password) {
+        return passwordEncoder.encode(password);
+    }
+}
 
 
 
@@ -59,7 +83,8 @@ public class UsersService {
 //        return usersRepository. findByusername(username);
 //    }
 
-    public void deleteUser(Integer userId) {
-        usersRepository.deleteById(userId);
-    }
-}
+//     public void deleteUser(Integer userId) {
+//         usersRepository.deleteById(userId);
+//     }
+// }
+

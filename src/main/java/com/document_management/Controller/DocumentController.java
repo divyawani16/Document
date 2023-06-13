@@ -8,6 +8,7 @@ import com.document_management.Service.DocumentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
@@ -60,6 +61,7 @@ public class DocumentController {
     }
 
     @GetMapping("/documentsdetails")
+//    @PreAuthorize("hasRole('Admin')")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
@@ -85,9 +87,37 @@ public class DocumentController {
         }
         return documentDetails;
     }
+    @GetMapping("/documentsdetails/{userId}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public List<DocumentDetailsDto> getDocumentsByUser(@PathVariable Integer userId) {
+        List<Document> documents = documentRepository.findByUserUserId(userId);
+        List<DocumentDetailsDto> documentDetails = new ArrayList<>();
+        for (Document document : documents) {
+            DocumentDetailsDto details = new DocumentDetailsDto();
+            details.setDocumentId(document.getDocumentId());
+            details.setDocumentName(document.getDocumentName());
+            details.setDateTime(document.getDateTime());
+            Users user = document.getUser();
+            if (user != null) {
+                details.setUserName(user.getUsername());
+            }
+            Property property = document.getProperty();
+            if (property != null) {
+                details.setPropertyName(property.getPropertyName());
+            }
+            DocType docType = document.getDocType();
+            if (docType != null) {
+                details.setDocTypeName(docType.getDocTypeName());
+            }
+
+            documentDetails.add(details);
+        }
+        return documentDetails;
+    }
 
     @GetMapping("/documents/propertyname")
     @CrossOrigin(origins = "http://localhost:4200")
+
     public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
         List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
         return convertToDocumentDetailsDto(documents);
@@ -147,7 +177,7 @@ public class DocumentController {
     }
 
 //    @PostMapping
-//    @CrossOrigin(origins = "http://localhost:4200")
+//  @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 //    public ResponseEntity<String> addDocument(
 //            @RequestParam("file") MultipartFile file,
 //            @RequestParam("documentName") String documentName,
@@ -185,6 +215,7 @@ public class DocumentController {
 
     @DeleteMapping("/{id}")
     @CrossOrigin(origins = "http://localhost:4200")
+
     public ResponseEntity<Void> deleteDocument(@PathVariable Integer documentId) {
         documentService.deleteDocument(documentId);
         return ResponseEntity.noContent().build();
@@ -236,8 +267,6 @@ public class DocumentController {
         DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
         document.setDocType(docType);
-
-
 
         String publicURL = awsS3Service.uploadFile(file);
         document.setFilePath(publicURL);

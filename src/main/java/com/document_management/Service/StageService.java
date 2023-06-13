@@ -23,7 +23,9 @@ public class StageService {
         Stage savedStage = stageRepository.save(stage);
         return mapStageToStageDto(savedStage);
     }
-
+    public Stage saveStage(Stage stage) {
+        return stageRepository.save(stage);
+    }
     public StageDto updateStage(int stageId, StageDto stageDto) {
         Stage stage = stageRepository.findById(stageId)
                 .orElseThrow(() -> new EntityNotFoundException("Stage not found"));

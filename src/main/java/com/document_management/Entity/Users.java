@@ -3,6 +3,8 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "Users")
@@ -29,6 +31,10 @@ public class Users {
 
     @Column(name = "Phonenumber")
     private String phoneNumber;
+
+    @Column(name = "EmailId")
+    private String emailId;
+
 
     public Integer getUserId() {
         return userId;
@@ -78,8 +84,43 @@ public class Users {
         this.phoneNumber = phoneNumber;
     }
 
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+
+
+
+//    public void setEnabled(boolean enabled) {
+//        this.enabled = enabled;
+//    }
+
+
+
+
+//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    private List<UserProperty> userProperties;
+//   private boolean enabled;
+
+    // getters and setters
+//    public List<UserProperty> getUserProperties() {
+//        return userProperties;
+//    }
+//
+//    public void setUserProperties(List<UserProperty> userProperties) {
+//        this.userProperties = userProperties;
+//    }public boolean isEnabled() {
+//        return this.enabled;
+//    }
+
 //        @Column(name = "EmailId")
 //    private String emailId;
+
 
 
 

@@ -2,6 +2,7 @@ package com.document_management.Controller;
 import com.document_management.DTO.RoleDto;
 import com.document_management.Service.RoleService;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import java.util.List;
 @RequestMapping("/api/roles")
 public class RoleController {
 
+    @Autowired
     private RoleService roleService;
 
     @GetMapping("/{roleId}")
