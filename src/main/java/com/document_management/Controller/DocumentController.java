@@ -96,6 +96,7 @@ public class DocumentController {
             DocumentDetailsDto details = new DocumentDetailsDto();
             details.setDocumentId(document.getDocumentId());
             details.setDocumentName(document.getDocumentName());
+            details.setDateTime(document.getDateTime());
             Users user = document.getUser();
             if (user != null) {
                 details.setUserName(user.getUsername());
@@ -116,6 +117,7 @@ public class DocumentController {
 
     @GetMapping("/documents/propertyname")
     @CrossOrigin(origins = "http://localhost:4200")
+
     public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
         List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
         return convertToDocumentDetailsDto(documents);
@@ -175,7 +177,7 @@ public class DocumentController {
     }
 
 //    @PostMapping
-//    @CrossOrigin(origins = "http://localhost:4200")
+//  @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 //    public ResponseEntity<String> addDocument(
 //            @RequestParam("file") MultipartFile file,
 //            @RequestParam("documentName") String documentName,
@@ -213,6 +215,7 @@ public class DocumentController {
 
     @DeleteMapping("/{id}")
     @CrossOrigin(origins = "http://localhost:4200")
+
     public ResponseEntity<Void> deleteDocument(@PathVariable Integer documentId) {
         documentService.deleteDocument(documentId);
         return ResponseEntity.noContent().build();
