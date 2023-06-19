@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 @RestController
-@RequestMapping("/doc-mime-types")
+@RequestMapping("/api/doc-mime-types")
 public class DocMimeTypeController {
     private DocMimeTypeService docMimeTypeService;
     private static final Logger logger = LogManager.getLogger(DocMimeTypeController.class);

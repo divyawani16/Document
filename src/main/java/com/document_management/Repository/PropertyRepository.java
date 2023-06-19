@@ -11,5 +11,4 @@ public interface PropertyRepository extends JpaRepository<Property, Integer> {
 
     Optional<Property> findByPropertyName(String propertyName);
 
-  //  List<Property> findByPropertyName(String propertyName);
 }

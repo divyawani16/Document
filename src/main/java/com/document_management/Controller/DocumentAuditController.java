@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/document-audit")
+@CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
+@RequestMapping("/api/document-audit")
 public class DocumentAuditController {
 
     @Autowired

@@ -45,7 +45,7 @@ public class Document {
 
     private LocalDateTime dateTime;
 
-    private boolean approved;
+   private boolean approved;
 
     }
 

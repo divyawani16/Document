@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 import org.springframework.core.io.Resource;
 
 @RestController
-@RequestMapping("api/documents")
+@RequestMapping("/api/documents")
 
 public class DocumentController {
     private final DocumentService documentService;
@@ -47,14 +47,14 @@ public class DocumentController {
     }
 
     @GetMapping("/count")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public ResponseEntity<Integer> countDocument() {
         int count = documentService.getAllDocuments().size();
         return ResponseEntity.ok(count);
     }
 
     @GetMapping("/{documentId}/download")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 
     public ResponseEntity<Resource> downloadDocument(@PathVariable Integer documentId) throws IOException {
         return documentService.downloadDocument(documentId);
@@ -62,7 +62,7 @@ public class DocumentController {
 
     @GetMapping("/documentsdetails")
 //    @PreAuthorize("hasRole('Admin')")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public List<DocumentDetailsDto> getAllDocumentsWithDetails() {
         List<Document> documents = documentRepository.findAll();
         List<DocumentDetailsDto> documentDetails = new ArrayList<>();
@@ -71,6 +71,7 @@ public class DocumentController {
             details.setDocumentId(document.getDocumentId());
             details.setDocumentName(document.getDocumentName());
             details.setDateTime(document.getDateTime());
+            details.setFilePath(document.getFilePath());
             Users user = document.getUser();
             if (user != null) {
                 details.setUserName(user.getUsername());
@@ -88,7 +89,7 @@ public class DocumentController {
         return documentDetails;
     }
     @GetMapping("/documentsdetails/{userId}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public List<DocumentDetailsDto> getDocumentsByUser(@PathVariable Integer userId) {
         List<Document> documents = documentRepository.findByUserUserId(userId);
         List<DocumentDetailsDto> documentDetails = new ArrayList<>();
@@ -97,6 +98,7 @@ public class DocumentController {
             details.setDocumentId(document.getDocumentId());
             details.setDocumentName(document.getDocumentName());
             details.setDateTime(document.getDateTime());
+            details.setFilePath(document.getFilePath());
             Users user = document.getUser();
             if (user != null) {
                 details.setUserName(user.getUsername());
@@ -116,7 +118,7 @@ public class DocumentController {
     }
 
     @GetMapping("/documents/propertyname")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 
     public List<DocumentDetailsDto> searchDocumentsByPropertyName(@RequestParam("propertyName") String propertyName) {
         List<Document> documents = documentRepository.findByPropertyPropertyName(propertyName);
@@ -133,17 +135,18 @@ public class DocumentController {
             dto.setPropertyName(document.getProperty().getPropertyName());
             dto.setDocTypeName(document.getDocType().getDocTypeName());
             dto.setDateTime(document.getDateTime());
+            dto.setFilePath(document.getFilePath());
             dtos.add(dto);
         }
         return dtos;
     }
     @GetMapping("/documents/username")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public List<Document> searchDocumentsByUsername(@RequestParam("username") String username) {
         return documentService.searchDocumentsByUsername(username);
     }
     @PostMapping
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public ResponseEntity<String> addDocument(
             @RequestParam("file") MultipartFile file,
             @RequestParam("documentName") String documentName,
@@ -176,45 +179,8 @@ public class DocumentController {
         return ResponseEntity.ok("Document added successfully.");
     }
 
-//    @PostMapping
-//  @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
-//    public ResponseEntity<String> addDocument(
-//            @RequestParam("file") MultipartFile file,
-//            @RequestParam("documentName") String documentName,
-//            @RequestParam("username") String username,
-//            @RequestParam("propertyName") String propertyName,
-//            @RequestParam("docTypeName") String docTypeName
-//        //    @RequestParam("docMimeTypeName") String docMimeTypeName
-//    ) {
-//        Document document = new Document();
-//        document.setDocumentName(documentName);
-//
-//        Users user = usersRepository.findByUsername(username)
-//                .orElseThrow(() -> new IllegalArgumentException("Invalid username"));
-//        document.setUser(user);
-//
-//        Property property = propertyRepository.findByPropertyName(propertyName)
-//                .orElseThrow(() -> new IllegalArgumentException("Invalid propertyName"));
-//        document.setProperty(property);
-//
-//        DocType docType = docTypeRepository.findByDocTypeName(docTypeName)
-//                .orElseThrow(() -> new IllegalArgumentException("Invalid docTypeName"));
-//        document.setDocType(docType);
-//
-////        Optional<DocMimeType> optionalDocMimeType = docMimeTypeRepository.findByDocMimeTypeName(docMimeTypeName);
-////        DocMimeType docMimeType = optionalDocMimeType.orElseThrow(() -> new IllegalArgumentException("Invalid docMimeTypeName"));
-////        document.setDocMimeType(docMimeType);
-//
-//        String publicURL = awsS3Service.uploadFile(file);
-//        document.setFilePath(publicURL);
-//
-//        documentService.addDocument(document);
-//
-//        return ResponseEntity.ok("Document added successfully.");
-//    }
-
     @DeleteMapping("/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 
     public ResponseEntity<Void> deleteDocument(@PathVariable Integer documentId) {
         documentService.deleteDocument(documentId);
@@ -222,7 +188,7 @@ public class DocumentController {
     }
 
     @GetMapping("/get")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public ResponseEntity<List<DocumentDto>> getAllDocuments() {
         List<Document> documents = documentService.getAllDocuments();
         List<DocumentDto> documentDtos = documents.stream()
@@ -232,14 +198,14 @@ public class DocumentController {
     }
 
     @GetMapping("/{documentId}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public ResponseEntity<Document> getDocumentById(@PathVariable Integer documentId) {
         Document document = documentService.getDocumentById(documentId);
         return ResponseEntity.ok(document);
     }
 
     @PutMapping("/{documentId}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
     public ResponseEntity<String> updateDocument(
             @PathVariable Integer documentId,
             @RequestParam("file") MultipartFile file,

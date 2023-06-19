@@ -56,4 +56,6 @@ public class DocumentDetailsDto {
     private String PropertyName;
     private String docTypeName;
     private LocalDateTime dateTime;
+    private String filePath;
+
 }

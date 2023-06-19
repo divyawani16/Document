@@ -84,7 +84,6 @@ public class Users {
         this.phoneNumber = phoneNumber;
     }
 
-
     public String getEmailId() {
         return emailId;
     }
@@ -93,33 +92,6 @@ public class Users {
         this.emailId = emailId;
     }
 
-
-
-
-//    public void setEnabled(boolean enabled) {
-//        this.enabled = enabled;
-//    }
-
-
-
-
-//    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<UserProperty> userProperties;
-//   private boolean enabled;
-
-    // getters and setters
-//    public List<UserProperty> getUserProperties() {
-//        return userProperties;
-//    }
-//
-//    public void setUserProperties(List<UserProperty> userProperties) {
-//        this.userProperties = userProperties;
-//    }public boolean isEnabled() {
-//        return this.enabled;
-//    }
-
-//        @Column(name = "EmailId")
-//    private String emailId;
 
 
 

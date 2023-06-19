@@ -1,5 +1,4 @@
 package com.document_management.Controller;
-import com.document_management.DTO.DocumentDetailsDto;
 import com.document_management.DTO.DocumentVersionDto;
 import com.document_management.Entity.*;
 import com.document_management.Repository.DocumentVersionRepository;
@@ -10,13 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/documentVersions")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 public class DocumentVersionController {
 
     @Autowired
@@ -64,29 +61,4 @@ public class DocumentVersionController {
         return ResponseEntity.ok(response);
     }
 
-//    @GetMapping("/documents")
-//    public List<DocumentVersionDto> getAllDocumentsWithDetails() {
-//        List<DocumentVersion> documents = documentVersionRepository.findAll();
-//        List<DocumentVersionDto> documentDetails = new ArrayList<>();
-//
-//        for (DocumentVersion document : documents) {
-//            DocumentVersionDto details = new DocumentVsDto();
-//            details.setDocumentName(document.getDocumentName());
-//
-////            Users user = document.getUser();
-////            if (user != null) {
-////                details.setUserName(user.getUsername());
-////            }
-//
-////            Property property = document.getProperty();
-////            if (property != null) {
-////                details.setPropertyName(property.getPropertyName());
-////            }
-//
-//
-//            documentDetails.add(details);
-//        }
-//
-//        return documentDetails;
-//    }
 }

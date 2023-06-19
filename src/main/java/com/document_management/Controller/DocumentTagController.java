@@ -18,7 +18,6 @@ public class DocumentTagController {
     private static final Logger logger = LogManager.getLogger(DocumentTagController.class);
     @GetMapping("/")
     public ResponseEntity<List<DocumentTag>> getAllDocumentTags() {
-
         return ResponseEntity.ok(documentTagService.getAllDocumentTags());
     }
 
@@ -31,10 +30,4 @@ public class DocumentTagController {
     public ResponseEntity<DocumentTag> getDocumentTagById(@PathVariable Long id) {
         return ResponseEntity.ok(documentTagService.getDocumentTagById(id));
     }
-
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Void> deleteDocumentTag(@PathVariable Long id) {
-//        documentTagService.deleteDocumentTag(id);
-//        return ResponseEntity.noContent().build();
-//    }
 }

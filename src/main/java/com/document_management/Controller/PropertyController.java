@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/properties/")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 public class PropertyController {
     private PropertyService propertyService;
     private final PropertyRepository propertyRepository;
@@ -59,12 +59,6 @@ public class PropertyController {
         List<PropertyDto> propertyDtos = propertyService.getAllProperties();
         return ResponseEntity.ok(propertyDtos);
     }
-//    @GetMapping("/propertyname")
-//    public ResponseEntity<Optional<Property>> findByPropertyName(@RequestParam("name") String propertyName) {
-//        Optional<Property> properties = propertyService.findByPropertyName(propertyName);
-//        return ResponseEntity.ok(properties);
-//    }
-
 
 @GetMapping("/propertyname")
 public ResponseEntity<Optional<Property>> findByPropertyName() {

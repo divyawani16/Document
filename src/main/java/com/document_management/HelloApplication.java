@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableJpaRepositories
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 @SpringBootApplication
 //@ComponentScan(basePackages = {"com.document_management"})
 //@EnableSwagger2

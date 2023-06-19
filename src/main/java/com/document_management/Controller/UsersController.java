@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://d2sn5cwr5purir.cloudfront.net")
 public class UsersController {
         private UsersService usersService;
         @Autowired
@@ -27,34 +27,7 @@ public class UsersController {
                 List<UserDto> userDtos = usersService.getAllUsers();
                 return ResponseEntity.ok(userDtos);
         }
-//        @GetMapping("/{userId}")
 
-
-//        @GetMapping("/{username}")
-//        public Optional<Users> findByusername(@PathVariable String username)
-//        {
-//                return this.usersService.findByusername(username);
-//        }
-
-//         @GetMapping("/")
-//         public ResponseEntity<List<UserDto>> getAllUsers() {
-//                 List<UserDto> userDtos = usersService.getAllUsers();
-//                 for (UserDto userDto : userDtos) {
-//                         userDto.setPassword("*****");
-//                 }
-
-//                 return ResponseEntity.ok(userDtos);
-//         }
-////        @GetMapping("/{userId}")
-
-//        public ResponseEntity<UserDto> getUser(@PathVariable Integer userId) {
-//                try {
-//                        UserDto userDto = usersService.getUserById(userId);
-//                        return ResponseEntity.ok(userDto);
-//                } catch (EntityNotFoundException e) {
-//                        return ResponseEntity.notFound().build();
-//                }
-//        }
 
         @PostMapping("/createUser")
         public ResponseEntity<UserDto> createUser(@RequestBody @Valid UserDto userDto) {

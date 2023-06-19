@@ -44,9 +44,6 @@ public class PropertyService {
         Property updatedProperty = propertyRepository.save(property);
         return modelMapper.map(updatedProperty, PropertyDto.class);
     }
-//    public List<Property> searchByPropertyName(String propertyName) {
-//        return propertyRepository.findByPropertyName(propertyName);
-//    }
 
     public void deleteProperty(Integer propertyId) {
         propertyRepository.deleteById(propertyId);

@@ -27,8 +27,6 @@ public class JwtService implements UserDetailsService {
     @Autowired
     private UsersRepository usersRepository;
 
-//    @Autowired
-//    private UserPropertyRepository userPropertyRepository;
     @Autowired
     private JwtUtil jwtUtil;
 
@@ -41,12 +39,8 @@ public class JwtService implements UserDetailsService {
         System.out.println("Method call");
         String username = jwtRequest.getUserName();
         String password = jwtRequest.getUserPassword();
-//        System.out.println(username + "  " + password);
-        //authenticate(username, password);
 
-        UserDetails userDetails = loadUserByUsername(username);//here you can get userid
-        //implement logic to get rolid from roll(get data from request) op:rollid
-        //find data in userproperty table by (userid,rollid)
+        UserDetails userDetails = loadUserByUsername(username);
         System.out.println("username"+username);
         List<String> userRoles =  usersRepository.getUsrRoleByUserName(username);
 

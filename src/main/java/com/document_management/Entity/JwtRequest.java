@@ -6,7 +6,6 @@ public class JwtRequest {
 
     private String roleId;
 
-//    public String getRoleName() {
 
 
     public String getRoleId() {

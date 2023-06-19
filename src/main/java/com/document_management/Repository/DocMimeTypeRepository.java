@@ -8,8 +8,5 @@ import java.util.Optional;
 @Repository
 public interface DocMimeTypeRepository extends JpaRepository<DocMimeType, Integer> {
 
-
- //   Optional<DocMimeType> findByDocMimeTyeName(String docMimeTypeName);
-
     Optional<DocMimeType> findByDocMimeTypeName(String docMimeTypeName);
 }

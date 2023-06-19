@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/userProperty")
+@RequestMapping("/api/userProperty")
 public class UserPropertyController {
     private PropertyRepository propertyRepository;
     @Autowired

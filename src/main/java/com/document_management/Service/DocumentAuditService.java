@@ -26,13 +26,6 @@ public class DocumentAuditService {
     public DocumentAudit createDocumentAudit(DocumentAudit documentAudit) {
         return documentAuditRepository.save(documentAudit);
     }
-//    public List<DocumentAuditDto> getAllDocAudit() {
-//        List<DocumentAudit> documentAudits = documentAuditRepository.findAll();
-//        return documentAudits.stream()
-//                .map(documentAudit -> modelMapper.map(documentAudit, DocumentAuditDto.class))
-//                .collect(Collectors.toList());
-//    }
-
 
 public List<DocumentAuditDto> getAllDocAudit() {
     List<DocumentAudit> documentAudits = documentAuditRepository.findAll();
@@ -40,12 +33,4 @@ public List<DocumentAuditDto> getAllDocAudit() {
             .map(documentAudit -> modelMapper.map(documentAudit, DocumentAuditDto.class))
             .collect(Collectors.toList());
 }
-//    public List<DocumentAudit> getAllDocAudit() {
-//        return documentAuditRepository.findAll();
-//    }
-//    public DocumentAuditDto getDocumentAuditById(Integer documentAuditId) {
-//        DocumentAudit documentAudit = documentAuditRepository.findById(documentAuditId)
-//                .orElseThrow(() -> new RuntimeException("Document audit not found with id: " + documentAuditId));
-//        return new DocumentAuditDto(documentAudit.getId(), documentAudit.getDocumentId(), documentAudit.getAction(), documentAudit.getTimestamp());
-//    }
 }

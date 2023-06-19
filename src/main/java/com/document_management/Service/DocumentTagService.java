@@ -22,7 +22,4 @@ public class DocumentTagService {
         return documentTagRepository.save(documentTag);
     }
 
-//    public void deleteDocumentTag(Long id) {
-//        documentTagRepository.deleteById(id);
-//    }
 }
